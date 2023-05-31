@@ -1,0 +1,262 @@
+---
+title: 简单的curd组件封装
+date: 2022-12-31 16:47:50
+id: simple-curd-component-encapsulation
+categories:
+  - 前端
+tags:
+  - Vue
+  - Vue组件
+---
+
+# 简单的curd组件封装
+
+特性：主要是合并表格、分页，然后其他内容自己通过slot插入，表格column也使用对象的形式定义
+
+```vue
+<script setup lang="ts">
+import type { ElTable, ElTableColumn } from 'element-plus/es'
+import type { CurdColumn, IPage } from '@/typings/common'
+
+const props = defineProps<{
+  columns: CurdColumn[]
+  tableData: unknown[]
+  page?: IPage
+}>()
+
+const emit = defineEmits<IEmit>()
+interface IEmit {
+  (event: 'update:page', value: typeof props.page): void
+  (event: 'search'): void
+}
+const tableRef = ref<InstanceType<typeof ElTable>>()
+
+const pageModel = computed({
+  get: () => props.page,
+  set: value => emit('update:page', value),
+})
+
+function handleSizeChange(val: number) {
+  if (!pageModel.value)
+    return
+  pageModel.value.pageSize = val
+  pageModel.value.pageNum = 1
+  emit('search')
+}
+function handleCurrentChange(val: number) {
+  if (!pageModel.value)
+    return
+  pageModel.value.pageNum = val
+  emit('search')
+}
+
+defineExpose({
+  tableRef,
+})
+</script>
+
+<template>
+  <div class="curd-container h-full flex flex-col">
+    <div class="header-line">
+      <slot name="header" />
+    </div>
+    <div class="table-container flex-auto">
+      <el-table
+        ref="tableRef"
+        :data="tableData"
+        class="flex-auto"
+        stripe
+        border
+      >
+        <template
+          v-for="(column, index) in columns"
+          :key="column.prop || index"
+        >
+          <el-table-column
+            :class-name="column.className || (column.slot && `${column.slot}-column`)"
+            v-bind="column"
+            #="scope"
+          >
+            <span v-if="column.prop && column.map">{{ column.map.value[scope.row[column.prop]] ?? scope.row[column.prop] }}</span>
+            <slot v-if="column.slot" :name="column.slot" v-bind="scope" />
+          </el-table-column>
+        </template>
+      </el-table>
+      <el-pagination
+        v-if="pageModel"
+        v-model:page-size="pageModel.pageSize"
+        v-model:current-page="pageModel.pageNum"
+        :total="pageModel.total"
+        :page-sizes="[15, 30, 50]"
+        background
+        layout="->, total, sizes, prev, pager, next, jumper"
+        h-80px
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+      />
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.curd-container{
+  box-sizing: border-box;
+}
+
+.table-container {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+</style>
+```
+
+```ts
+export interface IPage extends IPagination {
+  total: number
+}
+
+export type CurdColumn = ElTableColumnProps & {
+  slot?: string
+  map?: Ref<Record<string, string>>
+}
+```
+
+## utils
+
+如果想指定props，我也写了一个工具类
+
+```ts
+export type DefinedKeys<O, Key extends string, Keys> = O & {
+  [k in Key]?: Keys
+}
+```
+
+用法：
+
+```ts
+const columns: DefinedKeys<CurdColumn, 'prop', keyof IData>[] = []
+```
+
+## 基于这个想法，我觉得el-form可以同样的封装，但是为了灵活，我把el-form-item做了一个组件
+
+但这个组件用到现在我感觉设计上还是有点问题，
+如果能使用type，props的方式可能会更好，这样类型就定义起来比较麻烦，
+不同的type，对应element-plus不同组件的props，
+这样整个el-form的自定义程度会更高，但是一开始写的时候没有考虑到这些，
+现在重构也不太好了。。。
+
+```vue
+<script setup lang="ts">
+import { unref } from 'vue'
+import WddUpload from './WddUpload.vue'
+import type { CurdFormItems } from '@/typings/common'
+
+const props = defineProps<{
+  formItems: CurdFormItems[]
+  form: Record<string, unknown>
+  inputSize?: string
+}>()
+
+const emit = defineEmits<IEmit>()
+interface IEmit {
+  (event: 'update:form', value: typeof props.form): void
+  (event: 'change'): void
+}
+const formModel = computed({
+  get: () => props.form,
+  set: value => emit('update:form', value),
+})
+</script>
+
+<template>
+  <template
+    v-for="item in formItems"
+    :key="item.prop"
+  >
+    <el-form-item v-bind="item">
+      <!-- 这里可以是一些通用的固定组件，不然就直接放到slot里面就行 -->
+      <el-date-picker
+        v-if="item.date && ['datetime', 'date', 'week', 'month', 'year'].includes(item.date)"
+        v-model="formModel[item.prop]"
+        :size="inputSize"
+        :type="item.date"
+        value-format="YYYY-MM-DD HH:mm:ss"
+        clearable
+        @change="emit('change')"
+      />
+      <WddUpload v-else-if="item.upload" v-model:file-list="(formModel[item.prop])" />
+      <!-- 基础的一些表单 -->
+      <el-select
+        v-else-if="item.map" v-model="formModel[item.prop]" :size="inputSize" placeholder="请选择" clearable
+        filterable @change="emit('change')"
+      >
+        <el-option
+          v-for="(value, key) in unref(item.map)"
+          :key="key"
+          :label="value"
+          :value="key"
+        />
+      </el-select>
+      <slot v-else-if="item.slot" :name="item.slot" />
+      <div v-else-if="item.multi" class="w-full flex gap4">
+        <div v-for="subItem in item.multi" :key="subItem.prop" class="min-w-0 flex flex-1 items-center">
+          <span mr1>{{ subItem.label }}</span>
+          <el-input v-if="subItem.number" v-model.number="formModel[subItem.prop]" type="number" :size="inputSize" v-bind="subItem.inputProps">
+            <template v-if="subItem.unit" #suffix>
+              {{ subItem.unit }}
+            </template>
+          </el-input>
+          <el-input v-else v-model="formModel[subItem.prop]" :size="inputSize" v-bind="subItem.inputProps">
+            <template v-if="subItem.unit" #suffix>
+              {{ subItem.unit }}
+            </template>
+          </el-input>
+        </div>
+      </div>
+      <el-input v-else-if="item.textarea" v-model="formModel[item.prop]" type="textarea" :rows="item.textarea" v-bind="item.inputProps" />
+      <el-input
+        v-else-if="item.number" v-model.number="formModel[item.prop]" type="number" :size="inputSize" v-bind="item.inputProps"
+        @keyup.enter="emit('change')"
+      >
+        <template v-if="item.unit" #suffix>
+          {{ item.unit }}
+        </template>
+      </el-input>
+      <el-input
+        v-else v-model="formModel[item.prop]" :size="inputSize" v-bind="item.inputProps"
+        @keyup.enter="emit('change')"
+      >
+        <template v-if="item.unit" #suffix>
+          {{ item.unit }}
+        </template>
+      </el-input>
+    </el-form-item>
+  </template>
+</template>
+
+<style lang="scss" scoped>
+</style>
+```
+
+类型：
+
+```ts
+type ElFormItemProps = InstanceType<typeof ElFormItem>['$props']
+type ElInputProps = InstanceType<typeof ElInput>['$props']
+type ElUploadProps = InstanceType<typeof ElUpload>['$props']
+export type CurdFormItems = ElFormItemProps & {
+  prop: string
+  slot?: string
+  map?: Ref<Record<string, string>>
+  number?: boolean
+  unit?: string
+  inputProps?: ElInputProps
+  multi?: CurdFormItems[]
+  date?: 'datetime' | 'date' | 'week' | 'month' | 'year'
+  upload?: boolean
+  textarea?: number
+}
+```
