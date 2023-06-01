@@ -1,8 +1,10 @@
 <script setup lang="ts">
+const route = useRoute()
+
 useHead({
-  title: 'Vitesse',
+  title: 'wiidede',
   meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    { name: 'description', content: 'wiidede\'s personal site' },
     {
       name: 'theme-color',
       content: () => isDark.value ? '#121212' : '#ffffff',
@@ -19,11 +21,17 @@ useHead({
 </script>
 
 <template>
+  <TheHeader
+    text="gray-700 dark:gray-200"
+  />
   <main
-    px-4 py-10
+    p="x4 t4 b10"
     text="center gray-700 dark:gray-200"
   >
-    <TheFooter />
     <RouterView />
   </main>
+  <TheFooter
+    :key="route.path"
+    text="gray-700 dark:gray-200"
+  />
 </template>

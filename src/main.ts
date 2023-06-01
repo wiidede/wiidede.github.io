@@ -21,7 +21,24 @@ routes.forEach((route) => {
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes, base: import.meta.env.BASE_URL },
+  {
+    routes,
+    base: import.meta.env.BASE_URL,
+    scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        document.body.scrollTo(savedPosition)
+        return savedPosition
+      }
+      else {
+        document.body.scrollTo({
+          top: 0,
+        })
+        return {
+          top: 0,
+        }
+      }
+    },
+  },
   (ctx) => {
     // install all modules under `modules/`
     Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))

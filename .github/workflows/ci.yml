@@ -28,3 +28,8 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist

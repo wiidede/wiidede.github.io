@@ -1,22 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <nav flex="~ gap-4" mt-6 justify-center text-xl>
-    <RouterLink icon-btn to="/" title="button.home">
-      <div i-carbon-campsite />
-    </RouterLink>
-
-    <button icon-btn title="button.toggle_dark" @click="toggleDark()">
-      <div i="carbon-sun dark:carbon-moon" />
-    </button>
-
-    <RouterLink icon-btn to="/about" title="button.about">
-      <div i-carbon-dicom-overlay />
-    </RouterLink>
-
-    <a icon-btn rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
-      <div i-carbon-logo-github />
-    </a>
-  </nav>
+  <footer class="slide-enter m-auto mb-6 mt-10 w-fit flex animate-delay-800 px-4 prose">
+    <span class="text-sm op50"><a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:inherit">CC BY-NC-SA 4.0</a> 2021-PRESENT © wiidede</span>
+  </footer>
 </template>

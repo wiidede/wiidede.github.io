@@ -77,7 +77,8 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-vue-markdown
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
-      wrapperClasses: 'prose prose-sm m-auto text-left',
+      wrapperComponent: 'ThePostWrapper',
+      wrapperClasses: 'prose prose-sm m-auto text-left slide-enter-content',
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/

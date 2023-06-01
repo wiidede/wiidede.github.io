@@ -4,7 +4,7 @@ date: 2020-09-15 10:02:02
 tags:
   - wiidede
 categories:
-  - 关于
+  - 其他
 id: sponsor
 ---
 
