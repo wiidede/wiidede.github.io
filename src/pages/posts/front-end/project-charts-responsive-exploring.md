@@ -122,7 +122,7 @@ const marginDynamic = computed(() => (usingDynamic
 
 所以有没有一种方法可以统一的解决上面的两个问题呢？
 
-答案就是echarts外部容器加上容器大小的监听（而不是windows的resize），这样就不会出现上述两种问题。加上容器大小的监听有两种方法：[`ResizeObserver`](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver)、[`element-resize-detector`](https://github.com/wnr/element-resize-detector)，使用方法，可以看看我的这篇[博客](https://wiidede.github.io/echarts-base-vue-comp/)。
+答案就是echarts外部容器加上容器大小的监听（而不是windows的resize），这样就不会出现上述两种问题。加上容器大小的监听有两种方法：[`ResizeObserver`](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver)、[`element-resize-detector`](https://github.com/wnr/element-resize-detector)，使用方法，可以看看我的这篇[博客](https://wiidede.github.io/echarts-base-vue-comp)。
 
 ### 移动端自适应
 
