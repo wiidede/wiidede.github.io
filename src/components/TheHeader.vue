@@ -7,12 +7,12 @@
       <div i-the-wiidede />
     </RouterLink>
     <nav flex="~ gap-4" class="items-center justify-end px-4 pb2 pt4 text-4">
-      <RouterLink class="icon-btn" to="/posts" title="button.about">
+      <RouterLink class="icon-btn" to="/posts" title="Blogs">
         <span class="lt-md:hidden">Blogs</span>
         <div i-carbon-document-multiple-01 class="md:hidden" />
       </RouterLink>
 
-      <button class="icon-btn" title="button.toggle_dark" @click="toggleDark">
+      <button class="icon-btn" title="Toggle dark" @click="toggleDark">
         <div i="carbon-sun dark:carbon-moon" />
       </button>
 
