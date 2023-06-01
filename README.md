@@ -5,9 +5,16 @@
 my personal website
 
 generated from [antfu/vitesse](https://github.com/antfu/vitesse)
+
 heavily inspired by [antfu/antfu.me](https://github.com/antfu/antfu.me)
 
 Special thanks to [Anthony Fu](https://antfu.me/)
+
+<br>
+
+* [博客地址(Vite)](https://wiidede.github.io)
+* [旧博客(VuePress)](https://wiidede.github.io/wiidede-vuepress-blog/)
+* [旧博客(Hexo)](https://wiidede.github.io/wiidede-hexo-blog/)
 
 <br>
 
