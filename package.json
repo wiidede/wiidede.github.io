@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@8.5.1",
   "scripts": {
-    "build": "vite-ssg build",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 vite-ssg build",
     "dev": "vite --port 3333 --open --host",
     "lint": "eslint . --ext .vue,.ts,.html --fix",
     "preview": "vite preview",
