@@ -1,16 +1,22 @@
 import { ViteSSG } from 'vite-ssg'
-import { setupLayouts } from 'virtual:generated-layouts'
-
-// import Previewer from 'virtual:vue-component-preview'
 import App from './App.vue'
 import type { UserModule } from './types'
-import generatedRoutes from '~pages'
+import routes from '~pages'
 
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 
-const routes = setupLayouts(generatedRoutes)
+routes.forEach((route) => {
+  const match = route.path.match(/^\/posts\/.*\/(.*)$/)
+  if (match) {
+    route.path = `/${match[1]}`
+    if (route.meta)
+      route.meta.isPost = true
+    else
+      console.error(`Route ${route.path} has no meta`)
+  }
+})
 
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
