@@ -2,11 +2,11 @@
 title: 整理一些css样式
 date: 2020-09-10 16:54:31
 tags:
-  - 前端
   - CSS
 categories:
   - 前端
 id: several-css-style
+sticky: 2
 ---
 
 # 整理一些css样式

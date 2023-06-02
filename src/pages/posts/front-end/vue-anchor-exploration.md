@@ -5,7 +5,6 @@ id: vue-anchor-exploration
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
 ---
 

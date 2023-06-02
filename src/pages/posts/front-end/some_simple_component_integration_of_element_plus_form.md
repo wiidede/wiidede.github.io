@@ -7,7 +7,7 @@ categories:
 tags:
   - Vue组件
   - Vue
-  - Element Plus
+  - ElementPlus
 ---
 
 # ElementPlus Form一些简单的组件整合

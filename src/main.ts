@@ -18,6 +18,8 @@ routes.forEach((route) => {
   }
 })
 
+const topMap = new Map<string, number>()
+
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
@@ -26,16 +28,11 @@ export const createApp = ViteSSG(
     base: import.meta.env.BASE_URL,
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
-        document.body.scrollTo(savedPosition)
-        return savedPosition
+        document.documentElement.scrollTo({ top: 0 })
+        return { top: topMap.get(to.path) || 0, behavior: 'smooth' }
       }
       else {
-        document.body.scrollTo({
-          top: 0,
-        })
-        return {
-          top: 0,
-        }
+        return { top: 0 }
       }
     },
   },
@@ -43,6 +40,9 @@ export const createApp = ViteSSG(
     // install all modules under `modules/`
     Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
       .forEach(i => i.install?.(ctx))
+    ctx.router.beforeEach((to, from) => {
+      topMap.set(from.path, document.documentElement.scrollTop)
+    })
     // ctx.app.use(Previewer)
   },
 )

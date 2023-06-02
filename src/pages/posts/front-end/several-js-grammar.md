@@ -2,11 +2,11 @@
 title: 整理一些js写法
 date: 2020-10-22 09:57:27
 tags:
-  - 前端
   - JavaScript
 categories:
   - 前端
 id: several-js-grammar
+sticky: 1
 ---
 
 # 整理一些js写法

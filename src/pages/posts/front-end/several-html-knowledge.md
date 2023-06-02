@@ -5,8 +5,7 @@ id: several-html-knowledge
 categories:
   - 前端
 tags:
-  - 前端
-  - html
+  - HTML
 ---
 
 # 一些html小知识

@@ -5,7 +5,6 @@ id: vue-grid-layout-configuration
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - Vue组件
 ---

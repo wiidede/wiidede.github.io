@@ -49,7 +49,7 @@ matchTemplate(image, templ, method[, result[, mask]]) -> result
 
 这次比赛是比较简单的一次比赛，要自己写的代码只有识别五角星然后框图，模板匹配网上也都有比较详细的教程，当然，识别五角星还比较简单的，更难的比如人脸识别，网上也有代码，这个机器人的官方也给出了人脸识别的代码
 
-> https://github.com/6-robot/wpb_home
+> <https://github.com/6-robot/wpb_home>
 
 这个网站（我发给过学姐），就是一些官方出的基本案例，源代码都在上面。
 

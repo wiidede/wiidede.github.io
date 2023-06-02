@@ -2,7 +2,6 @@
 title: leetcode-cn-40-组合总和 II 以及回溯
 date: 2021-04-06 15:33:52
 tags:
-  - 算法
   - 回溯
 categories:
   - 算法
@@ -100,4 +99,3 @@ var combinationSum2 = function(candidates, target) {
     return ret
 };
 ```
-

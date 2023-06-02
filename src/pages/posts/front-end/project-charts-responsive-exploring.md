@@ -5,8 +5,7 @@ id: project-charts-responsive-exploring
 categories:
   - 前端
 tags:
-  - 前端
-  - 项目
+  - 框架
   - Echarts
   - VueGridLayout
 ---

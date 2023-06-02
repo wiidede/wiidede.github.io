@@ -2,7 +2,7 @@
 title: 掘金上的小题目
 date: 2022-01-10 17:13:02
 tags:
-  - 算法
+  - 树
 categories:
   - 算法
 id: juejin-serval-question

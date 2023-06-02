@@ -2,7 +2,6 @@
 title: leetcode-cn-115-不同的子序列
 date: 2021-03-18 10:48:30
 tags:
-  - 算法
   - 动态规划
 categories:
   - 算法
@@ -45,8 +44,6 @@ var numDistinct = function(s, t) {
 };
 ```
 
-
-
 ## 动态规划
 
 ### 解题思路
@@ -86,4 +83,3 @@ var numDistinct = function(s, t) {
     return dp[t.length][s.length]
 };
 ```
-

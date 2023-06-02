@@ -2,7 +2,7 @@
 title: 阿里云学习笔记
 date: 2020-01-11 16:09:31
 tags:
-  - 阿里云
+  - 云服务
 categories:
   - 其他
 id: aliyun-note
@@ -123,7 +123,7 @@ service vsftpd restart
 
 ## 展示markdown文件给别人看（简单的网页）
 
-https://github.com/wangchaoeric87/markdown
+<https://github.com/wangchaoeric87/markdown>
 
 ```python
 from flask import Flask
@@ -163,8 +163,8 @@ if __name__ == '__main__':
 
 通过外网访问
 
-http://xx.xx.xx.xx:5000/alinote
+<http://xx.xx.xx.xx:5000/alinote>
 
 CSS样式
 
-https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css
+<https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css>

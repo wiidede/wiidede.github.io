@@ -5,7 +5,6 @@ id: graduation-project-front-end-knowledge
 categories:
   - 前端
 tags:
-  - 前端
   - 毕业设计
   - Vue
 ---

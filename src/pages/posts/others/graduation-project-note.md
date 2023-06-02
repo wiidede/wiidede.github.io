@@ -4,7 +4,7 @@ date: 2021-04-26 21:30:33
 tags:
   - 部署
   - 毕业设计
-  - 阿里云
+  - 云服务
 categories:
   - 其他
 id: graduation-project-note
@@ -61,6 +61,7 @@ http {
     }
 }
 ```
+
 > /etc/nginx/conf/mime.types
 
 ```conf

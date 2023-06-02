@@ -5,9 +5,7 @@ id: axios-api-download
 categories:
   - 前端
 tags:
-  - 前端
   - axios
-  - 下载
 ---
 
 # axios请求api然后下载文件

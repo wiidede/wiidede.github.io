@@ -5,7 +5,7 @@ id: element-plus-table-auto-span-composition
 categories:
   - 前端
 tags:
-  - Element Plus
+  - ElementPlus
   - Composition
   - Vue
 ---

@@ -5,8 +5,7 @@ id: el-table-chrome-style
 categories:
   - 前端
 tags:
-  - 前端
-  - Css
+  - CSS
   - ElementPlus
 ---
 

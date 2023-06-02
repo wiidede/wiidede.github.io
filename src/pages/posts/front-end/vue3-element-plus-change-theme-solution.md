@@ -6,7 +6,7 @@ categories:
   - 前端
 tags:
   - Vue
-  - Element Plus
+  - ElementPlus
   - CSS
 ---
 

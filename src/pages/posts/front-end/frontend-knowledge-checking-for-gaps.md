@@ -5,8 +5,7 @@ id: frontend-knowledge-checking-for-gaps
 categories:
   - 前端
 tags:
-  - 前端
-  - html
+  - HTML
   - CSS
   - JavaScript
 ---

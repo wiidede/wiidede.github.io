@@ -5,7 +5,6 @@ id: antd-3x-year-picker
 categories:
   - 前端
 tags:
-  - 前端
   - Antd
   - React
 ---

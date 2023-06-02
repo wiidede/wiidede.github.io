@@ -5,7 +5,6 @@ id: change-my-axios-request-func
 categories:
   - 前端
 tags:
-  - 前端
   - axios
 ---
 

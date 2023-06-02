@@ -5,7 +5,6 @@ id: frontend-frame-idea
 categories:
   - 前端
 tags:
-  - 前端
   - 框架
 ---
 

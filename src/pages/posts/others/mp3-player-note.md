@@ -322,7 +322,7 @@ UBRRH = ubrr >> 8
   - 读取BF状态
   - EN_L
 
-###7/9任务
+### 7/9任务
 
 1. 显示图片
 
@@ -332,7 +332,7 @@ UBRRH = ubrr >> 8
 
    1. 每个界面完成一个单独的接口
 
-      *name1 *name2 *name3 pos
+      \*name1 \*name2 \*name3 pos
 
    2. 完成静态
 
@@ -407,4 +407,3 @@ void prev();
 //infValue = 0;
 void keyCheck();
 ```
-

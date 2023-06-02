@@ -5,7 +5,7 @@ id: several-code-for-lookup
 categories:
   - 前端
 tags:
-  - 前端
+  - JavaScript
 ---
 
 # 我写的一些可以日后参考的代码

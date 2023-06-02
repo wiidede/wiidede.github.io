@@ -5,7 +5,6 @@ id: el-input-number-prefix
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - Vue组件
   - ElementPlus

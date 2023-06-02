@@ -79,5 +79,5 @@ onMounted(() => {
   <article ref="content">
     <slot />
   </article>
-  <TheGoBack />
+  <TheGoBack level />
 </template>

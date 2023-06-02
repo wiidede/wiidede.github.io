@@ -5,7 +5,6 @@ id: several-vue-skills
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
 ---
 

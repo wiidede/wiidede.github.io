@@ -5,9 +5,9 @@ id: deep-dive-with-evan-you-note
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - 源码
+sticky: 3
 ---
 
 # Deep Dive with Evan You 笔记
@@ -126,7 +126,7 @@ v-for --> `list.map(() => {return h(...)})`
 
 ## 4 - Compiler & Renderer API
 
-**Vue 3 Template Explorer**
+> **Vue 3 Template Explorer**
 
 使用 Vue 3 Template Explorer 就可以看到 Vue 3 把模板编译成了什么样的渲染函数。
 

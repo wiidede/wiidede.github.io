@@ -5,14 +5,14 @@ id: arco-design-using-tailwind-color
 categories:
   - 前端
 tags:
-  - arco design
-  - tailwind
-  - unocss
+  - ArcoDesign
+  - Tailwind
+  - UnoCss
 ---
 
 # arco-design快速使用tailwind的颜色、unocss动态颜色
 
-# arco-design快速使用tailwind的颜色
+## arco-design快速使用tailwind的颜色
 
 arco design的颜色是它自己定义的，但是我们可以使用tailwind的颜色，这样配合tailwind的颜色工具，可以更方便的使用颜色。
 

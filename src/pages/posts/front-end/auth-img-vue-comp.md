@@ -5,7 +5,6 @@ id: auth-img-vue-comp
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - Vue组件
   - axios

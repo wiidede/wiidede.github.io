@@ -5,7 +5,7 @@ id: frontend-npm-package-recommend
 categories:
   - 前端
 tags:
-  - 前端
+  - npm
 ---
 
 # 前端npm包推荐

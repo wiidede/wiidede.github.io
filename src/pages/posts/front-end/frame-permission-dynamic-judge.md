@@ -5,7 +5,6 @@ id: frame-permission-dynamic-judge
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - 自定义指令
   - 权限判断

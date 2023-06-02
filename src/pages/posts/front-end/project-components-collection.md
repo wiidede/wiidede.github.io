@@ -5,7 +5,6 @@ id: project-components-collection
 categories:
   - 前端
 tags:
-  - 前端
   - Vue
   - Vue组件
 ---

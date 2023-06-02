@@ -2,7 +2,6 @@
 title: vue隔代组件层层动态插槽并且附带数据
 date: 2020-10-14 15:57:28
 tags:
-  - 前端
   - Vue
 categories:
   - 前端

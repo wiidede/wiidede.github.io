@@ -5,7 +5,7 @@ id: echarts-base-vue-comp
 categories:
   - 前端
 tags:
-  - echarts
+  - Echarts
   - Vue
   - Vue组件
   - 前端

@@ -34,18 +34,18 @@ html:not(.dark) .vitesse-dark {
   color: var(--fg);
 }
 
-.prose a {
+.prose a, .prose .link {
   font-weight: inherit;
   text-decoration: none;
   border-bottom: 1px solid rgba(125, 125, 125, 0.3);
   transition: border 0.3s ease-in-out;
 }
 
-.prose a:hover {
+.prose a:hover, .prose .link:hover{
   border-bottom: 1px solid var(--fg);
 }
 
-.prose a code {
+.prose a code, .prose .link code {
   color: inherit;
 }
 
@@ -64,7 +64,7 @@ a.item {
   transition: 0.2s all ease-out;
   text-decoration: none;
   border-bottom: none !important;
-  opacity: 0.6;
+  opacity: 0.67;
 }
 
 a.item:hover {
