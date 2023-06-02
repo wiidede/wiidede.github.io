@@ -27,7 +27,7 @@ export const createApp = ViteSSG(
     routes,
     base: import.meta.env.BASE_URL,
     scrollBehavior(to, from, savedPosition) {
-      if (savedPosition) {
+      if (savedPosition && document) {
         document.documentElement.scrollTo({ top: 0 })
         return { top: topMap.get(to.path) || 0, behavior: 'smooth' }
       }
@@ -40,9 +40,11 @@ export const createApp = ViteSSG(
     // install all modules under `modules/`
     Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
       .forEach(i => i.install?.(ctx))
-    ctx.router.beforeEach((to, from) => {
-      topMap.set(from.path, document.documentElement.scrollTop)
-    })
+    if (ctx.isClient) {
+      ctx.router.beforeEach((to, from) => {
+        topMap.set(from.path, document.documentElement.scrollTop)
+      })
+    }
     // ctx.app.use(Previewer)
   },
 )
