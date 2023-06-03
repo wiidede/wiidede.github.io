@@ -135,6 +135,8 @@ const activeStyle = 'opacity-100 !font-600'
       :style="{
         '--enter-stage': idx,
         '--enter-step': '90ms',
+        '--enter-offset-step': '10ms',
+        '--enter-offset-time': 9,
       }"
     >
       <div
@@ -160,7 +162,9 @@ const activeStyle = 'opacity-100 !font-600'
       class="slide-enter"
       :style="{
         '--enter-stage': idx,
-        '--enter-step': '16ms',
+        '--enter-step': '20ms',
+        '--enter-offset-step': '0.5ms',
+        '--enter-offset-time': 40,
       }"
     >
       <div
@@ -185,9 +189,6 @@ const activeStyle = 'opacity-100 !font-600'
       slide-enter pointer-events-none relative h12 select-none
       :style="{
         '--enter-stage': idx + 4,
-        '--enter-step': '60ms',
-        '--enter-offset-step': '3ms',
-        '--enter-offset-time': 20,
       }"
     >
       <span
@@ -198,9 +199,6 @@ const activeStyle = 'opacity-100 !font-600'
       class="slide-enter"
       :style="{
         '--enter-stage': idx + 4,
-        '--enter-step': '60ms',
-        '--enter-offset-step': '4ms',
-        '--enter-offset-time': 15,
       }"
     >
       <component

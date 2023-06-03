@@ -111,9 +111,9 @@ html:not(.dark) [img-dark] {
   .slide-enter,
   .slide-enter-content > * {
     --enter-stage: 0;
-    --enter-step: 90ms;
-    --enter-offset-step: 5ms; /* step decline, like 90ms 85ms 80ms ... 5ms 0ms 0ms 0ms 0ms */
-    --enter-offset-time: 18; /* 90 / 5 */
+    --enter-step: 60ms;
+    --enter-offset-step: 4ms; /* step decline, like 90ms 85ms 80ms ... 5ms 0ms 0ms 0ms 0ms */
+    --enter-offset-time: 15; /* 90 / 5 */
     --enter-initial: 0ms;
     --enter-offset: max(var(--enter-step) - 5ms * var(--enter-stage), 0ms);
     --enter-stage-truly: min(var(--enter-stage), var(--enter-offset-time));
