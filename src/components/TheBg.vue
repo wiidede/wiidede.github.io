@@ -3,10 +3,10 @@ const router = useRouter()
 
 // utils
 let dpi = 1
-let width = window.innerWidth
-let height = window.innerHeight
-let D = width / 4
-const timeout = 100
+let width = window.screen.width
+let height = window.screen.height
+let D = (width + height) / 8
+const timeout = 120
 function setCanvasSize(canvas: HTMLCanvasElement, width: number, height: number) {
   canvas.style.width = `${width}px`
   canvas.style.height = `${height}px`
@@ -125,9 +125,9 @@ onMounted(async () => {
   window.addEventListener('scroll', scrollHandler)
 
   resizeHandler = () => {
-    width = window.innerWidth
-    height = window.innerHeight
-    targetD = width / 4
+    width = window.screen.width
+    height = window.screen.height
+    targetD = (width + height) / 8
     setCanvasSize(canvas, width, height)
     startUpdate(timeout)
   }
