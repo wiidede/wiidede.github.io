@@ -21,6 +21,7 @@ useHead({
 </script>
 
 <template>
+  <TheBg />
   <TheHeader
     text="gray-700 dark:gray-200"
   />
