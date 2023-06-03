@@ -7,8 +7,8 @@
       <div i-the-wiidede />
     </RouterLink>
     <nav flex="~ gap-4" class="items-center justify-end px-4 pb2 pt4 text-4">
-      <RouterLink class="icon-btn" to="/posts" title="Blogs">
-        <span class="lt-md:hidden">Blogs</span>
+      <RouterLink class="icon-btn" to="/posts" title="Blog">
+        <span class="lt-md:hidden">Blog</span>
         <div i-carbon-document-multiple-01 class="md:hidden" />
       </RouterLink>
 
