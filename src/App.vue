@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { isClient } from '@vueuse/core'
+
 const route = useRoute()
 
 useHead({
@@ -21,7 +23,7 @@ useHead({
 </script>
 
 <template>
-  <TheBg />
+  <TheBg v-if="isClient" />
   <TheHeader
     text="gray-700 dark:gray-200"
   />
