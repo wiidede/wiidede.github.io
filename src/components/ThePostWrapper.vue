@@ -85,7 +85,9 @@ onMounted(() => {
   </article>
   <TheGoBack />
   <TheFooter />
-  <div class="slide-enter mx-auto animate-delay-800 pt-4 prose">
-    <TheValine v-if="route.meta.isPost" />
-  </div>
+  <client-only>
+    <div class="slide-enter mx-auto animate-delay-800 pt-4 prose">
+      <TheValine v-if="route.meta.isPost" />
+    </div>
+  </client-only>
 </template>

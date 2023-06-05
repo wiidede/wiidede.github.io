@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import Valine from 'valine'
-
-onMounted(() => {
+onMounted(async () => {
+  const Valine = (await import('valine')).default
   // eslint-disable-next-line no-new
   new Valine({
     el: '#valine-comments',

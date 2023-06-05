@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { isClient } from '@vueuse/core'
-
-const route = useRoute()
-
 useHead({
   title: 'wiidede',
   meta: [
@@ -23,7 +19,9 @@ useHead({
 </script>
 
 <template>
-  <TheBg v-if="isClient" />
+  <client-only>
+    <TheBg />
+  </client-only>
   <TheHeader
     text="gray-700 dark:gray-200"
   />
@@ -33,8 +31,4 @@ useHead({
   >
     <RouterView />
   </main>
-  <TheFooter
-    :key="route.path"
-    text="gray-700 dark:gray-200"
-  />
 </template>
