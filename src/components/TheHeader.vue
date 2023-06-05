@@ -12,13 +12,21 @@
         <div i-carbon-document-multiple-01 class="md:hidden" />
       </RouterLink>
 
-      <button class="icon-btn" title="Toggle dark" @click="toggleDark">
-        <div i="carbon-sun dark:carbon-moon" />
-      </button>
+      <RouterLink class="icon-btn" to="/sponsor" title="Sponsor">
+        <div i-carbon-favorite />
+      </RouterLink>
 
       <a class="icon-btn" rel="noreferrer" href="https://github.com/wiidede/wiidede.github.io" target="_blank" title="GitHub">
         <div i-carbon-logo-github />
       </a>
+
+      <a href="/feed.xml" target="_blank" title="RSS">
+        <div i-carbon-rss />
+      </a>
+
+      <button class="icon-btn" title="Toggle dark" @click="toggleDark">
+        <div i="carbon-sun dark:carbon-moon" />
+      </button>
     </nav>
   </header>
 </template>

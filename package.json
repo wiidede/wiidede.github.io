@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@8.5.1",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=4096 vite-ssg build",
+    "build": "esno ./scripts/rss.ts && cross-env NODE_OPTIONS=--max-old-space-size=4096 vite-ssg build",
     "dev": "vite --port 3333 --open --host",
     "lint": "eslint . --ext .vue,.ts,.html --fix",
     "preview": "vite preview",
@@ -34,7 +34,9 @@
     "@unocss/eslint-config": "^0.52.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "cross-env": "^7.0.3",
+    "enso": "1.0.0-alpha.3",
     "eslint": "^8.41.0",
+    "feed": "^4.2.2",
     "fs-extra": "^11.1.1",
     "https-localhost": "^4.7.1",
     "lint-staged": "^13.2.2",
