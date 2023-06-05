@@ -14,3 +14,8 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'valine' {
+  const Valine: any
+  export default Valine
+}

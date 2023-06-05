@@ -17,5 +17,6 @@ declare module '@vue/runtime-core' {
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     ThePosts: typeof import('./components/ThePosts.vue')['default']
     ThePostWrapper: typeof import('./components/ThePostWrapper.vue')['default']
+    TheValine: typeof import('./components/TheValine.vue')['default']
   }
 }

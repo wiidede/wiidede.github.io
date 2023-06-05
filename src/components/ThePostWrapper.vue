@@ -6,6 +6,7 @@ const { frontmatter } = defineProps({
   },
 })
 
+const route = useRoute()
 const router = useRouter()
 const content = ref<HTMLDivElement>()
 
@@ -82,5 +83,9 @@ onMounted(() => {
   <article ref="content">
     <slot />
   </article>
-  <TheGoBack level />
+  <TheGoBack />
+  <TheFooter />
+  <div class="slide-enter mx-auto animate-delay-800 pt-4 prose">
+    <TheValine v-if="route.meta.isPost" />
+  </div>
 </template>
