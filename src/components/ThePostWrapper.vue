@@ -12,8 +12,11 @@ const content = ref<HTMLDivElement>()
 onMounted(() => {
   const navigate = () => {
     if (location.hash) {
-      document.querySelector(decodeURIComponent(location.hash))
-        ?.scrollIntoView({ behavior: 'smooth' })
+      const titleEl = document.getElementById(location.hash.slice(1))
+      if (titleEl) {
+        const top = Math.max(titleEl.offsetTop - 100, 0)
+        document.documentElement.scrollTo({ top, behavior: 'smooth' })
+      }
     }
   }
 

@@ -9,6 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import matter from 'gray-matter'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
@@ -87,6 +88,13 @@ export default defineConfig({
             light: 'vitesse-light',
             dark: 'vitesse-dark',
           },
+        })
+        md.use(anchor, {
+          // slugify,
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' }),
+          }),
         })
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),
