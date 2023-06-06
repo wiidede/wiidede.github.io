@@ -11,11 +11,11 @@ const router = useRouter()
 const content = ref<HTMLDivElement>()
 
 onMounted(() => {
-  const navigate = () => {
+  const navigate = async () => {
     if (location.hash) {
       const titleEl = document.getElementById(location.hash.slice(1))
       if (titleEl) {
-        const top = Math.max(titleEl.offsetTop - 100, 0)
+        const top = Math.max(titleEl.getBoundingClientRect().top + document.documentElement.scrollTop - 80, 0)
         document.documentElement.scrollTo({ top, behavior: 'smooth' })
       }
     }
