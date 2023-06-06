@@ -15,6 +15,13 @@ export function toggleDark(event: MouseEvent) {
     return
   }
 
+  const DURATION = 400
+
+  document.documentElement.classList.add('hidden-scroll')
+  setTimeout(() => {
+    document.documentElement.classList.remove('hidden-scroll')
+  }, DURATION)
+
   const x = event.clientX
   const y = event.clientY
   const endRadius = Math.hypot(
@@ -39,7 +46,7 @@ export function toggleDark(event: MouseEvent) {
             : clipPath,
         },
         {
-          duration: 400,
+          duration: DURATION,
           easing: 'ease-out',
           pseudoElement: isDark.value
             ? '::view-transition-old(root)'

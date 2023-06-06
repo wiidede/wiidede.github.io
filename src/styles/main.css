@@ -3,6 +3,7 @@
 :root {
   --c-bg: #fff;
   --c-bg-rgb: 255, 255, 255;
+  --c-scrollbarTrack: #fff6;
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
 }
@@ -13,8 +14,15 @@ html {
 html.dark {
   --c-bg: #050505;
   --c-bg-rgb: 5, 5, 5;
+  --c-scrollbarTrack: #1116;
   --c-scrollbar: #333;
   --c-scrollbar-hover: #444;
+}
+
+html.hidden-scroll, html.hidden-scroll.dark {
+  --c-scrollbarTrack: transparent;
+  --c-scrollbar: transparent;
+  --c-scrollbar-hover: transparent;
 }
 
 header {
@@ -44,7 +52,7 @@ header {
 }
 
 * {
-  scrollbar-color: var(--c-scrollbar) rgba(var(--c-bg-rgb), 0.3);
+  scrollbar-color: var(--c-scrollbar) var(--c-scrollbarTrack);
 }
 
 .sponsorkit-avatar {
@@ -68,7 +76,7 @@ header {
   height: 6px;
 }
 ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
-  background: rgba(var(--c-bg-rgb), 0.3);
+  background: var(--c-scrollbarTrack);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
