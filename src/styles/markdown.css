@@ -12,10 +12,10 @@
 }
 
 .shiki-light {
-  background: #f8f8f8 !important;
+  background: #f8f8f880 !important;
 }
 .shiki-dark {
-  background: #0e0e0e !important;
+  background: #0e0e0e80 !important;
 }
 
 html.dark .vitesse-light {
