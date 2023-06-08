@@ -119,6 +119,32 @@ function getGroupName(p: Post) {
 
 const inactiveStyle = 'opacity-40 hover:opacity-70 font-400'
 const activeStyle = 'opacity-100 !font-600'
+
+const bgStyle = reactive({
+  top: '0',
+  left: '0',
+  height: '0',
+  width: '0',
+  opacity: '0 !important',
+})
+function handleBgIn(evt: Event) {
+  const target = evt.target as HTMLElement
+  const parent = target.parentElement
+  if (!parent)
+    return
+  parent.style.position = 'relative'
+  const rect = target.getBoundingClientRect()
+  const parentRect = parent.getBoundingClientRect()
+  bgStyle.left = `${rect.left - parentRect.left - 5}px`
+  bgStyle.top = `${rect.top - parentRect.top}px`
+  bgStyle.width = `${rect.width + 10}px`
+  bgStyle.height = `${rect.height}px`
+  bgStyle.opacity = '1 !important'
+}
+
+function handleBgOut() {
+  bgStyle.opacity = '0 !important'
+}
 </script>
 
 <template>
@@ -186,6 +212,8 @@ const activeStyle = 'opacity-100 !font-600'
     </div>
   </template>
 
+  <div class="absolute right-0 rd bg-zinc:10 transition-all transition-duration-200" :style="bgStyle" />
+
   <template v-for="post, idx in postsDisplay" :key="`${post.path}_${currentCategory}`">
     <div
       v-if="showYear && !isSameGroup(post, postsDisplay[idx - 1])"
@@ -203,6 +231,8 @@ const activeStyle = 'opacity-100 !font-600'
       :style="{
         '--enter-stage': idx + 4,
       }"
+      @mouseenter="handleBgIn"
+      @mouseleave="handleBgOut"
     >
       <component
         :is="post.path.includes('://') ? 'a' : 'RouterLink'"
@@ -215,38 +245,18 @@ const activeStyle = 'opacity-100 !font-600'
             to: post.path,
           }
         "
-        class="item mb-6 mt-2 block font-normal no-underline"
+        class="item block py-3 font-normal no-underline"
       >
-        <div class="no-underline" flex="~ col gap-2">
+        <div class="no-underline" flex="~ col gap-1">
           <div class="title items-center text-lg leading-1.2em" flex="~ gap-2 wrap">
             <span>{{ post.title }}</span>
             <div v-if="post.sticky" i-carbon-pin class="text-0.8em op67" />
           </div>
 
           <div flex="~ gap-2 items-center wrap">
-            <!-- <span
-                v-if="route.inperson"
-
-                i-ri:group-2-line flex-none align-middle op50
-                title="In person"
-              />
-              <span
-                v-if="route.recording || route.video"
-
-                i-ri:film-line flex-none align-middle op50
-                title="Provided in video"
-              />
-              <span
-                v-if="route.radio"
-
-                i-ri:radio-line flex-none align-middle op50
-                title="Provided in radio"
-              /> -->
             <span ws-nowrap text-sm op60>
               {{ dayjs(post.date).format(showYear ? 'MM-DD' : 'YYYY-MM-DD') }}
             </span>
-            <!-- <span v-if="route.duration" ws-nowrap text-sm op40>· {{ route.duration }}</span>
-              <span v-if="route.platform" ws-nowrap text-sm op40>· {{ route.platform }}</span> -->
             <span v-if="currentCategory === ''" class="tag">{{ post.category }}</span>
             <span v-if="currentCategory === '' && post.tags?.length"> · </span>
             <span v-for="tag in post.tags" :key="tag" class="tag">{{ tag }}</span>
