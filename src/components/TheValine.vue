@@ -41,6 +41,9 @@ onMounted(async () => {
 #valine-comments :deep(.vbtn:hover)  {
   opacity: 0.8;
 }
+#valine-comments :deep(a.vicon)  {
+  cursor: help;
+}
 #valine-comments :deep(.vicon)  {
   opacity: 0.5;
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);

@@ -153,7 +153,10 @@ const activeStyle = 'opacity-100 !font-600'
     @click="toggleTags()"
   >
     <span class="op60">Tags</span>
-    <div class="inline-block op60" :class="showTags ? 'i-carbon-chevron-up' : 'i-carbon-chevron-down'" />
+    <div
+      class="i-carbon-chevron-down inline-block op60 transition-transform transition-duration-400"
+      :class="{ 'scale-y--100': showTags }"
+    />
   </div>
   <div v-show="showTags" class="m-auto mb-8 flex flex-wrap select-none gap4 prose animate-none! op100!">
     <div
