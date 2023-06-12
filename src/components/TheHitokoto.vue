@@ -1,6 +1,13 @@
 <script lang="ts" setup>
+import { promiseTimeout } from '@vueuse/core'
 import Typed from 'typed.js'
 import type { TypedOptions } from 'typed.js'
+
+const props = withDefaults(defineProps<{
+  delay: number
+}>(), {
+  delay: 0,
+})
 
 interface Hitokoto {
   id: number
@@ -17,15 +24,6 @@ interface Hitokoto {
   length: number
 }
 
-let typed: InstanceType<typeof Typed>
-const strings: string[] = ['愿你眼里有光，心中有爱❤️ —— wiidede']
-const typedOptions: TypedOptions = {
-  typeSpeed: 80,
-  backSpeed: 30,
-  backDelay: 2000,
-  contentType: 'null',
-  loop: true,
-}
 const lightBg = [
   'linear-gradient(36deg, rgba(176,98,234,1) 0%, rgba(243,146,242,1) 40%, rgba(254,208,143,1) 70%, rgba(246,243,159,1) 100%)',
   'linear-gradient(72deg, rgba(250,134,190,1) 0%, rgba(162,117,227,1) 40%, rgba(154,235,237,1) 70%, rgba(255,252,171,1) 100%)',
@@ -41,7 +39,18 @@ const darkBg = [
 ]
 const bgIndex = ref(Math.floor(Math.random() * 10))
 const background = computed(() => !isDark.value ? darkBg[bgIndex.value % darkBg.length] : lightBg[bgIndex.value % lightBg.length])
-
+let typed: InstanceType<typeof Typed>
+const strings: string[] = ['愿你眼里有光，心中有爱❤️']
+const typedOptions: TypedOptions = {
+  typeSpeed: 80,
+  backSpeed: 30,
+  backDelay: 2000,
+  contentType: 'null',
+  loop: true,
+  onLastStringBackspaced: () => {
+    bgIndex.value += 1
+  },
+}
 const { data, isFetching, execute } = useFetch('https://v1.hitokoto.cn', { immediate: false }).json<Hitokoto>()
 
 async function getHitokoto() {
@@ -73,7 +82,8 @@ function startTyped(strings: string[]) {
   })
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await promiseTimeout(props.delay)
   startTyped(strings)
 })
 
