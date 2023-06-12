@@ -32,6 +32,7 @@ html:not(.dark) .vitesse-dark {
   --fg-deeper: #000;
 
   color: var(--fg);
+  --un-prose-borders: rgba(125,125,125,0.3);
 }
 
 .prose a, .prose .link {
@@ -118,13 +119,7 @@ h6:focus .header-anchor {
   margin-bottom: 0;
 }
 
-.prose blockquote p:first-of-type::before {
-  content: none;
-}
 
-.prose blockquote p:first-of-type::after {
-  content: none;
-}
 
 @media (max-width: 1200px) {
   .table-of-contents {
