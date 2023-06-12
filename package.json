@@ -61,6 +61,7 @@
     "vite-plugin-webfont-dl": "^3.7.4",
     "vite-ssg": "^0.22.2",
     "vite-ssg-sitemap": "^0.5.1",
+    "vue-router-better-scroller": "^0.0.0",
     "vue-tsc": "^1.6.5"
   },
   "simple-git-hooks": {
