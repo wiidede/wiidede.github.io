@@ -125,4 +125,8 @@ onUnmounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+:deep(.typed-cursor) {
+  user-select: none;
+}
 </style>
