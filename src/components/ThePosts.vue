@@ -212,7 +212,7 @@ function handleBgOut() {
     </div>
   </template>
 
-  <div class="absolute right-0 rd bg-zinc:10 transition-all transition-duration-200" :style="bgStyle" />
+  <div class="absolute right-0 z--1 rd bg-zinc:10 transition-all transition-duration-200" :style="bgStyle" />
 
   <template v-for="post, idx in postsDisplay" :key="`${post.path}_${currentCategory}`">
     <div
