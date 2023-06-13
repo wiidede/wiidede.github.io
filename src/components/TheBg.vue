@@ -81,7 +81,7 @@ onMounted(async () => {
           if (distance([x1, y1], [x, y]) < D) {
             const fade2 = getFade(t2, ts)
             const color = max(0, round(fade * fade2 * 255))
-            ctx.strokeStyle = `#a0a0a0${toHex(color)}`
+            ctx.strokeStyle = `#808080${toHex(color)}`
             ctx.beginPath()
             ctx.moveTo(x1, y1)
             ctx.lineTo(x, y)
@@ -145,7 +145,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="fixed left-0 top-0 z--1 op50 dark:op100">
+  <div class="fixed left-0 top-0 z--1 op60 dark:op100">
     <canvas ref="el" :width="width" :height="height" />
   </div>
 </template>

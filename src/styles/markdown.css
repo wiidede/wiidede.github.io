@@ -12,17 +12,17 @@
 }
 
 .shiki-light {
-  background: #f8f8f880 !important;
+  background: #fafafa80 !important;
 }
 .shiki-dark {
-  background: #0e0e0e80 !important;
+  background: #25252680 !important;
 }
 
-html.dark .vitesse-light {
+html.dark .shiki-light {
   display: none;
 }
 
-html:not(.dark) .vitesse-dark {
+html:not(.dark) .shiki-dark {
   display: none;
 }
 

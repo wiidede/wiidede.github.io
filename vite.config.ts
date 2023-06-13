@@ -14,6 +14,8 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+import liquidRayLight from './public/liquid-ray-light.json'
+import liquidRayDark from './public/liquid-ray.json'
 
 export default defineConfig({
   resolve: {
@@ -85,8 +87,8 @@ export default defineConfig({
         // https://prismjs.com/
         md.use(Shiki, {
           theme: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
+            light: liquidRayLight,
+            dark: liquidRayDark,
           },
         })
         md.use(anchor, {
