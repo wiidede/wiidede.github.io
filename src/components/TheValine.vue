@@ -23,10 +23,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-#valine-comments :deep(.vwrap)  {
-  border-color: rgba(125, 125, 125, 0.2) !important;
-}
-#valine-comments :deep(.vinput)  {
+#valine-comments :deep(.vinput), #valine-comments :deep(.vwrap), #valine-comments :deep(.vh), #valine-comments :deep(.vquote), #valine-comments :deep(.vimg)  {
   border-color: rgba(125, 125, 125, 0.2) !important;
 }
 #valine-comments :deep(.vinput:focus)  {
