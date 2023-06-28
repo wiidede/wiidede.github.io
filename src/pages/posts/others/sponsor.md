@@ -12,8 +12,8 @@ id: sponsor
 
 ## 支付宝
 
-![wiidede-alipay](https://cdn.jsdelivr.net/gh/wiidede/img-store-one/images/image-20220909093628278.png)
+![wiidede-alipay](https://wiidede.github.io/img-store-one/images/image-20220909093628278.png)
 
 ## 微信
 
-![wiidede-wechat](https://cdn.jsdelivr.net/gh/wiidede/img-store-one/images/image-20220909093652154.png)
+![wiidede-wechat](https://wiidede.github.io/img-store-one/images/image-20220909093652154.png)

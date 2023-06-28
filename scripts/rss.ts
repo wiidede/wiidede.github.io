@@ -68,8 +68,8 @@ async function buildBlogRSS() {
 
 async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   options.author = AUTHOR
-  options.image = 'https://cdn.jsdelivr.net/gh/wiidede/img-store-one/special/avatar.png)'
-  options.favicon = 'https://cdn.jsdelivr.net/gh/wiidede/img-store-one/special/blog-logo.png'
+  options.image = 'https://wiidede.github.io/img-store-one/special/avatar.png)'
+  options.favicon = 'https://wiidede.github.io/img-store-one/special/blog-logo.png'
 
   const feed = new Feed(options)
 
