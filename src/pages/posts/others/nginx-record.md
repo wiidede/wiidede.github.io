@@ -1,6 +1,6 @@
 ---
 title: nginx record
-date: 2020-09-11 01:17:23
+date: 2023-07-06 15:09:56
 tags:
   - nginx
 categories:
@@ -42,7 +42,7 @@ nginx -s quit
 
 ## vue router history mode
 
-```conf
+```nginx
 worker_processes  1;
 
 events {
