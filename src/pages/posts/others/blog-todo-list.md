@@ -15,3 +15,4 @@ id: blog-todo-list
 - [ ] md TOC
 - [x] rss
 - [x] comment
+- [ ] index add pinned article
