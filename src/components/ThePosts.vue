@@ -1,17 +1,18 @@
 <script setup lang="ts">
-interface Post {
-  path: string
-  title: string
-  date: string
-  id: string
-  category: string
-  tags: string
-  sticky?: number
-}
+import type { Post } from '~/types'
+
+const props = defineProps<{
+  pinned?: boolean
+}>()
 
 const route = useRoute()
 const router = useRouter()
-const routes = router.getRoutes().filter(i => i.meta?.isPost)
+
+const {
+  posts,
+  categoryMap,
+  tagMap,
+} = usePosts()
 
 const currentCategory = computed({
   get: () => route.query.category as string || '',
@@ -24,7 +25,6 @@ const currentCategory = computed({
     })
   },
 })
-const categoryMap = new Map<string, number>()
 const categoryList = computed(() => Array.from(categoryMap.entries()).sort((a, b) => b[1] - a[1]).map(category => category[0]))
 
 const showTags = ref(!!route.query.tag)
@@ -41,51 +41,13 @@ const currentTag = computed({
     })
   },
 })
-const tagMap = new Map<string, number>()
 const tagList = computed(() => Array.from(tagMap.entries()).sort((a, b) => b[1] - a[1]).map(tag => tag[0]))
-
-const posts = routes.map((route) => {
-  const matter = route.meta?.frontmatter as any
-  if (!matter?.date) {
-    console.error(`Frontmatter error in ${route.path}: `, matter)
-    matter.date = new Date(0).toISOString()
-  }
-  const category = matter?.categories?.[0]
-  const tags = matter?.tags
-  if (category) {
-    categoryMap.set('', (categoryMap.get('') || 0) + 1)
-    categoryMap.set(category, (categoryMap.get(category) || 0) + 1)
-  }
-  if (Array.isArray(tags)) {
-    tags.forEach((tag: string) => {
-      tagMap.set('', (tagMap.get('') || 0) + 1)
-      tagMap.set(tag, (tagMap.get(tag) || 0) + 1)
-    })
-  }
-
-  return {
-    path: route.path,
-    title: matter.title,
-    date: matter.date,
-    id: matter.id,
-    category,
-    tags,
-    sticky: matter.sticky,
-  } as Post
-}).sort((a, b) => {
-  if (a.sticky && b.sticky)
-    return a.sticky - b.sticky
-  if (a.sticky)
-    return -1
-  if (b.sticky)
-    return 1
-  return new Date(b.date).getTime() - new Date(a.date).getTime()
-})
 
 const postsDisplay = computed(
   () => posts.filter(
     post => (!currentCategory.value ? true : currentCategory.value === post.category)
-     && (!currentTag.value ? true : (Array.isArray(post.tags) && post.tags.includes(currentTag.value))),
+     && (!currentTag.value ? true : (Array.isArray(post.tags) && post.tags.includes(currentTag.value)))
+     && (props.pinned ? post.sticky !== undefined : true),
   ),
 )
 const showYear = computed(() => postsDisplay.value.length > 9)
@@ -148,64 +110,66 @@ function handleBgOut() {
 </script>
 
 <template>
-  <div
-    class="mb2"
-  >
-    <span class="op60">Categories</span>
-  </div>
-  <div class="m-auto mb-2 flex flex-wrap select-none gap4 prose animate-none! op100!">
+  <template v-if="!pinned">
     <div
-      v-for="category, idx in categoryList"
-      :key="category"
-      class="slide-enter"
-      :style="{
-        '--enter-stage': idx,
-        '--enter-step': '90ms',
-        '--enter-offset-step': '10ms',
-        '--enter-offset-time': 9,
-      }"
+      class="mb2"
     >
+      <span class="op60">Categories</span>
+    </div>
+    <div class="m-auto mb-2 flex flex-wrap select-none gap4 prose animate-none! op100!">
       <div
-        class="cursor-pointer"
-        :class="currentCategory === category ? activeStyle : inactiveStyle"
-        @click="() => { currentCategory = category }"
+        v-for="category, idx in categoryList"
+        :key="category"
+        class="slide-enter"
+        :style="{
+          '--enter-stage': idx,
+          '--enter-step': '90ms',
+          '--enter-offset-step': '10ms',
+          '--enter-offset-time': 9,
+        }"
       >
-        {{ category || 'All' }}
+        <div
+          class="cursor-pointer"
+          :class="currentCategory === category ? activeStyle : inactiveStyle"
+          @click="() => { currentCategory = category }"
+        >
+          {{ category || 'All' }}
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="mb2 flex cursor-pointer items-center gap-2 op80"
-    @click="toggleTags()"
-  >
-    <span class="op60">Tags</span>
     <div
-      class="i-carbon-chevron-down inline-block op60 transition-transform transition-duration-400"
-      :class="{ 'scale-y--100': showTags }"
-    />
-  </div>
-  <div v-show="showTags" class="m-auto mb-8 flex flex-wrap select-none gap4 prose animate-none! op100!">
-    <div
-      v-for="tag, idx in tagList"
-      :key="tag"
-      class="slide-enter"
-      :style="{
-        '--enter-stage': idx,
-        '--enter-step': '20ms',
-        '--enter-offset-step': '0.5ms',
-        '--enter-offset-time': 40,
-      }"
+      class="mb2 flex cursor-pointer items-center gap-2 op80"
+      @click="toggleTags()"
     >
+      <span class="op60">Tags</span>
       <div
-        class="cursor-pointer"
-        :class="currentTag === tag ? activeStyle : inactiveStyle"
+        class="i-carbon-chevron-down inline-block op60 transition-transform transition-duration-400"
+        :class="{ 'scale-y--100': showTags }"
+      />
+    </div>
+    <div v-show="showTags" class="m-auto mb-8 flex flex-wrap select-none gap4 prose animate-none! op100!">
+      <div
+        v-for="tag, idx in tagList"
+        :key="tag"
+        class="slide-enter"
+        :style="{
+          '--enter-stage': idx,
+          '--enter-step': '20ms',
+          '--enter-offset-step': '0.5ms',
+          '--enter-offset-time': 40,
+        }"
+      >
+        <div
+          class="cursor-pointer"
+          :class="currentTag === tag ? activeStyle : inactiveStyle"
 
-        @click="() => { currentTag = tag }"
-      >
-        {{ tag || 'All' }}
+          @click="() => { currentTag = tag }"
+        >
+          {{ tag || 'All' }}
+        </div>
       </div>
     </div>
-  </div>
+  </template>
   <template v-if="!posts.length">
     <div op50>
       { nothing here yet }
