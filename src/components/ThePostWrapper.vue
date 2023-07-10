@@ -66,12 +66,23 @@ onMounted(() => {
   <div v-if="frontmatter.display ?? frontmatter.title" class="m-auto mb-8 text-left prose" :class="frontmatter.wrapperClass">
     <p
       v-if="frontmatter.date"
-      class="slide-enter opacity-50 !-mt-2"
+      class="slide-enter flex items-baseline gap2 opacity-50 !-mt-2"
     >
       {{ dayjs(frontmatter.date).format('YYYY-MM-DD') }}
-      <span v-if="frontmatter.duration"> · {{ frontmatter.duration }}</span>
-      <span v-if="frontmatter.categories?.length"> · {{ frontmatter.categories.join(' ') }}</span>
-      <span v-if="frontmatter.tags?.length"> · {{ frontmatter.tags.join(' ') }}</span>
+      <template v-if="frontmatter.duration">
+        <span>·</span>
+        <span>{{ frontmatter.duration }}</span>
+      </template>
+      <template v-if="frontmatter.categories?.length">
+        <span>·</span>
+        <span>{{ frontmatter.categories.join(' ') }}</span>
+      </template>
+      <template v-if="frontmatter.tags?.length">
+        <span>·</span>
+        <span v-for="tag, idx in frontmatter.tags" :key="idx" class="mr2 tag">
+          {{ tag }}
+        </span>
+      </template>
     </p>
     <p
       v-if="frontmatter.subtitle"
