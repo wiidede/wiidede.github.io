@@ -16,17 +16,24 @@ useHead({
     },
   ],
 })
+
+const showHeader = ref(true)
+const showBg = ref(true)
+
+provide(ProvideShowHeaderKey, showHeader)
+provide(ProvideShowBgKey, showBg)
 </script>
 
 <template>
   <client-only>
-    <TheBg />
+    <TheBg v-if="showBg" />
   </client-only>
   <TheHeader
+    v-if="showHeader"
     text="gray-700 dark:gray-200"
   />
   <main
-    p="x4 t4 b10"
+    :class="showHeader ? 'px4 pt4 pb10' : ''"
     text="center gray-700 dark:gray-200"
   >
     <RouterView />
