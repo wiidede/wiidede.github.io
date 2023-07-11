@@ -31,6 +31,13 @@ const experiences = [
   { logo: dahua, name: '上海达华测绘科技有限公司', post: '前端工程师', time: '2022.08 - present' },
 ]
 
+const awards = [
+  { time: '2019年08月', name: 'IJCAI2019老年人机器人看护大赛（国际赛）', award: '三等奖', unit: '澳门大学' },
+  { time: '2019年06月', name: '2019中国服务机器人大赛', award: '二等奖', unit: '中国自动化学会' },
+  { time: '2019年03月', name: '蓝桥杯大赛', award: '三等奖', unit: '中国软件行业协会' },
+  { time: '2017年12月', name: 'CCF大数据与计算智能大赛青年志愿者服务证书', award: '', unit: '中国共产主义青年团' },
+]
+
 const skills = [
   { icon: 'i-logos-vue', label: 'Vue 3', value: 90 },
   { icon: 'i-logos-element', label: 'Element Plus', value: 95 },
@@ -78,6 +85,10 @@ const projects = [
     desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻。',
     href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
   },
+]
+
+const certificates = [
+  { icon: 'i-carbon-translate', label: 'CET6' },
 ]
 </script>
 
@@ -267,6 +278,21 @@ const projects = [
           <li>使用深度学习额外完成了水表识别的项目。</li>
         </ol>
       </div>
+      <h2 class="text-8 font-bold text-zinc-900">
+        获奖
+      </h2>
+      <div class="w-full flex flex-col gap2">
+        <div v-for="award, idx in awards" :key="idx">
+          <div class="flex justify-between font-medium text-zinc-900">
+            <span class="">{{ award.name }}</span>
+            <span class="">{{ award.award }}</span>
+          </div>
+          <div class="flex justify-between text-sm font-light">
+            <span class="text-zinc-600">{{ award.unit }}</span>
+            <span class="text-zinc-500">{{ award.time }}</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
@@ -287,6 +313,17 @@ const projects = [
           <br>
           <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
         </a>
+      </div>
+      <div class="w-full flex flex-col items-start border rd px4 pb4 pt2">
+        <h2 class="mb2 text-8 font-bold text-zinc-900">
+          证书
+        </h2>
+        <div class="flex flex-col items-start">
+          <div v-for="certificate, idx in certificates" :key="idx">
+            <i :class="certificate.icon" class="mr1" />
+            <span>{{ certificate.label }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
