@@ -67,7 +67,7 @@ const projects = [
     href: 'https://fly-my-day.netlify.app/',
   },
   {
-    icon: 'i-carbon-campsite',
+    icon: 'i-the-dandanplay-vi',
     name: 'DanDanPlay-Vi',
     desc: 'DanDanPlay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
     href: 'https://dandanplay-vitesse.netlify.app/',
@@ -281,7 +281,7 @@ const projects = [
           target="_blank"
         >
           <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
-            <i :class="project.icon" class="h8 w8" />
+            <i :class="project.icon" class="h7 w7" />
           </div>
           <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900">{{ project.name }}</span>
           <br>

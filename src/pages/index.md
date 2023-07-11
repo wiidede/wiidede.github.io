@@ -5,7 +5,7 @@ Hey, I am wiidede(`wii-` serving as a meaningless prefix and `dede` as the pronu
 I have a lot of interest in Open Source. So far, I have done these things:
 
 - [`my-day`](https://github.com/wiidede/my-day): Little page to plan my day!
-- [`DanDanPlayer-vitesse`](https://github.com/wiidede/DanDanPlayer-vitesse): dandanplay web version start by vitesse-lite
+- [`dandanplay-vi`](https://github.com/wiidede/dandanplay-vi): dandanplay web version start by vitesse-lite
 - [`Liquid-Ray`](https://github.com/wiidede/Liquid-Ray): a unibody vscode theme
 - Contributed to: [`element-plus`](https://github.com/element-plus/element-plus/pulls?q=is%3Apr+author%3Awiidede) [`pdf2docx`](https://github.com/dothinking/pdf2docx/pulls?q=is:pr+author:wiidede)
 
