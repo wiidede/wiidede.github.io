@@ -83,7 +83,7 @@ const projects = [
 
 <template>
   <div class="a4 mx-a flex text-left text-zinc-700">
-    <div class="flex flex-[7] flex-col items-start gap4 px4 py8">
+    <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex justify-between gap4 pr4">
         <div class="flex flex-auto flex-col items-start justify-between gap4 leading-none">
           <h1 class="text-20 font-bold text-zinc-900">
@@ -169,7 +169,7 @@ const projects = [
       </div>
     </div>
     <div class="h-full b-r" />
-    <div class="flex flex-[3] flex-col items-start gap4 px4 py8">
+    <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex flex-col items-start px2">
         <img
           class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full"
@@ -234,7 +234,7 @@ const projects = [
     </div>
   </div>
   <div class="a4 mx-a flex text-left text-zinc-700">
-    <div class="flex flex-[7] flex-col items-start gap4 px4 py8">
+    <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="flex flex-col gap2">
         <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
           运维中台<img class="ml2 inline-block h2 select-none" :src="kedacom">
@@ -269,7 +269,7 @@ const projects = [
       </div>
     </div>
     <div class="h-full b-r" />
-    <div class="flex flex-[3] flex-col items-start gap4 px4 py8">
+    <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex flex-col items-start gap2 border rd px2 pb4 pt2">
         <h2 class="px2 text-8 font-bold text-zinc-900">
           项目
@@ -296,5 +296,11 @@ const projects = [
 .a4 {
   width: 210mm;
   height: 297mm;
+  background-color: white;
+}
+
+.a4 + .a4 {
+  height: calc(297mm - 1px);
+  border-top: 1px solid #f0f0f0;
 }
 </style>

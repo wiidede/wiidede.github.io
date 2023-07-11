@@ -15,6 +15,8 @@ Outside of programming, I also enjoy photography. I am trying to establish a hab
 
 I would be happy to make new friends, so feel free to contact me via: [Email](mailto:wiixdede@gmail.com), [CoolApk](http://www.coolapk.com/u/641913).
 
+If you can provide me very cool jos, here is my [resume](/resume).
+
 ## [Blog](/posts)
 
 <ThePosts pinned />
