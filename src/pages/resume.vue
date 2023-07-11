@@ -15,10 +15,10 @@ const isFull = route.query.full === 'true'
 const isConservative = route.query.conservative === 'true'
 
 const baseInfoLeft = [
-  { icon: 'i-carbon-user', value: '24岁 1999年7月' },
+  { icon: 'i-carbon-user', value: '24岁 1999.07' },
   { icon: 'i-carbon-application-web', value: '3年 前端' },
   { icon: 'i-carbon-phone', value: isFull ? '17625809601' : '176____9601' },
-  { icon: 'i-carbon-email', value: 'wiidede@qq.com' },
+  { icon: 'i-carbon-email', value: 'wiixdede@gmail.com' },
 ]
 
 const baseInfoRight = [
@@ -33,13 +33,16 @@ const experiences = [
 ]
 
 const skills = [
-  { label: 'Vue 3', value: 90 },
-  { label: 'Element Plus', value: 95 },
-  { label: 'Typescript', value: 70 },
-  { label: 'Vite', value: 75 },
-  { label: 'React', value: 35 },
-  { label: 'Python', value: 20 },
-  { label: 'TensorFlow', value: 18 },
+  { icon: 'i-logos-vue', label: 'Vue 3', value: 90 },
+  { icon: 'i-logos-element', label: 'Element Plus', value: 95 },
+  { icon: 'i-logos-typescript-icon', label: 'TypeScript', value: 70 },
+  { icon: 'i-logos-vitejs', label: 'Vite', value: 75 },
+  { icon: 'i-logos-unocss', label: 'UnoCSS', value: 75 },
+  { icon: 'i-logos-vitest', label: 'Vitest', value: 20 },
+  { icon: 'i-logos-nuxt-icon', label: 'Nuxt', value: 1 },
+  { icon: 'i-logos-react', label: 'React', value: 35 },
+  { icon: 'i-logos-python', label: 'Python', value: 20 },
+  { icon: 'i-logos-tensorflow', label: 'TensorFlow', value: 18 },
 ]
 
 const contributions = [
@@ -48,25 +51,46 @@ const contributions = [
 ]
 
 const personalities = [
-  '代码强迫症',
-  '喜欢简洁有趣的设计',
-  '想拍人像的风光摄影',
-  '虚假的二次元',
-  '跑步&跳操',
-  '热爱科技',
-  '追求高效简洁的生活',
+  { icon: 'i-carbon-code', label: '代码强迫症' },
+  { icon: 'i-carbon-logo-figma', label: '喜欢简洁有趣的设计' },
+  { icon: 'i-carbon-camera', label: '想拍人像的风光摄影' },
+  { icon: 'i-carbon-worship', label: '虚假的二次元' },
+  { icon: 'i-carbon-pedestrian', label: '跑步&跳操' },
+  { icon: 'i-carbon-carbon-for-ibm-product', label: '热爱科技' },
+  { icon: 'i-carbon-restaurant-fine', label: '追求高效简洁的生活' },
+]
+
+const projects = [
+  {
+    icon: 'i-the-my-day',
+    name: '流光日月',
+    desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划。',
+    href: 'https://fly-my-day.netlify.app/',
+  },
+  {
+    icon: 'i-carbon-campsite',
+    name: 'DanDanPlay-Vi',
+    desc: 'DanDanPlay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
+    href: 'https://dandanplay-vitesse.netlify.app/',
+  },
+  {
+    icon: 'i-the-liquid-ray',
+    name: 'Liquid Ray',
+    desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻',
+    href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
+  },
 ]
 </script>
 
 <template>
   <div class="a4 mx-a flex text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 py8">
-      <div class="w-full flex justify-between pr4">
-        <div class="flex flex-col items-start justify-between leading-[1]">
+      <div class="w-full flex justify-between gap4 pr4">
+        <div class="flex flex-auto flex-col items-start justify-between gap4 leading-none">
           <h1 class="text-20 font-bold text-zinc-900">
             王子羽
           </h1>
-          <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+          <div class="grid grid-cols-[auto_auto] w-full justify-between gap-x-2 gap-y-1">
             <div v-for="info, idx in baseInfoLeft" :key="idx" class="flex items-center gap1">
               <i :class="info.icon" />
               <span>{{ info.value }}</span>
@@ -74,13 +98,13 @@ const personalities = [
           </div>
         </div>
         <div class="relative h36 flex-[0_0_auto] rd-full">
-          <img v-show="!isConservative" class="h36 rd-full" alt="王子羽" src="/assets/images/dede.avif">
+          <img v-show="!isConservative" class="h36 select-none rd-full" alt="王子羽" src="/assets/images/dede.avif">
           <div class="absolute bottom-0 left-0 right-0 top-0 rd-full ring-3 ring-sky-200 ring-inset" />
         </div>
       </div>
-      <div v-for="experience, idx in experiences" :key="idx" class="w-full flex items-center gap2 pr50">
+      <div v-for="experience, idx in experiences" :key="idx" class="w-full flex items-center gap2 pr44">
         <div class="aspect-ratio-square h10 flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
-          <img alt="x" :src="experience.logo" class="w8 rd-full">
+          <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
         <div class="flex-auto">
           <div class="font-medium text-zinc-900">
@@ -122,7 +146,7 @@ const personalities = [
     <div class="flex flex-[3] flex-col items-start gap4 px4 py8">
       <div class="mx4 flex flex-col items-start">
         <img
-          class="mb4 aspect-ratio-square h36 rd-full"
+          class="mb4 aspect-ratio-square h36 select-none rd-full"
           alt="wiidede"
           :src="isConservative ? '/assets/images/dede.avif' : 'https://avatars.githubusercontent.com/u/25472916?v=4'"
         >
@@ -136,49 +160,52 @@ const personalities = [
           技能
         </h2>
         <template v-for="skill in skills" :key="skill.label">
-          <div class="w-full flex flex-col items-start">
-            <span>{{ skill.label }}</span>
-            <div class="h1 w-full rd-full bg-zinc-100">
-              <div class="h1 rd-full bg-pink-200" :style="{ width: `${skill.value}%` }" />
+          <div class="w-full flex items-center gap1">
+            <i class="text-4" :class="skill.icon" />
+            <div class="w-full flex flex-col">
+              <span class="leading-tight">{{ skill.label }}</span>
+              <div class="h1 w-full rd-full bg-zinc-100">
+                <div class="h1 rd-full bg-pink-200" :style="{ width: `${skill.value}%` }" />
+              </div>
             </div>
           </div>
         </template>
       </div>
-      <div class="w-full flex flex-col items-start border rd px4 pb4 pt2">
-        <h2 class="mb2 text-8 font-bold text-zinc-900">
+      <div class="w-full flex flex-col items-start gap1 border rd px4 pb4 pt2">
+        <h2 class="mb1 text-8 font-bold text-zinc-900">
           贡献
         </h2>
-        <div class="flex flex-col gap2">
-          <a
-            v-for="contribution, idx in contributions"
-            :key="idx"
-            :href="`https://github.com/${contribution.owner}/${contribution.name}/pulls?q=is:pr+author:wiidede`"
-            target="_blank"
-            class="flex items-center gap2"
+        <a
+          v-for="contribution, idx in contributions"
+          :key="idx"
+          :href="`https://github.com/${contribution.owner}/${contribution.name}/pulls?q=is:pr+author:wiidede`"
+          target="_blank"
+          class="flex items-center gap2"
+        >
+          <img
+            :alt="`${contribution.owner}'s avatar`"
+            :src="`https://avatars.githubusercontent.com/u/${contribution.ownerId}?s=48&v=4`"
+            class="h-5 w-5 select-none"
           >
-            <img
-              :alt="`${contribution.owner}'s avatar`"
-              :src="`https://avatars.githubusercontent.com/u/${contribution.ownerId}?s=48&v=4`"
-              width="24"
-              height="24"
-            >
-            {{ contribution.name }}
-            <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
-          </a>
-        </div>
+          {{ contribution.name }}
+          <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
+        </a>
       </div>
       <div class="w-full flex flex-col items-start border rd px4 pb4 pt2">
         <h2 class="mb2 text-8 font-bold text-zinc-900">
           个性
         </h2>
         <div class="flex flex-col items-start">
-          <span v-for="personality, idx in personalities" :key="idx">{{ personality }}</span>
+          <div v-for="personality, idx in personalities" :key="idx">
+            <i :class="personality.icon" class="mr1 text-3" />
+            <span>{{ personality.label }}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="a4 mx-a text-left text-zinc-700">
-    <div class="flex flex-col items-start gap4 px4 py8">
+  <div class="a4 mx-a flex text-left text-zinc-700">
+    <div class="flex flex-[7] flex-col items-start gap4 px4 py8">
       <h3 class="text-6 font-medium text-zinc-900">
         家庭服务机器人、水表识别（大学期间）
       </h3>
@@ -186,6 +213,22 @@ const personalities = [
         <li>使用ROS系统操作机器人（C++），过程中涉及SLAM、建图、导航、路径规划等。</li>
         <li>使用深度学习进行物品识别，从而提供家庭服务。顺带做了水表识别的项目。</li>
       </ol>
+    </div>
+    <div class="h-full b-r" />
+    <div class="flex flex-[3] flex-col items-start gap4 px4 py8">
+      <div class="w-full flex flex-col items-start gap2 border rd px4 pb4 pt2">
+        <h2 class="text-8 font-bold text-zinc-900">
+          项目
+        </h2>
+        <span v-for="project, idx in projects" :key="idx" class="mb4 w-full leading-none">
+          <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
+            <i :class="project.icon" class="h8 w8" />
+          </div>
+          <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900">{{ project.name }}</span>
+          <br>
+          <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
+        </span>
+      </div>
     </div>
   </div>
 </template>
