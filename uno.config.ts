@@ -24,6 +24,7 @@ export default defineConfig({
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
+        'flex': '0 0 auto',
       },
       collections: {
         the: FileSystemIconLoader(

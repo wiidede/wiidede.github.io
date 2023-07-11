@@ -16,6 +16,7 @@ declare module 'vue' {
     TheHitokoto: typeof import('./components/TheHitokoto.vue')['default']
     ThePosts: typeof import('./components/ThePosts.vue')['default']
     ThePostWrapper: typeof import('./components/ThePostWrapper.vue')['default']
+    TheTech: typeof import('./components/TheTech.vue')['default']
     TheValine: typeof import('./components/TheValine.vue')['default']
   }
 }
