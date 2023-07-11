@@ -32,10 +32,10 @@ const experiences = [
 ]
 
 const awards = [
-  { time: '2019年08月', name: 'IJCAI2019老年人机器人看护大赛（国际赛）', award: '三等奖', unit: '澳门大学' },
-  { time: '2019年06月', name: '2019中国服务机器人大赛', award: '二等奖', unit: '中国自动化学会' },
-  { time: '2019年03月', name: '蓝桥杯大赛', award: '三等奖', unit: '中国软件行业协会' },
-  { time: '2017年12月', name: 'CCF大数据与计算智能大赛青年志愿者服务证书', award: '', unit: '中国共产主义青年团' },
+  { time: '2019.08', name: 'IJCAI2019老年人机器人看护大赛（国际赛）', award: '三等奖', unit: '澳门大学' },
+  { time: '2019.06', name: '2019中国服务机器人大赛', award: '二等奖', unit: '中国自动化学会' },
+  { time: '2019.03', name: '蓝桥杯大赛', award: '三等奖', unit: '中国软件行业协会' },
+  { time: '2017.12', name: 'CCF大数据与计算智能大赛青年志愿者服务证书', award: '', unit: '中国共产主义青年团' },
 ]
 
 const skills = [
@@ -93,7 +93,7 @@ const certificates = [
 </script>
 
 <template>
-  <div class="a4 mx-a flex text-left text-zinc-700">
+  <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex justify-between gap4 pr4">
         <div class="flex flex-auto flex-col items-start justify-between gap4 leading-none">
@@ -164,7 +164,7 @@ const certificates = [
         <ol class="list-decimal list-inside">
           <li>前端框架扩展：动态权限变化；三方登录；baseUrl支持相对路径</li>
           <li>组件：响应式echarts组件；el-tooltip封装文字溢出判断；带有鉴权头的图片；年月日切换组件</li>
-          <li>前端导出excel；uKey登录；webSocket接受告警、进度、权限推送</li>
+          <li>前端导出excel；uKey登录；webSocket接收告警、进度、权限等</li>
           <li>页面性能优化；UI细节优化；组件代码重构；去除Jquery等写法</li>
           <li>
             开发子项目：<ul class="ml4 list-disc list-inside">
@@ -244,7 +244,7 @@ const certificates = [
       </div>
     </div>
   </div>
-  <div class="a4 mx-a flex text-left text-zinc-700">
+  <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="flex flex-col gap2">
         <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
