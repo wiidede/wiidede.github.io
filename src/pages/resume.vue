@@ -11,13 +11,12 @@ const showBg = inject(ProvideShowBgKey)
 showHeader && (showHeader.value = false)
 showBg && (showBg.value = false)
 
-const isFull = route.query.full === 'true'
 const isConservative = route.query.conservative === 'true'
 
 const baseInfoLeft = [
   { icon: 'i-carbon-user', value: '24岁 1999.07' },
   { icon: 'i-carbon-application-web', value: '3年 前端' },
-  { icon: 'i-carbon-phone', value: isFull ? '17625809601' : '176____9601' },
+  { icon: 'i-carbon-phone', value: route.query.tel || '176____9601' },
   { icon: 'i-carbon-email', value: 'wiixdede@gmail.com' },
 ]
 
