@@ -53,6 +53,7 @@ const skills = [
 
 const contributions = [
   { name: 'element-plus', count: 4, owner: 'element-plus', ownerId: 68583457 },
+  { name: 'vite-plugin-vue-devtools', count: 1, owner: 'webfansplz', ownerId: 22515951 },
   { name: 'pdf2docx', count: 1, owner: 'dothinking', ownerId: 13885442 },
 ]
 
@@ -96,7 +97,7 @@ const certificates = [
   <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex justify-between pr4">
-        <div class="flex flex-auto flex-col items-start justify-between gap4 leading-none">
+        <div class="min-w0 flex flex-auto flex-col items-start justify-between gap4 leading-none">
           <h1 class="text-20 font-bold text-zinc-900">
             王子羽
           </h1>
@@ -115,7 +116,7 @@ const certificates = [
         <div class="aspect-ratio-square h10 flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
           <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
-        <div class="flex-auto">
+        <div class="min-w0 flex-auto">
           <div class="font-medium text-zinc-900">
             {{ experience.name }}
           </div>
@@ -180,7 +181,7 @@ const certificates = [
       </div>
     </div>
     <div class="h-full b-r" />
-    <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
+    <div class="flex flex-[3] flex-col items-start gap4 px4 pb4 pt8">
       <div class="w-full flex flex-col items-start px2">
         <img
           class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full"
@@ -195,12 +196,12 @@ const certificates = [
           class="w-full flex items-center gap1 rd px2 py1 transition hover:bg-zinc-100"
         ><i :class="info.icon" />{{ info.value }}</a>
       </div>
-      <div class="w-full flex flex-col items-start gap2 border rd px4 pb4 pt2">
-        <h2 class="mb1 text-8 font-bold text-zinc-900">
+      <div class="min-h0 w-full flex flex-auto flex-col border rd px4 pb4 pt2">
+        <h2 class="mb2 text-8 font-bold text-zinc-900">
           技能
         </h2>
-        <template v-for="skill in skills" :key="skill.label">
-          <div class="w-full flex items-center gap1">
+        <div class="min-h0 flex flex-auto flex-col items-start justify-between">
+          <div v-for="skill in skills" :key="skill.label" class="w-full flex items-center gap1">
             <i :class="skill.icon" />
             <div class="w-full flex flex-col">
               <span class="leading-tight">{{ skill.label }}</span>
@@ -209,7 +210,7 @@ const certificates = [
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </div>
       <div class="w-full flex flex-col items-start border rd px2 pb4 pt2">
         <h2 class="mb2 px2 text-8 font-bold text-zinc-900">
@@ -227,7 +228,7 @@ const certificates = [
             :src="`https://avatars.githubusercontent.com/u/${contribution.ownerId}?s=48&v=4`"
             class="h-4.8 w-4.8 select-none"
           >
-          {{ contribution.name }}
+          <span class="h4 inline-flex items-center leading-none">{{ contribution.name }}</span>
           <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
         </a>
       </div>
