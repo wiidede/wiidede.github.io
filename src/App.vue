@@ -31,6 +31,7 @@ provide(ProvideShowBgKey, showBg)
   <TheHeader
     v-if="showHeader"
     text="gray-700 dark:gray-200"
+    class="print:hidden"
   />
   <main
     :class="showHeader ? 'px4 pt4 pb10' : ''"

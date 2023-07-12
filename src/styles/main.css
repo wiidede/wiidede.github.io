@@ -167,3 +167,9 @@ html:not(.dark) [img-dark] {
 .dark::view-transition-new(root) {
   z-index: 1;
 }
+
+@media print {
+  #__vue-devtools-container__ {
+    display: none !important;
+  }
+}

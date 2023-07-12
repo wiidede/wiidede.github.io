@@ -340,4 +340,10 @@ const certificates = [
   height: calc(297mm - 1px);
   border-top: 1px solid #f0f0f0;
 }
+
+@media print {
+  .a4 + .a4 {
+    border-color: transparent;
+  }
+}
 </style>
