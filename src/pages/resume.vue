@@ -75,8 +75,8 @@ const projects = [
   },
   {
     icon: 'i-the-dandanplay-vi',
-    name: 'DanDanPlay-Vi',
-    desc: 'DanDanPlay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
+    name: 'dandanplayVi',
+    desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
     href: 'https://dandanplay-vitesse.netlify.app/',
   },
   {
@@ -281,17 +281,17 @@ const certificates = [
       <h2 class="text-8 font-bold text-zinc-900">
         获奖
       </h2>
-      <div class="w-full flex flex-col gap2">
-        <div v-for="award, idx in awards" :key="idx">
-          <div class="flex justify-between font-medium text-zinc-900">
-            <span class="">{{ award.name }}</span>
-            <span class="">{{ award.award }}</span>
+      <div class="grid grid-cols-[auto_auto] gap-x-4 gap-y-4">
+        <template v-for="award in awards" :key="award.name">
+          <div class="grid content-between justify-items-end">
+            <span class="font-medium text-zinc-900">{{ award.award }}</span>
+            <span class="font-light text-zinc-500">{{ award.time }}</span>
           </div>
-          <div class="flex justify-between text-sm font-light">
-            <span class="text-zinc-600">{{ award.unit }}</span>
-            <span class="text-zinc-500">{{ award.time }}</span>
+          <div class="grid">
+            <span class="font-medium text-zinc-900">{{ award.name }}</span>
+            <span class="font-light text-zinc-600">{{ award.unit }}</span>
           </div>
-        </div>
+        </template>
       </div>
     </div>
     <div class="h-full b-r" />
