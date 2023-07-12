@@ -95,12 +95,12 @@ const certificates = [
 <template>
   <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
-      <div class="w-full flex justify-between gap4 pr4">
+      <div class="w-full flex justify-between pr4">
         <div class="flex flex-auto flex-col items-start justify-between gap4 leading-none">
           <h1 class="text-20 font-bold text-zinc-900">
             王子羽
           </h1>
-          <div class="grid grid-cols-[auto_auto] w-full justify-between gap-x-2 gap-y-1">
+          <div class="grid grid-cols-[auto_auto] w-full justify-between gap-y-1">
             <div v-for="info, idx in baseInfoLeft" :key="idx" class="flex items-center gap1">
               <i :class="info.icon" />
               <span>{{ info.value }}</span>
