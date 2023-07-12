@@ -159,7 +159,7 @@ id: mp3-player-note
 
 ### 用途
 
-- UASRT GSM WiFi 蓝牙 GPRS 窄带物联网
+- UASRT GSM Wi-Fi 蓝牙 GPRS 窄带物联网
 
 - LCD GPIO（8位并行）
 

@@ -6,7 +6,7 @@ categories:
   - 前端
 tags:
   - 框架
-  - Echarts
+  - ECharts
   - VueGridLayout
 ---
 
@@ -96,7 +96,7 @@ const marginDynamic = computed(() => (usingDynamic
 </template>
 ```
 
-## Echarts 响应式组件封装
+## ECharts 响应式组件封装
 
 在echarts官网，关于响应式的应该就这两点
 
@@ -161,7 +161,7 @@ fontSize自适应效果：
 1. 现在只是针对fontSize做响应式，后续可以加上其他的，比如margin，padding，itemWidth等等
 2. 现在是根据屏幕宽度响应式，如果想根据容器宽度响应式也是可以的
 
-> Echarts.vue
+> ECharts.vue
 
 ```vue
 <script setup>

@@ -5,7 +5,7 @@ id: echarts-base-vue-comp
 categories:
   - 前端
 tags:
-  - Echarts
+  - ECharts
   - Vue
   - Vue组件
   - 前端
@@ -23,7 +23,7 @@ tags:
 
 ### ResizeObserver（容器大小变化监听方案1）
 
-可以使用 ResizeObserver 这个 Web Api 来监听容器的大小变化，使用的时候注意下兼容性哦
+可以使用 ResizeObserver 这个 Web API 来监听容器的大小变化，使用的时候注意下兼容性哦
 
 ```vue
 <script>
@@ -714,14 +714,8 @@ export default {
 </script>
 
 <template>
-  <EchartsBase
-    :id="id"
-    :options="baseOptions"
-    :class-name="className"
-    @mouseover="mouserOver"
-    @mouseout="mouserOut"
-    v-on="$listeners"
-  />
+  // eslint-disable-next-line vue/no-deprecated-dollar-listeners-api
+  <EchartsBase :id="id" :options="baseOptions" :class-name="className" @mouseover="mouserOver" @mouseout="mouserOut" v-on="$listeners" />
 </template>
 
 <style scoped>

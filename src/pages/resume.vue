@@ -138,7 +138,7 @@ const certificates = [
           <TheTech icon="i-logos-element" label="Element Plus" />
           <TheTech icon="i-logos-typescript-icon" label="TypeScript" />
           <TheTech icon="i-logos-vitejs" label="Vite" />
-          <TheTech icon="i-logos-unocss" label="Unocss" />
+          <TheTech icon="i-logos-unocss" label="UnoCSS" />
           <TheTech icon="i-logos-pinia" label="Pinia" />
         </div>
         <span class="text-sm text-zinc-500">
@@ -156,7 +156,7 @@ const certificates = [
         <div class="flex flex-wrap items-center gap2">
           <TheTech icon="i-logos-vue" label="Vue2" />
           <TheTech icon="i-logos-element" label="Element UI" />
-          <TheTech icon="i-logos-webpack" label="Webpack" />
+          <TheTech icon="i-logos-webpack" label="webpack" />
         </div>
         <span class="text-sm text-zinc-500">
           项目背景：苏州科达是一家摄像头制造企业，其项目的主要业务都是设备的维护和为客户提供城市管理等解决方案。
@@ -255,7 +255,7 @@ const certificates = [
           <TheTech icon="i-logos-react" label="React" />
           <TheTech icon="i-logos-ant-design" label="Ant Design" />
           <TheTech icon="i-logos-redux-saga w-2em" label="Redux-Saga" />
-          <TheTech icon="i-logos-webpack" label="Webpack" />
+          <TheTech icon="i-logos-webpack" label="webpack" />
         </div>
         <ol class="list-decimal list-inside">
           <li>该项目基于现成的低代码平台改造开发</li>

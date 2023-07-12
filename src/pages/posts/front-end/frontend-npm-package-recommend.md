@@ -14,7 +14,7 @@ tags:
 
 [el-bigdata-table](https://www.npmjs.com/package/el-bigdata-table)
 
-elementUI Table组件，虚拟列表，采用mixin的方式注入到el-table组件，可见作者对el-table源码的研究
+ElementUI Table组件，虚拟列表，采用mixin的方式注入到el-table组件，可见作者对el-table源码的研究
 
 ## uuid
 

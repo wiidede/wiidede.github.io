@@ -1,14 +1,14 @@
 ---
-title: WebPack 知识总结
+title: webpack 知识总结
 date: 2022-03-04 13:27:19
 id: webpack-knowledge
 categories:
   - 前端
 tags:
-  - WebPack
+  - webpack
 ---
 
-# WebPack 知识总结
+# webpack 知识总结
 
 ## 不打包某个文件夹
 

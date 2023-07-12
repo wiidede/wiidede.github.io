@@ -1,15 +1,15 @@
 ---
-title: Antd-3.x-YearPicker
+title: AntD-3.x-YearPicker
 date: 2022-04-15 15:09:27
 id: antd-3x-year-picker
 categories:
   - 前端
 tags:
-  - Antd
+  - AntD
   - React
 ---
 
-# Antd-3.x-YearPicker
+# AntD-3.x-YearPicker
 
 > PS：React、TypeScript 初学，所以可能怪怪的
 

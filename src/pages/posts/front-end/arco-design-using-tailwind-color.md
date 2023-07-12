@@ -7,7 +7,7 @@ categories:
 tags:
   - ArcoDesign
   - Tailwind
-  - UnoCss
+  - UnoCSS
 ---
 
 # arco-design快速使用tailwind的颜色、unocss动态颜色

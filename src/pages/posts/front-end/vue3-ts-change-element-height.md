@@ -7,7 +7,7 @@ categories:
 tags:
   - Vue
   - TypeScript
-  - Dom
+  - DOM
 ---
 
 # vue3+ts根据高度改变元素的透明度

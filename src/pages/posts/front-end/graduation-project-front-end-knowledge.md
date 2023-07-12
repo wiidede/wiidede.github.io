@@ -17,7 +17,7 @@ tags:
 
 - Vue3.0
 - Element Plus
-- Vue-Cli 4.5
+- Vue-CLI 4.5
 
 ## 部分实现
 
