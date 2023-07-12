@@ -5,6 +5,12 @@ import dahua from '/assets/images/dahua.avif'
 
 const route = useRoute()
 
+const [DefineTitledBox, ReuseTitledBox] = createReusableTemplate<{
+  title: string
+  cls: string
+  gap?: string
+}>()
+
 const showHeader = inject(ProvideShowHeaderKey)
 const showBg = inject(ProvideShowBgKey)
 
@@ -94,6 +100,16 @@ const certificates = [
 </script>
 
 <template>
+  <DefineTitledBox v-slot="{ $slots, title, cls, gap }">
+    <div class="border rd px2 pb4 pt2" :class="cls">
+      <h2 class="mb2 px2 text-8 font-bold text-zinc-900">
+        {{ title }}
+      </h2>
+      <div class="min-h0 flex flex-auto flex-col child:px2" :class="gap">
+        <component :is="$slots.default" v-if="$slots.default" />
+      </div>
+    </div>
+  </DefineTitledBox>
   <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex justify-between pr4">
@@ -196,11 +212,8 @@ const certificates = [
           class="w-full flex items-center gap1 rd px2 py1 transition hover:bg-zinc-100"
         ><i :class="info.icon" />{{ info.value }}</a>
       </div>
-      <div class="min-h0 w-full flex flex-auto flex-col border rd px4 pb4 pt2">
-        <h2 class="mb2 text-8 font-bold text-zinc-900">
-          技能
-        </h2>
-        <div class="min-h0 flex flex-auto flex-col items-start justify-between">
+      <ReuseTitledBox title="技能" cls="min-h0 w-full flex flex-auto flex-col" gap="justify-between">
+        <div class="h-full flex flex-col items-start justify-between">
           <div v-for="skill in skills" :key="skill.label" class="w-full flex items-center gap1">
             <i :class="skill.icon" />
             <div class="w-full flex flex-col">
@@ -211,11 +224,8 @@ const certificates = [
             </div>
           </div>
         </div>
-      </div>
-      <div class="w-full flex flex-col items-start border rd px2 pb4 pt2">
-        <h2 class="mb2 px2 text-8 font-bold text-zinc-900">
-          贡献
-        </h2>
+      </ReuseTitledBox>
+      <ReuseTitledBox title="贡献" cls="w-full flex flex-col items-start" gap="gap1">
         <a
           v-for="contribution, idx in contributions"
           :key="idx"
@@ -231,18 +241,13 @@ const certificates = [
           <span class="h4 inline-flex items-center leading-none">{{ contribution.name }}</span>
           <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
         </a>
-      </div>
-      <div class="w-full flex flex-col items-start border rd px4 pb4 pt2">
-        <h2 class="mb2 text-8 font-bold text-zinc-900">
-          个性
-        </h2>
-        <div class="flex flex-col items-start">
-          <div v-for="personality, idx in personalities" :key="idx">
-            <i :class="personality.icon" class="mr1" />
-            <span>{{ personality.label }}</span>
-          </div>
+      </ReuseTitledBox>
+      <ReuseTitledBox title="个性" cls="w-full flex flex-col items-start">
+        <div v-for="personality, idx in personalities" :key="idx">
+          <i :class="personality.icon" class="mr1" />
+          <span>{{ personality.label }}</span>
         </div>
-      </div>
+      </ReuseTitledBox>
     </div>
   </div>
   <div class="a4 mx-a flex px4 text-left text-zinc-700">
@@ -297,10 +302,7 @@ const certificates = [
     </div>
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
-      <div class="w-full flex flex-col items-start gap2 border rd px2 pb4 pt2">
-        <h2 class="px2 text-8 font-bold text-zinc-900">
-          项目
-        </h2>
+      <ReuseTitledBox title="项目" cls="w-full flex flex-col items-start" gap="gap1">
         <a
           v-for="project, idx in projects"
           :key="idx" class="w-full rd p2 leading-none transition hover:bg-zinc-100"
@@ -314,18 +316,13 @@ const certificates = [
           <br>
           <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
         </a>
-      </div>
-      <div class="w-full flex flex-col items-start border rd px4 pb4 pt2">
-        <h2 class="mb2 text-8 font-bold text-zinc-900">
-          证书
-        </h2>
-        <div class="flex flex-col items-start">
-          <div v-for="certificate, idx in certificates" :key="idx">
-            <i :class="certificate.icon" class="mr1" />
-            <span>{{ certificate.label }}</span>
-          </div>
+      </ReuseTitledBox>
+      <ReuseTitledBox title="证书" cls="w-full flex flex-col items-start">
+        <div v-for="certificate, idx in certificates" :key="idx">
+          <i :class="certificate.icon" class="mr1" />
+          <span>{{ certificate.label }}</span>
         </div>
-      </div>
+      </ReuseTitledBox>
     </div>
   </div>
 </template>

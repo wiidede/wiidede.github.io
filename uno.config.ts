@@ -46,4 +46,15 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   safelist: 'prose m-auto text-left'.split(' '),
+  variants: [
+    // child:
+    (matcher) => {
+      if (!matcher.startsWith('child:'))
+        return matcher
+      return {
+        matcher: matcher.slice(6),
+        selector: s => `${s}>*`,
+      }
+    },
+  ],
 })
