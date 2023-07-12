@@ -6,6 +6,7 @@
     "build": "esno ./scripts/rss.ts && cross-env NODE_OPTIONS=--max-old-space-size=4096 vite-ssg build",
     "dev": "vite --port 3333 --open --host",
     "lint": "eslint . --ext .vue,.ts,.html --fix",
+    "fix-case": "npx case-police --fix",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "typecheck": "vue-tsc --noEmit",
@@ -39,6 +40,7 @@
     "cross-env": "^7.0.3",
     "enso": "1.0.0-alpha.3",
     "eslint": "^8.44.0",
+    "eslint-plugin-case-police": "^0.6.1",
     "feed": "^4.2.2",
     "fs-extra": "^11.1.1",
     "https-localhost": "^4.7.1",
@@ -70,9 +72,24 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.ts": "eslint --fix",
-    "*.vue": "eslint --fix",
-    "*.md": "eslint --fix",
-    "*.html": "eslint --fix"
+    "*": "eslint --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@antfu",
+      "@unocss",
+      "plugin:case-police/recommended"
+    ],
+    "overrides": [
+      {
+        "files": ["**/*.md/*.vue", "**/*.md/*.js"],
+        "rules": {
+          "vue/require-explicit-emits": "off",
+          "vue/no-deprecated-dollar-listeners-api": "off",
+          "@typescript-eslint/no-invalid-this": "off",
+          "vue/valid-attribute-name": "off"
+        }
+      }
+    ]
   }
 }
