@@ -19,6 +19,15 @@ showBg && (showBg.value = false)
 
 const isConservative = route.query.conservative === 'true'
 
+const {
+  personalities,
+  projects,
+  contributions,
+  skills,
+  experiences,
+  awards,
+} = useMyInfo()
+
 const baseInfoLeft = [
   { icon: 'i-carbon-user', value: '24岁 1999.07' },
   { icon: 'i-carbon-application-web', value: '3年 前端' },
@@ -29,69 +38,6 @@ const baseInfoLeft = [
 const baseInfoRight = [
   { icon: 'i-carbon-logo-github', value: 'wiidede', href: 'https://github.com/wiidede' },
   { icon: 'i-carbon-earth-southeast-asia-filled', value: 'wiidede.github.io', href: 'https://wiidede.github.io' },
-]
-
-const experiences = [
-  { logo: cslg, name: '常熟理工学院', post: '物联网工程', time: '2017.09 - 2021.6' },
-  { logo: kedacom, name: '苏州科达科技股份有限公司', post: '前端工程师', time: '2020.07 - 2022.8' },
-  { logo: dahua, name: '上海达华测绘科技有限公司', post: '前端工程师', time: '2022.08 - present' },
-]
-
-const awards = [
-  { time: '2019.08', name: 'IJCAI2019老年人机器人看护大赛（国际赛）', award: '三等奖', unit: '澳门大学' },
-  { time: '2019.06', name: '2019中国服务机器人大赛', award: '二等奖', unit: '中国自动化学会' },
-  { time: '2019.03', name: '蓝桥杯大赛', award: '三等奖', unit: '中国软件行业协会' },
-  { time: '2017.12', name: 'CCF大数据与计算智能大赛青年志愿者服务证书', award: '', unit: '中国共产主义青年团' },
-]
-
-const skills = [
-  { icon: 'i-logos-vue', label: 'Vue 3', value: 90 },
-  { icon: 'i-logos-element', label: 'Element Plus', value: 95 },
-  { icon: 'i-logos-typescript-icon', label: 'TypeScript', value: 70 },
-  { icon: 'i-logos-vitejs', label: 'Vite', value: 75 },
-  { icon: 'i-logos-unocss', label: 'UnoCSS', value: 75 },
-  { icon: 'i-logos-vitest', label: 'Vitest', value: 20 },
-  { icon: 'i-logos-nuxt-icon', label: 'Nuxt', value: 1 },
-  { icon: 'i-logos-react', label: 'React', value: 35 },
-  { icon: 'i-logos-python', label: 'Python', value: 20 },
-  { icon: 'i-logos-tensorflow', label: 'TensorFlow', value: 18 },
-]
-
-const contributions = [
-  { name: 'element-plus', count: 4, owner: 'element-plus', ownerId: 68583457 },
-  { name: 'vite-plugin-vue-devtools', count: 1, owner: 'webfansplz', ownerId: 22515951 },
-  { name: 'pdf2docx', count: 1, owner: 'dothinking', ownerId: 13885442 },
-]
-
-const personalities = [
-  { icon: 'i-carbon-code', label: '代码强迫症' },
-  { icon: 'i-carbon-logo-figma', label: '喜欢简洁有趣的设计' },
-  { icon: 'i-carbon-camera', label: '想拍人像的风光摄影' },
-  { icon: 'i-carbon-worship', label: '虚假的二次元' },
-  { icon: 'i-carbon-pedestrian', label: '跑步&跳操' },
-  { icon: 'i-carbon-carbon-for-ibm-product', label: '热爱科技' },
-  { icon: 'i-carbon-restaurant-fine', label: '追求高效简洁的生活' },
-]
-
-const projects = [
-  {
-    icon: 'i-the-my-day',
-    name: '流光日月',
-    desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划。',
-    href: 'https://fly-my-day.netlify.app/',
-  },
-  {
-    icon: 'i-the-dandanplay-vi',
-    name: 'dandanplayVi',
-    desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
-    href: 'https://dandanplay-vitesse.netlify.app/',
-  },
-  {
-    icon: 'i-the-liquid-ray',
-    name: 'Liquid Ray',
-    desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻。',
-    href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
-  },
 ]
 
 const certificates = [
