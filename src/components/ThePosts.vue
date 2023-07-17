@@ -43,40 +43,35 @@ const currentTag = computed({
 })
 const tagList = computed(() => Array.from(tagMap.entries()).sort((a, b) => b[1] - a[1]).map(tag => tag[0]))
 
+const postsPinnedLength = computed(() => posts.filter(post => post.sticky).length)
 const postsDisplay = computed(
   () => posts.filter(
-    post => (!currentCategory.value ? true : currentCategory.value === post.category)
+    (post, index) => (!currentCategory.value ? true : currentCategory.value === post.category)
      && (!currentTag.value ? true : (Array.isArray(post.tags) && post.tags.includes(currentTag.value)))
-     && (props.pinned ? post.sticky !== undefined : true),
+     && (props.pinned ? (index < postsPinnedLength.value + 3) : true),
   ),
 )
-const showYear = computed(() => postsDisplay.value.length > 9)
+const showYear = computed(() => props.pinned || postsDisplay.value.length > 9)
 
 const getYear = (a: Date | string | number) => new Date(a).getFullYear()
 const isFuture = (a?: Date | string | number) => a && new Date(a) > new Date()
 function isSameGroup(a: Post, b?: Post) {
   if (!b)
     return false
-  let aTag, bTag
-  if (a.sticky)
-    aTag = 'sticky'
-  else if (isFuture(a.date))
-    aTag = 'upcoming'
-  else
-    aTag = getYear(a.date)
-  if (b.sticky)
-    bTag = 'sticky'
-  else if (isFuture(b.date))
-    bTag = 'upcoming'
-  else
-    bTag = getYear(b.date)
-  return aTag === bTag
+  return getGroupName(a) === getGroupName(b)
 }
 
 function getGroupName(p: Post) {
-  if (isFuture(p.date))
-    return 'Upcoming'
-  return getYear(p.date)
+  let tag
+  if (p.sticky)
+    tag = 'PINNED'
+  else if (props.pinned && !p.sticky)
+    tag = 'RECENT'
+  else if (isFuture(p.date))
+    tag = 'UPCOMING'
+  else
+    tag = getYear(p.date)
+  return tag
 }
 
 const inactiveStyle = 'opacity-40 hover:opacity-70 font-400'
@@ -188,7 +183,7 @@ function handleBgOut() {
     >
       <span
         class="absolute left--3 top-0 text-6em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-zinc-5 op20"
-      >{{ post.sticky ? 'PINNED' : getGroupName(post) }}</span>
+      >{{ getGroupName(post) }}</span>
     </div>
     <div
       class="slide-enter"
