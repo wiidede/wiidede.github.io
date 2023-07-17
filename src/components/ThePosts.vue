@@ -176,13 +176,13 @@ function handleBgOut() {
   <template v-for="post, idx in postsDisplay" :key="`${post.path}_${currentCategory}`">
     <div
       v-if="showYear && !isSameGroup(post, postsDisplay[idx - 1])"
-      slide-enter pointer-events-none relative h12 select-none
+      class="slide-enter pointer-events-none relative h10 select-none md:h12"
       :style="{
         '--enter-stage': idx + 4,
       }"
     >
       <span
-        class="absolute left--3 top-0 text-6em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-zinc-5 op20"
+        class="absolute left--3 top-0 text-5em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-zinc-5 op20 md:text-6em"
       >{{ getGroupName(post) }}</span>
     </div>
     <div

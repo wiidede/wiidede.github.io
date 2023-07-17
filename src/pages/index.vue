@@ -94,7 +94,7 @@ const {
       经历
     </h2>
     <div class="space-y-4">
-      <div v-for="experience, idx in experiences" :key="idx" class="w-full flex items-center gap2 pr44">
+      <div v-for="experience, idx in experiences" :key="idx" class="max-w40ch flex items-center gap2">
         <div class="aspect-ratio-square h10 flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
