@@ -1,3 +1,3 @@
-# Blog
+# 博客
 
 <ThePosts/>

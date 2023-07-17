@@ -109,7 +109,7 @@ function handleBgOut() {
     <div
       class="mb2"
     >
-      <span>Categories</span>
+      <span>分类</span>
     </div>
     <div class="m-auto mb-2 flex flex-wrap select-none gap4 prose animate-none! op100!">
       <div
@@ -136,7 +136,7 @@ function handleBgOut() {
       class="mb2 flex cursor-pointer items-center gap-2 op80"
       @click="toggleTags()"
     >
-      <span>Tags</span>
+      <span>标签</span>
       <div
         class="i-carbon-chevron-down inline-block op60 transition-transform duration-400"
         :class="{ 'scale-y--100': showTags }"

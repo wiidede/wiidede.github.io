@@ -8,11 +8,11 @@
     </RouterLink>
     <nav flex="~ gap-4" class="items-center justify-end px-4 pb2 pt4 text-4">
       <RouterLink class="icon-btn" to="/posts" title="Blog">
-        <span class="lt-md:hidden">Blog</span>
+        <span class="lt-md:hidden">博客</span>
         <div i-carbon-document-multiple-01 class="md:hidden" />
       </RouterLink>
 
-      <RouterLink class="icon-btn" to="/sponsor" title="Sponsor">
+      <RouterLink class="icon-btn" to="/sponsor" title="捐赠">
         <div i-carbon-favorite />
       </RouterLink>
 
@@ -24,7 +24,7 @@
         <div i-carbon-rss />
       </a>
 
-      <button class="icon-btn" title="Toggle dark" @click="toggleDark">
+      <button class="icon-btn" title="切换暗黑模式" @click="toggleDark">
         <div i="carbon-sun dark:carbon-moon" />
       </button>
     </nav>
