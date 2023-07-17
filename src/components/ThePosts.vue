@@ -114,7 +114,7 @@ function handleBgOut() {
     <div
       class="mb2"
     >
-      <span class="op60">Categories</span>
+      <span>Categories</span>
     </div>
     <div class="m-auto mb-2 flex flex-wrap select-none gap4 prose animate-none! op100!">
       <div
@@ -141,9 +141,9 @@ function handleBgOut() {
       class="mb2 flex cursor-pointer items-center gap-2 op80"
       @click="toggleTags()"
     >
-      <span class="op60">Tags</span>
+      <span>Tags</span>
       <div
-        class="i-carbon-chevron-down inline-block op60 transition-transform transition-duration-400"
+        class="i-carbon-chevron-down inline-block op60 transition-transform duration-400"
         :class="{ 'scale-y--100': showTags }"
       />
     </div>
@@ -176,7 +176,7 @@ function handleBgOut() {
     </div>
   </template>
 
-  <div class="absolute right-0 z--1 rd bg-zinc:10 transition-all transition-duration-200" :style="bgStyle" />
+  <div class="absolute right-0 z--1 rd bg-zinc:10 transition-all duration-200" :style="bgStyle" />
 
   <template v-for="post, idx in postsDisplay" :key="`${post.path}_${currentCategory}`">
     <div
@@ -187,7 +187,7 @@ function handleBgOut() {
       }"
     >
       <span
-        class="absolute left--3 top-0 text-6em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-hex-aaa op15"
+        class="absolute left--3 top-0 text-6em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-zinc-5 op20"
       >{{ post.sticky ? 'PINNED' : getGroupName(post) }}</span>
     </div>
     <div
@@ -209,16 +209,16 @@ function handleBgOut() {
             to: post.path,
           }
         "
-        class="item block py-3 font-normal no-underline"
+        class="group/a block py-3 font-normal no-underline transition !b-b-0"
       >
         <div class="no-underline" flex="~ col gap-1">
-          <div class="title items-center text-lg leading-1.2em" flex="~ gap-2 wrap">
-            <span>{{ post.title }}</span>
+          <div flex="~ gap-2 wrap" class="w-fit items-center text-lg leading-1.2em">
+            <span class="dark::after:b-zinc-700 relative after:(absolute bottom-0 left-0 w-0 b-b-0 b-zinc-400 transition-all duration-500 content-['']) group-hover/a:after:(w-full b-b-1)">{{ post.title }}</span>
             <div v-if="post.sticky" i-carbon-pin class="text-0.8em op67" />
           </div>
 
-          <div flex="~ gap-2 items-center wrap">
-            <span ws-nowrap text-sm op60>
+          <div flex="~ gap-2 items-center wrap" class="op67 transition-all duration-200 group-hover/a:op80">
+            <span ws-nowrap text-sm>
               {{ dayjs(post.date).format(showYear ? 'MM-DD' : 'YYYY-MM-DD') }}
             </span>
             <span v-if="currentCategory === ''" class="tag">{{ post.category }}</span>

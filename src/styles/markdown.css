@@ -32,6 +32,11 @@ html:not(.dark) .shiki-dark {
 
   color: var(--fg);
   --un-prose-borders: rgba(125,125,125,0.3);
+  --un-prose-headings: #18181B;
+}
+
+.dark .prose {
+  --un-prose-headings: #FAFAFA;
 }
 
 .prose a, .prose .link {
@@ -58,17 +63,6 @@ html.dark .prose {
   --fg: #bbb;
   --fg-deep: #ddd;
   --fg-deeper: #fff;
-}
-
-a.item {
-  transition: 0.2s all ease-out;
-  text-decoration: none;
-  border-bottom: none !important;
-  opacity: 0.67;
-}
-
-a.item:hover {
-  opacity: 1;
 }
 
 a.header-anchor {

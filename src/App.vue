@@ -30,12 +30,12 @@ provide(ProvideShowBgKey, showBg)
   </client-only>
   <TheHeader
     v-if="showHeader"
-    text="gray-700 dark:gray-200"
+    text="zinc-700 dark:zinc-200"
     class="print:hidden"
   />
   <main
     :class="showHeader ? 'px4 pt4 pb10' : ''"
-    text="center gray-700 dark:gray-200"
+    text="center zinc-700 dark:zinc-200"
   >
     <RouterView />
   </main>

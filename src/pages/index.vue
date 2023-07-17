@@ -14,7 +14,7 @@ const {
   <div class="slide-enter-content m-auto max-w65ch text-left">
     <img class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full" alt="wiidede" src="https://avatars.githubusercontent.com/u/25472916?v=4">
 
-    <h1 class="mb2 text-8 text-zinc-900 dark:text-white">
+    <h1 class="mb2 text-8 text-zinc-900 dark:text-zinc-50">
       Hey, I am wiidede 小的的 👋
     </h1>
     <div class="mx--2 mb8 space-x-4">
@@ -30,7 +30,7 @@ const {
       <span>{{ personality.label }}</span>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       项目
     </h2>
     <div class="grid grid-cols-1 mx--2 gap2 md:grid-cols-3">
@@ -43,13 +43,13 @@ const {
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <i :class="project.icon" class="h7 w7" />
         </div>
-        <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900 dark:text-white">{{ project.name }}</span>
+        <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900 dark:text-zinc-50">{{ project.name }}</span>
         <br>
         <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
       </a>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       博客
     </h2>
     <ThePosts pinned />
@@ -57,7 +57,7 @@ const {
       <a href="/posts">更多 ...</a>
     </p>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       贡献
     </h2>
     <div class="grid grid-cols-1 mx--2 md:grid-cols-2">
@@ -78,7 +78,7 @@ const {
       </a>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       技能
     </h2>
     <div class="max-w30ch flex flex-col items-start justify-between gap2">
@@ -93,7 +93,7 @@ const {
       </div>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       经历
     </h2>
     <div class="space-y-4">
@@ -102,7 +102,7 @@ const {
           <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
         <div class="min-w0 flex-auto">
-          <div class="font-medium text-zinc-900 dark:text-white">
+          <div class="font-medium text-zinc-900 dark:text-zinc-50">
             {{ experience.name }}
           </div>
           <div class="flex justify-between text-sm font-light">
@@ -113,23 +113,23 @@ const {
       </div>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       获奖
     </h2>
     <div class="grid grid-cols-[auto_auto] w-fit gap-x-4 gap-y-4">
       <template v-for="award in awards" :key="award.name">
         <div class="grid content-between justify-items-end">
-          <span class="font-medium text-zinc-900 dark:text-white">{{ award.award }}</span>
+          <span class="font-medium text-zinc-900 dark:text-zinc-50">{{ award.award }}</span>
           <span class="font-light text-zinc-500">{{ award.time }}</span>
         </div>
         <div class="grid">
-          <span class="font-medium text-zinc-900 dark:text-white">{{ award.name }}</span>
+          <span class="font-medium text-zinc-900 dark:text-zinc-50">{{ award.name }}</span>
           <span class="font-light text-zinc-600 dark:text-zinc-400">{{ award.unit }}</span>
         </div>
       </template>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-white">
+    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       写在最后
     </h2>
 
