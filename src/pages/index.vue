@@ -36,14 +36,14 @@ const {
     <div class="grid grid-cols-1 mx--2 gap2 md:grid-cols-3">
       <a
         v-for="project, idx in projects"
-        :key="idx" class="w-full rd p2 leading-none transition hover:bg-zinc/10"
+        :key="idx" class="group w-full rd p2 leading-none transition hover:bg-zinc/10"
         :href="project.href"
         target="_blank"
       >
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <i :class="project.icon" class="h7 w7" />
         </div>
-        <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900 dark:text-zinc-50">{{ project.name }}</span>
+        <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900 under-anime group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
         <br>
         <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
       </a>
@@ -53,9 +53,6 @@ const {
       博客
     </h2>
     <ThePosts pinned />
-    <p class="prose">
-      <a href="/posts">更多 ...</a>
-    </p>
 
     <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       贡献
@@ -66,14 +63,14 @@ const {
         :key="idx"
         :href="`https://github.com/${contribution.owner}/${contribution.name}/pulls?q=is:pr+author:wiidede`"
         target="_blank"
-        class="w-full flex items-center gap1 rd p2 transition hover:bg-zinc/10"
+        class="group w-full flex items-center gap1 rd p2 transition hover:bg-zinc/10"
       >
         <img
           :alt="`${contribution.owner}'s avatar`"
           :src="`https://avatars.githubusercontent.com/u/${contribution.ownerId}?s=48&v=4`"
           class="h-4.8 w-4.8 select-none"
         >
-        <span class="h4 inline-flex items-center leading-none">{{ contribution.name }}</span>
+        <span class="h4 inline-flex items-center leading-none under-anime group-hover:under-anime-hover">{{ contribution.name }}</span>
         <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
       </a>
     </div>

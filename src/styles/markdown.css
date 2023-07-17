@@ -39,18 +39,15 @@ html:not(.dark) .shiki-dark {
   --un-prose-headings: #FAFAFA;
 }
 
-.prose a, .prose .link {
-  font-weight: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(125, 125, 125, 0.3);
-  transition: border 0.3s ease-in-out;
+.prose a {
+  --at-apply: under-anime under-base;
 }
 
-.prose a:hover, .prose .link:hover{
-  border-bottom: 1px solid var(--fg);
+.prose a:hover{
+  --at-apply: under-anime-hover;
 }
 
-.prose a code, .prose .link code {
+.prose a code {
   color: inherit;
 }
 

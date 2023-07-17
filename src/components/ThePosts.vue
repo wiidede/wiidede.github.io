@@ -209,15 +209,15 @@ function handleBgOut() {
             to: post.path,
           }
         "
-        class="group/a block py-3 font-normal no-underline transition !b-b-0"
+        class="group block py-3 font-normal no-underline transition after:hidden before:hidden !b-b-0"
       >
         <div class="no-underline" flex="~ col gap-1">
           <div flex="~ gap-2 wrap" class="w-fit items-center text-lg leading-1.2em">
-            <span class="dark::after:b-zinc-700 relative after:(absolute bottom-0 left-0 w-0 b-b-0 b-zinc-400 transition-all duration-500 content-['']) group-hover/a:after:(w-full b-b-1)">{{ post.title }}</span>
+            <span class="under-anime group-hover:under-anime-hover">{{ post.title }}</span>
             <div v-if="post.sticky" i-carbon-pin class="text-0.8em op67" />
           </div>
 
-          <div flex="~ gap-2 items-center wrap" class="op67 transition-all duration-200 group-hover/a:op80">
+          <div flex="~ gap-2 items-center wrap" class="op67 transition-all duration-200 group-hover:op80">
             <span ws-nowrap text-sm>
               {{ dayjs(post.date).format(showYear ? 'MM-DD' : 'YYYY-MM-DD') }}
             </span>
@@ -229,4 +229,13 @@ function handleBgOut() {
       </component>
     </div>
   </template>
+
+  <a
+    v-if="pinned"
+    href="/posts"
+    class="group w-fit w-fit flex cursor-pointer items-center gap2 font-mono under-anime under-base hover:under-anime-hover !op67"
+  >
+    更多
+    <div i-carbon-chevron-right class="back-icon text-0.8em transition-all duration-250 group-hover:(mr2 translate-x-2)" />
+  </a>
 </template>

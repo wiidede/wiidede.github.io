@@ -8,21 +8,14 @@ const router = useRouter()
     <br>
     <div
       :key="route.path"
-      class="link w-fit flex cursor-pointer items-center gap4 font-mono op50 transition-all hover:op75"
+      class="group w-fit w-fit flex cursor-pointer items-center gap4 font-mono op67 under-anime-r under-base hover:under-anime-hover"
       @click="router.back()"
     >
       go back
-      <div i-carbon-chevron-left class="back-icon text-0.8em" />
+      <div i-carbon-chevron-left class="back-icon text-0.8em transition duration-250 group-hover:translate-x--2" />
     </div>
   </div>
 </template>
 
 <style scoped>
-.link .back-icon {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover .back-icon {
-  transform: translateX(-0.5rem);
-}
 </style>
