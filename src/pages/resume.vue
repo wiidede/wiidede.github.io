@@ -41,7 +41,8 @@ const baseInfoRight = [
 ]
 
 const certificates = [
-  { icon: 'i-carbon-translate', label: 'CET6' },
+  { icon: 'i-carbon-translate', label: 'CET-6' },
+  { icon: 'i-carbon-app-connectivity', label: '软件设计师' },
 ]
 </script>
 
