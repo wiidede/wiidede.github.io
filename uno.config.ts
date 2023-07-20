@@ -61,4 +61,9 @@ export default defineConfig({
       }
     },
   ],
+  rules: [
+    [/^animate-count-(\d+|infinite)$/, ([, d]) => ({ 'animation-iteration-count': d === 'infinite' ? d : +d })],
+    [/^animate-delay-(\d+)$/, ([, d]) => ({ 'animation-delay': `${d}ms` })],
+    [/^animate-duration-(\d+)$/, ([, d]) => ({ 'animation-duration': `${d}ms` })],
+  ],
 })

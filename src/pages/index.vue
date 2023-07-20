@@ -15,7 +15,7 @@ const {
     <img class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full" alt="wiidede" src="https://wiidede.github.io/img-store-one/special/avatar.png">
 
     <h1 class="mb2 text-8 text-zinc-900 dark:text-zinc-50">
-      Hey, I am wiidede 小的的 👋
+      Hey, I am wiidede 小的的 <span class="wave-hand inline-block animate-count-infinite animate-duration-1800">👋</span>
     </h1>
     <div class="mx--2 mb8 space-x-4">
       <a
