@@ -10,6 +10,8 @@ const route = useRoute()
 const router = useRouter()
 const content = ref<HTMLDivElement>()
 
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+
 onMounted(() => {
   const navigate = async () => {
     if (location.hash) {
@@ -59,6 +61,32 @@ onMounted(() => {
 
   navigate()
   setTimeout(navigate, 500)
+
+  const tocAnchorEl = document.querySelector<HTMLDivElement>('.table-of-contents-anchor')
+  const tocUlEl = document.querySelector<HTMLUListElement>('.table-of-contents>ul')
+  if (tocAnchorEl && tocUlEl) {
+    tocAnchorEl.addEventListener('click', () => {
+      if (!tocUlEl.style.display)
+        tocUlEl.style.display = isLargeScreen.value ? 'none' : 'block'
+      else if (tocUlEl.style.display === 'none')
+        tocUlEl.style.display = 'block'
+      else
+        tocUlEl.style.display = 'none'
+    })
+  }
+
+  if (tocUlEl) {
+    tocUlEl.addEventListener('click', () => {
+      if (isLargeScreen.value)
+        return
+      tocUlEl.style.display = 'none'
+    })
+  }
+
+  watchEffect(() => {
+    if (tocUlEl)
+      tocUlEl.style.display = isLargeScreen.value ? 'block' : 'none'
+  })
 })
 </script>
 

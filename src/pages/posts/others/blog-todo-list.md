@@ -12,7 +12,8 @@ id: blog-todo-list
 
 - [x] bg
 - [x] md anchor
-- [ ] md TOC
+- [x] md TOC
 - [x] rss
 - [x] comment
 - [x] index add pinned article
+- [ ] unocss theme color
