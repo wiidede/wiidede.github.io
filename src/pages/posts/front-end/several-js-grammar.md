@@ -9,6 +9,8 @@ id: several-js-grammar
 sticky: 1
 ---
 
+[[toc]]
+
 # 整理一些js写法
 
 在工作中遇到了许多重复需要的js方法，每次都要查阅之前写的。

@@ -92,12 +92,13 @@ onMounted(() => {
     </p>
   </div>
   <article ref="content">
+    <!-- i-carbon-list -->
     <slot />
   </article>
   <TheGoBack />
   <TheFooter />
   <client-only>
-    <div class="slide-enter mx-auto animate-delay-800 pt-4 prose">
+    <div class="slide-enter mx-auto pt-4 prose animate-delay-800">
       <TheValine v-if="route.meta.isPost" />
     </div>
   </client-only>

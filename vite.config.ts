@@ -14,6 +14,9 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import UnoCSS from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+
+// @ts-expect-error missing types
+import TOC from 'markdown-it-table-of-contents'
 import liquidRayLight from './public/liquid-ray-light.json'
 import liquidRayDark from './public/liquid-ray.json'
 
@@ -104,6 +107,12 @@ export default defineConfig({
             target: '_blank',
             rel: 'noopener',
           },
+        })
+
+        md.use(TOC, {
+          includeLevel: [1, 2, 3, 4],
+          // slugify,
+          containerHeaderHtml: '<div class="table-of-contents-anchor"><div class="i-carbon-list" /></div>',
         })
       },
     }),
