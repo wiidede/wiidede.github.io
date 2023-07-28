@@ -8,6 +8,8 @@ categories:
 id: sponsor
 ---
 
+[[toc]]
+
 # 赞赏
 
 ## 支付宝

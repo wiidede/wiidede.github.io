@@ -8,6 +8,8 @@ categories:
 id: leetcode-cn-115
 ---
 
+[[toc]]
+
 # [题目](https://leetcode-cn.com/problems/distinct-subsequences/)
 
 给定一个字符串 `s` 和一个字符串 `t` ，计算在 `s` 的子序列中 `t` 出现的个数。

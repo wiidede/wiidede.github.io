@@ -8,6 +8,8 @@ categories:
 id: deep-learning-note
 ---
 
+[[toc]]
+
 # 深度学习笔记
 
 ## 一个最基础的例子

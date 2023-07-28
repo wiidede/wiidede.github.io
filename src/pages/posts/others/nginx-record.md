@@ -8,6 +8,8 @@ categories:
 id: nginx-record
 ---
 
+[[toc]]
+
 # nginx record
 
 ## start nginx

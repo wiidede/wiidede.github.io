@@ -10,6 +10,8 @@ categories:
 id: graduation-project-note
 ---
 
+[[toc]]
+
 # 毕业设计部署踩坑笔记
 
 首先为什么要叫踩坑，主要还是之前从来没有正式的发布过

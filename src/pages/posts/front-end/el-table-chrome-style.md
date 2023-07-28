@@ -9,6 +9,10 @@ tags:
   - ElementPlus
 ---
 
+[[toc]]
+
+# el-tab做成chrome类似的tab样式
+
 ```scss
 .el-tabs__item {
   &.is-active {

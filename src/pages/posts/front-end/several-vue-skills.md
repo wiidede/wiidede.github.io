@@ -8,6 +8,8 @@ tags:
   - Vue
 ---
 
+[[toc]]
+
 # title: vue的小技巧总结
 
 作者：Web前端技术委员会

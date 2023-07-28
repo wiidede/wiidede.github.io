@@ -9,6 +9,8 @@ tags:
   - pinia
 ---
 
+[[toc]]
+
 # 项目数据字典封装
 
 使用pinia封装：

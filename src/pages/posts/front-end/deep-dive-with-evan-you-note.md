@@ -10,6 +10,8 @@ tags:
 sticky: 3
 ---
 
+[[toc]]
+
 # Deep Dive with Evan You 笔记
 
 这是一篇 Vue Mastery 上的课程，尤大带我们实现一个简单的 Vue，并且介绍了一些 Vue 3 中的一些使用技巧。

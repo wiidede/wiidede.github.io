@@ -11,6 +11,8 @@ categories:
 id: vue-auto-show-tooltip
 ---
 
+[[toc]]
+
 # vue判断字符串是否溢出来显示弹窗、解决el-table tooltip 内过多导致无法显示，内容闪烁
 
 总体的思路就是获取dom元素，根据dom元素的 `clientWidth` 与 `scrollWidth` 来判断是否溢出，我这里正好碰到v-for，所以需要动态绑定每一个元素的ref。

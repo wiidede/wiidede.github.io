@@ -8,6 +8,8 @@ categories:
 id: typora-picgo-core-github-compress
 ---
 
+[[toc]]
+
 # `typora`+`picgo-core`+`github`+`compress` 压缩后上传 github 图床
 
 1. 新建github access token

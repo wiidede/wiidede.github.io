@@ -8,6 +8,8 @@ categories:
 id: mp3-player-note
 ---
 
+[[toc]]
+
 # 大三实训 MP3 播放器 硬件
 
 ## 命名规范

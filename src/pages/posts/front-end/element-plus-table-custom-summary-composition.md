@@ -10,6 +10,8 @@ tags:
   - Vue
 ---
 
+[[toc]]
+
 # ElementPlus表格自定义合计列composition
 
 这个composition api的主要目的就是只要提供列名，就让这一列合计

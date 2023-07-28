@@ -8,6 +8,8 @@ categories:
 id: git-change-local-account
 ---
 
+[[toc]]
+
 # git 切换本地帐号
 
 ```bash

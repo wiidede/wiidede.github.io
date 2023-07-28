@@ -8,6 +8,8 @@ categories:
 id: meizu-note6-exprience
 ---
 
+[[toc]]
+
 ## 魅蓝 note6 使用报告
 
 开始用 note6 已有一个礼拜来总结一下吧

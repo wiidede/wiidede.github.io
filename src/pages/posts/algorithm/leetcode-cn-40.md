@@ -8,6 +8,8 @@ categories:
 id: leetcode-cn-40
 ---
 
+[[toc]]
+
 # [题目](https://leetcode-cn.com/problems/combination-sum-ii/)
 
 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。

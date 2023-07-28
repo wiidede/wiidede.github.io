@@ -10,6 +10,8 @@ tags:
   - VueGridLayout
 ---
 
+[[toc]]
+
 # POM BI 项目图表组件响应式探索（VueGridLayout、Echarts）
 
 ## 响应式布局常规解决方案

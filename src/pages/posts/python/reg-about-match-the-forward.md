@@ -9,6 +9,8 @@ categories:
 id: reg-about-match-the-forward
 ---
 
+[[toc]]
+
 # 正则表达式 向前最短匹配
 
 使用正则表达式  `.*?`  可以向后匹配最短的，那么如何向前匹配最短的呢

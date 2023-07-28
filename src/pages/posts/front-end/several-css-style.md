@@ -9,6 +9,8 @@ id: several-css-style
 sticky: 2
 ---
 
+[[toc]]
+
 # 整理一些css样式
 
 ## 渐变文字

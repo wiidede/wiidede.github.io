@@ -8,6 +8,8 @@ tags:
   - HTML
 ---
 
+[[toc]]
+
 # 一些html小知识
 
 ## 控制输入整数(Vue)

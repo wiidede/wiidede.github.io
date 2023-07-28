@@ -9,6 +9,8 @@ categories:
 id: element-ui-time-picker-add-now-button
 ---
 
+[[toc]]
+
 # ElementUI timePicker 增加此刻按钮 引发的dom操作的学习
 
 ## 解决方案

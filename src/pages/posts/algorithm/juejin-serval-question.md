@@ -8,6 +8,8 @@ categories:
 id: juejin-serval-question
 ---
 
+[[toc]]
+
 # 掘金上的小题目
 
 ## 扁平数据结构转Tree[题目](https://juejin.cn/post/6983904373508145189)

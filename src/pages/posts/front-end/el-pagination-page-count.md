@@ -10,6 +10,8 @@ tags:
   - ElementPlus
 ---
 
+[[toc]]
+
 # ElPagination添加页数总数
 
 从Vue的插件中可以看到，ElPagination provide了pageCount，但是layout里面并没有pageCount，但是有slot，反正肯定要用slot，那么插槽的内容作为子组件，就可以inject ElPagination provide的pageCount。elPaginationKey是个symbol，需要我们手动导入一下

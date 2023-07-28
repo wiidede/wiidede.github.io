@@ -10,6 +10,8 @@ tags:
   - Vue
 ---
 
+[[toc]]
+
 # ElementPlus表格table列自动合并composition
 
 特性：

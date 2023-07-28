@@ -8,6 +8,8 @@ categories:
 id: warehousing-robot
 ---
 
+[[toc]]
+
 # 仓储机器人
 
 ## 调试阶段

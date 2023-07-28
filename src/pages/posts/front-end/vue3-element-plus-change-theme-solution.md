@@ -10,6 +10,8 @@ tags:
   - CSS
 ---
 
+[[toc]]
+
 # vue3 + ElementPlus 换肤方案（Css变量）
 
 ## 前言

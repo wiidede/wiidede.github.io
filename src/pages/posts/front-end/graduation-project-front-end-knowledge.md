@@ -9,6 +9,8 @@ tags:
   - Vue
 ---
 
+[[toc]]
+
 # 毕业设计（水表识别）前端知识整理
 
 大学毕业设计刚刚做完，做的是水表识别，整个项目源代码放在了[github](https://github.com/wiidede/water-meter-frontend) [gitee](https://gitee.com/wiidede/water-meter-frontend)，前端比较简单，用来上传图片并且展示识别结果。

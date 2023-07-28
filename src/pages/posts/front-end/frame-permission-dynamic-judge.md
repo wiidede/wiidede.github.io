@@ -11,6 +11,8 @@ tags:
   - 框架
 ---
 
+[[toc]]
+
 # 全局动态权限判断（Vue指令）
 
 ## 目标
@@ -93,7 +95,7 @@ Global.initPermissionWatcher(vm, permissionNodeConf)
 Global.js：
 
 ```js
-global.initPermissionWatcher = function (vm, nodeMap) {
+Global.initPermissionWatcher = function (vm, nodeMap) {
   // 监听Vuex中权限变化
   vm.$watch('$store.state.user.app_permission_change', () => {
     // 遍历收集来的Dom节点，通过对应的配置上的key判断是否有权限

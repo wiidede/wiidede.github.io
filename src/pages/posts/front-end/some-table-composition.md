@@ -9,6 +9,8 @@ tags:
   - Vue
 ---
 
+[[toc]]
+
 # 一些处理表格数据composition api
 
 ## 检查表格某列是否重复，并返回重复的值

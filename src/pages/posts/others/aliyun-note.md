@@ -8,6 +8,8 @@ categories:
 id: aliyun-note
 ---
 
+[[toc]]
+
 # 阿里云学习笔记(很久之前的尝试)
 
 ## 购买服务器

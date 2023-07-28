@@ -11,6 +11,8 @@ tags:
   - 前端
 ---
 
+[[toc]]
+
 # echarts基础vue组件
 
 ## 基础组件（Vue2）

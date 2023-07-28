@@ -10,6 +10,8 @@ tags:
   - async-validator
 ---
 
+[[toc]]
+
 # 表格使用async-validator检验composition
 
 ```ts
