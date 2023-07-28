@@ -651,7 +651,7 @@ async function withElLoading<T>(fn: Promise<T>,
 ## object to URLSearchParams
 
 ```ts
-function obj2params(obj: {}) {
+function obj2params(obj: object) {
   const params = new URLSearchParams()
   Object.entries(obj).forEach(([key, value]) => {
     params.append(key, value as string)
@@ -677,5 +677,20 @@ export function displayNumber(number: number, fixed = 1) {
 export function getDuplicates(arr: any[]) {
   const duplicates = arr.filter((item, index) => arr.indexOf(item) !== index)
   return [...new Set(duplicates)]
+}
+```
+
+## 我的encode decode
+
+```ts
+function slyEncode(str: string, times = 3) {
+  const randomCode = (i: number) => `=${'0'.repeat(i)}`.replace(/[^=]/g, s => ((Math.random() + ~~s) * 0x10000 >> ~~s).toString(16).padStart(4, '0'))
+  const encode = (s: string, i = 1) => randomCode(i) + window.btoa(s)
+  return Array(times).fill(0).map((_, i) => i + 1).reduce((pre, i) => encode(pre, i), str)
+}
+
+function slyDecode(str: string, times = 3) {
+  const decode = (s: string, i = 1) => window.atob(s.slice(i * 4 + 1))
+  return Array(times).fill(0).map((_, i) => times - i).reduce((pre, i) => decode(pre, i), str)
 }
 ```
