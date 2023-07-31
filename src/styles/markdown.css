@@ -114,6 +114,14 @@ h6:focus .header-anchor {
   --uno: fixed z-200 left-4 top-16 bottom-4 flex flex-col lt-lg:right-4;
 }
 
+.table-of-contents.ul-hidden {
+  --uno: w-fit bottom-unset;
+}
+
+.table-of-contents.ul-hidden > ul {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .table-of-contents {
     width: calc((100vw - 65ch - 4rem) / 2);
@@ -123,7 +131,11 @@ h6:focus .header-anchor {
 
 .table-of-contents-anchor {
   backdrop-filter: blur(4px);
-  --uno: w-7 h-7 text-lg flex mb-4 items-center justify-center rounded text-hex-8887 border border-base shadow lg:(border-transparent shadow-none mb0) cursor-pointer lt-sm:ml-auto transition duration-400 bg-white/90 dark:bg-black/90;
+  --uno: w-fit text-lg lt-lg:(p1 btn-border op67 hover:op100) flex-center rd cursor-pointer lt-sm:ml-auto transition duration-400 bg-white/90 dark:bg-black/90;
+}
+
+.table-of-contents ul {
+  margin: 0;
 }
 
 .table-of-contents > ul {
@@ -131,16 +143,12 @@ h6:focus .header-anchor {
   height: 100%;
   overflow-y: auto;
   font-size: 0.8em;
-  backdrop-filter: blur(4px);
-  --uno: lt-lg:hidden pl-0 py-2 rounded transition duration-700 list-none lt-lg:(bg-white/90 dark:bg-black/90 ring-1 ring-zinc/33);
+  backdrop-filter: blur(10px);
+  --uno: pl-0 py-2 rounded transition duration-700 list-none lt-lg:(mt2 px2 bg-white/95 dark:bg-black/95 shadow ring-1 ring-zinc/10);
 }
 
 .table-of-contents > ul > li > a {
   --uno: text-1.2em;
-}
-
-.table-of-contents ul {
-  --uno: m0;
 }
 
 .table-of-contents ul > li::before {
