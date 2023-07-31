@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useHead({
-  title: 'wiidede',
+  title: 'wiidede | 小的的',
   meta: [
-    { name: 'description', content: 'wiidede\'s personal site' },
+    { name: 'description', content: 'wiidede\'s personal site 是小的的呐' },
     {
       name: 'theme-color',
       content: () => isDark.value ? '#121212' : '#ffffff',

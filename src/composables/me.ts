@@ -86,3 +86,28 @@ export function useMyInfo() {
     awards,
   }
 }
+
+export function useFriends() {
+  const friends = [
+    { name: 'wiidede | 小的的', link: 'https://wiidede.github.io', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
+    { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
+  ]
+
+  const idols = [
+    { name: 'Anthony Fu', link: 'https://antfu.me', desc: 'A ship in harbor is safe, but that is not what ships are built for.', avatar: 'https://github.com/antfu.png' },
+    { name: 'Evan You', link: 'https://evanyou.me', desc: '', avatar: 'https://github.com/yyx990803.png' },
+  ]
+
+  const siteInfo = [
+    { label: '站点名称', content: 'wiidede | 小的的' },
+    { label: '站点链接', content: 'https://wiidede.github.io' },
+    { label: '站点描述', content: '是小的的呐，愿你眼里有光，心中有爱' },
+    { label: '主人头像', content: 'https://github.com/wiidede.png' },
+  ]
+
+  return {
+    friends,
+    idols,
+    siteInfo,
+  }
+}

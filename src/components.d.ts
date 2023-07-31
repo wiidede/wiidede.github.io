@@ -12,6 +12,7 @@ declare module 'vue' {
     TheAvatar: typeof import('./components/TheAvatar.vue')['default']
     TheBg: typeof import('./components/TheBg.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
+    TheFriendFormat: typeof import('./components/TheFriendFormat.md')['default']
     TheGoBack: typeof import('./components/TheGoBack.vue')['default']
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     TheHitokoto: typeof import('./components/TheHitokoto.vue')['default']
