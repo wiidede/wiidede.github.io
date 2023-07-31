@@ -23,21 +23,19 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-#valine-comments :deep(.vinput), #valine-comments :deep(.vwrap), #valine-comments :deep(.vh), #valine-comments :deep(.vquote), #valine-comments :deep(.vimg)  {
-  border-color: rgba(125, 125, 125, 0.2) !important;
+#valine-comments :deep(.vinput), #valine-comments :deep(.vquote), #valine-comments :deep(.vimg)  {
+  --uno: btn-border;
 }
-#valine-comments :deep(.vinput:focus)  {
-  border-color: rgba(125, 125, 125, 0.8) !important;
+
+#valine-comments :deep(.vwrap)  {
+  --uno: border-zinc/20;
 }
 
 #valine-comments :deep(.vbtn)  {
-  border-color: inherit;
+  --uno: btn-border;
   color: inherit;
-  opacity: 0.5;
 }
-#valine-comments :deep(.vbtn:hover)  {
-  opacity: 0.8;
-}
+
 #valine-comments :deep(a.vicon)  {
   cursor: help;
 }
@@ -49,9 +47,15 @@ onMounted(async () => {
   opacity: 0.8;
 }
 
-#valine-comments :deep(.vpower) {
-  display: flex;
-  justify-content: flex-end;
+#valine-comments :deep(a)  {
+  color: inherit;
+}
+#valine-comments :deep(a:hover)  {
+  opacity: 80%;
+}
+
+#valine-comments :deep(.vh), :deep(.vquote) {
+  border: none !important;
 }
 
 #valine-comments :deep(.vempty) {
@@ -68,12 +72,11 @@ onMounted(async () => {
 }
 
 #valine-comments :deep(.vpower) {
-  display: none !important;
+  display: none;
 }
 
 #valine-comments :deep(.vnick:hover) {
   color: inherit;
-  filter: opacity(0.8);
 }
 
 #valine-comments :deep(.vat) {

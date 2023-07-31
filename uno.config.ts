@@ -18,6 +18,10 @@ export default defineConfig({
     ['under-anime', 'no-underline relative after:(absolute bottom-0 left-0 w-0 b-b-0 b-zinc-400 transition-all duration-500 content-[\'\'])'],
     ['under-anime-r', 'relative after:(absolute bottom-0 right-0 w-0 b-b-0 b-zinc-400 transition-all duration-500 content-[\'\'])'],
     ['under-anime-hover', 'after:(w-full b-b-1)'],
+    ['btn-border', 'border border-zinc/33 hover:border-zinc/67 focus:border-zinc/50 active:border-zinc/50'],
+    ['flex-center', 'flex items-center justify-center'],
+    ['flex-v-center', 'flex items-center'],
+    ['flex-h-center', 'flex justify-center'],
   ],
   presets: [
     presetUno(),
