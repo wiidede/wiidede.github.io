@@ -182,7 +182,7 @@ const certificates = [
         >
           <img
             :alt="`${contribution.owner}'s avatar`"
-            :src="`https://avatars.githubusercontent.com/u/${contribution.ownerId}?s=48&v=4`"
+            :src="`https://github.com/${contribution.owner}.png?size=48`"
             class="h-4.8 w-4.8 select-none"
           >
           <span class="h4 inline-flex items-center leading-none">{{ contribution.name }}</span>

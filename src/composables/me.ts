@@ -45,9 +45,10 @@ export function useMyInfo() {
   ]
 
   const contributions = [
-    { name: 'element-plus', count: 4, owner: 'element-plus', ownerId: 68583457 },
-    { name: 'vite-plugin-vue-devtools', count: 1, owner: 'webfansplz', ownerId: 22515951 },
-    { name: 'pdf2docx', count: 1, owner: 'dothinking', ownerId: 13885442 },
+    { name: 'element-plus', count: 4, owner: 'element-plus' },
+    { name: 'vueuse', count: 1, owner: 'vueuse' },
+    { name: 'vite-plugin-vue-devtools', count: 1, owner: 'webfansplz' },
+    { name: 'pdf2docx', count: 1, owner: 'dothinking' },
   ]
 
   const skills = [
