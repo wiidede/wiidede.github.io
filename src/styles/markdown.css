@@ -131,7 +131,7 @@ h6:focus .header-anchor {
 
 .table-of-contents-anchor {
   backdrop-filter: blur(4px);
-  --uno: w-fit text-lg lt-lg:(p1 btn-border op67 hover:op100)
+  --uno: w-fit text-lg lt-lg:(p1 btn-border op80 hover:op100)
     lt-md:(absolute top--12 left-10) flex-center rd cursor-pointer transition duration-400 bg-white/90 dark:bg-black/90;
 }
 
