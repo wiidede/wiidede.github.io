@@ -12,7 +12,7 @@
         <div i-carbon-document-multiple-01 class="md:hidden" />
       </RouterLink>
 
-      <RouterLink class="icon-btn" to="/posts" title="Blog">
+      <RouterLink class="icon-btn" to="/friends" title="Friends">
         <span class="lt-md:hidden">友链</span>
         <div i-carbon-friendship class="md:hidden" />
       </RouterLink>
