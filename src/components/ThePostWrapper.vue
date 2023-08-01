@@ -119,7 +119,7 @@ onMounted(() => {
     </p>
   </div>
   <article ref="content">
-    <!-- i-carbon-list -->
+    <!-- unocss compile: i-carbon-list -->
     <slot />
   </article>
   <TheGoBack />
