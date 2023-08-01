@@ -5,7 +5,7 @@
   <RouterLink class="header-card fixed ml2 mt2 rd-full px2 py1 text-6 text-black outline-none icon-btn dark:text-white" to="/" focusable="false">
     <div i-the-wiidede />
   </RouterLink>
-  <header class="header-card fixed right-0 top-0 ml-auto mr4 mt3 w-fit rd-5 px2 py1 text-black ring-1 ring-zinc/33 dark:text-white">
+  <header class="header-card fixed right-0 top-0 ml-auto mr4 mt3 w-fit rd-5 px3 py1 text-black ring-1 ring-zinc/33 dark:text-white">
     <nav flex="~ gap-4" class="items-center justify-end text-4">
       <RouterLink class="icon-btn" to="/posts" title="Blog">
         <span class="lt-md:hidden">博客</span>
