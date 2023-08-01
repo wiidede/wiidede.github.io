@@ -134,7 +134,7 @@ const {
       谢谢你光临我的个人网站🥰我也很乐意如果可以认识你。
     </p>
     <p class="prose">
-      如果你可以提供我一个非常酷的工作机会，这是我的<a href="/resume" target="_blank">简历</a>。
+      If you can provide me awesome job(prefer remote, open source), here's my <a href="/resume" target="_blank">resume</a>
     </p>
 
     <TheFooter />
