@@ -93,7 +93,7 @@ onMounted(() => {
   <div v-if="frontmatter.display ?? frontmatter.title" class="m-auto mb-8 text-left prose" :class="frontmatter.wrapperClass">
     <p
       v-if="frontmatter.date"
-      class="slide-enter flex items-baseline gap2 opacity-50 !-mt-2"
+      class="slide-enter flex flex-wrap items-baseline gap2 opacity-50 !-mt-2"
     >
       {{ dayjs(frontmatter.date).format('YYYY-MM-DD') }}
       <template v-if="frontmatter.duration">
