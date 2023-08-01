@@ -37,7 +37,7 @@ const baseInfoLeft = [
 
 const baseInfoRight = [
   { icon: 'i-carbon-logo-github', value: 'wiidede', href: 'https://github.com/wiidede' },
-  { icon: 'i-carbon-earth-southeast-asia-filled', value: 'wiidede.github.io', href: 'https://wiidede.github.io' },
+  { icon: 'i-carbon-earth-southeast-asia-filled', value: 'wiidede.space', href: 'https://wiidede.space' },
 ]
 
 const certificates = [
@@ -149,7 +149,7 @@ const certificates = [
         <img
           class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full"
           alt="wiidede"
-          :src="isConservative ? '/assets/images/dede.avif' : 'https://wiidede.github.io/img-store-one/special/avatar.png'"
+          :src="isConservative ? '/assets/images/dede.avif' : 'https://wiidede.space/img-store-one/special/avatar.png'"
         >
         <a
           v-for="info, idx in baseInfoRight"

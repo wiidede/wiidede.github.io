@@ -6,7 +6,7 @@ import MarkdownIt from 'markdown-it'
 import type { FeedOptions, Item } from 'feed'
 import { Feed } from 'feed'
 
-const DOMAIN = 'https://wiidede.github.io/'
+const DOMAIN = 'https://wiidede.space'
 const AUTHOR = {
   name: 'wiidede',
   email: 'wiixdede@gmail.com',
@@ -28,13 +28,13 @@ async function buildBlogRSS() {
   const options = {
     title: 'wiidede',
     description: 'wiidede\' Blog',
-    id: 'https://wiidede.github.io/',
-    link: 'https://wiidede.github.io/',
+    id: 'https://wiidede.space',
+    link: 'https://wiidede.space',
     copyright: 'CC BY-NC-SA 4.0 2020 © wiidede',
     feedLinks: {
-      json: 'https://wiidede.github.io/feed.json',
-      atom: 'https://wiidede.github.io/feed.atom',
-      rss: 'https://wiidede.github.io/feed.xml',
+      json: 'https://wiidede.space/feed.json',
+      atom: 'https://wiidede.space/feed.atom',
+      rss: 'https://wiidede.space/feed.xml',
     },
   }
   const posts: any[] = (
@@ -68,8 +68,8 @@ async function buildBlogRSS() {
 
 async function writeFeed(name: string, options: FeedOptions, items: Item[]) {
   options.author = AUTHOR
-  options.image = 'https://wiidede.github.io/img-store-one/special/avatar.png'
-  options.favicon = 'https://wiidede.github.io/img-store-one/special/blog-logo.png'
+  options.image = 'https://wiidede.space/img-store-one/special/avatar.png'
+  options.favicon = 'https://wiidede.space/img-store-one/special/blog-logo.png'
 
   const feed = new Feed(options)
 

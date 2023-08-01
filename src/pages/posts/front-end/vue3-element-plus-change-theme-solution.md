@@ -16,7 +16,7 @@ tags:
 
 ## 前言
 
-> 你可以在这里直接看到效果 [设置主题色 + 换肤](https://wiidede.github.io/little-page/#/settings)
+> 你可以在这里直接看到效果 [设置主题色 + 换肤](https://wiidede.space/little-page/#/settings)
 
 有了css变量，可以方便的在样式中使用统一的颜色，然后通过js修改，就能很快地改变整个界面的样式
 

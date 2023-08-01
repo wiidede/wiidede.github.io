@@ -135,7 +135,7 @@ export default defineConfig({
     },
     onFinished() {
       generateSitemap({
-        hostname: 'https://wiidede.github.io/',
+        hostname: 'https://wiidede.space/',
       })
     },
   },

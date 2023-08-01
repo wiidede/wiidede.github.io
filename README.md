@@ -1,6 +1,6 @@
 # wiidede
 
-**[wiidede.github.io](https://wiidede.github.io)**
+**[wiidede.github.io](https://wiidede.space)**
 
 my personal website
 
@@ -12,7 +12,7 @@ Special thanks to [Anthony Fu](https://antfu.me/)
 
 <br>
 
-* [博客地址(Vite)](https://wiidede.github.io)
+* [博客地址(Vite)](https://wiidede.space)
 * [旧博客(VuePress)](https://wiidede.github.io/wiidede-vuepress-blog/)
 * [旧博客(Hexo)](https://wiidede.github.io/wiidede-hexo-blog/)
 
