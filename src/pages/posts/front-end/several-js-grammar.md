@@ -615,6 +615,31 @@ export function useValidateFile(fileList: Ref<UploadUserFile[]>, message = '请�
   }
 }
 
+export function useValidateFileDuplicated<T extends string>(form: Partial<Record<T, any>>, checkKeys: T[], checkLabels?: string[], currentKey?: T) {
+  return (rule: any, value: any, callback: any) => {
+    const filenameArr = checkKeys.map((key) => {
+      const files = form[key] as UploadUserFile[]
+      return Array.isArray(files) ? files.map(file => `【${file.name}】(${humanFileSize(file.size || 0)})`) : [] // #格式化文件大小
+    })
+    const filenames = filenameArr.flat()
+    const duplicate = getDuplicates(filenames) // #获取数组重复项
+    const errors = duplicate.map((item) => {
+      const indexes: number[] = []
+      filenameArr.forEach((files, index) => {
+        if (files.includes(item))
+          indexes.push(index)
+
+      })
+      const needErrors = indexes.includes(checkKeys.indexOf(currentKey!))
+      return needErrors ? `${item} 发现于： ${indexes.map(index => checkLabels?.[index] || checkKeys[index]).join(' | ')}` : ''
+    }).filter(Boolean)
+    if (!errors.length)
+      return callback()
+
+    return callback(new Error(rule.message || `重复的文件：${errors}`))
+  }
+}
+
 // onChange时使用
 export function checkFile(uploadFile: UploadFile, uploadFiles: UploadFiles) {
   if (!['jpg', 'mp4', 'png', 'jpeg', 'doc', 'docx', 'xls', 'xlsx', 'pdf', 'txt'].includes(uploadFile.name.split('.').pop()!)) {
@@ -694,5 +719,39 @@ function slyEncode(str: string, times = 3) {
 function slyDecode(str: string, times = 3) {
   const decode = (s: string, i = 1) => window.atob(s.slice(i * 4 + 1))
   return Array(times).fill(0).map((_, i) => times - i).reduce((pre, i) => decode(pre, i), str)
+}
+```
+
+## 格式化文件大小
+
+```ts
+/**
+ * Format bytes as human-readable text.
+ *
+ * @param bytes Number of bytes.
+ * @param si True to use metric (SI) units, aka powers of 1000. False to use
+ *           binary (IEC), aka powers of 1024.
+ * @param dp Number of decimal places to display.
+ *
+ * @return Formatted string.
+ */
+function humanFileSize(bytes: number, si = true, dp = 1) {
+  const thresh = si ? 1000 : 1024
+
+  if (Math.abs(bytes) < thresh)
+    return `${bytes} B`
+
+  const units = si
+    ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+    : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
+  let u = -1
+  const r = 10 ** dp
+
+  do {
+    bytes /= thresh
+    ++u
+  } while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1)
+
+  return `${bytes.toFixed(dp)} ${units[u]}`
 }
 ```
