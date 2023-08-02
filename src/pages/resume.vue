@@ -172,7 +172,7 @@ const certificates = [
           </div>
         </div>
       </ReuseTitledBox>
-      <ReuseTitledBox title="贡献" cls="w-full flex flex-col items-start" gap="gap1">
+      <ReuseTitledBox title="贡献" cls="w-full flex flex-col items-start" gap="gap-0.5">
         <a
           v-for="contribution, idx in contributions"
           :key="idx"
