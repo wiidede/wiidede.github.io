@@ -249,6 +249,12 @@ const certificates = [
     </div>
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
+      <ReuseTitledBox title="证书" cls="w-full flex flex-col items-start">
+        <div v-for="certificate, idx in certificates" :key="idx">
+          <i :class="certificate.icon" class="mr1" />
+          <span>{{ certificate.label }}</span>
+        </div>
+      </ReuseTitledBox>
       <ReuseTitledBox title="项目" cls="w-full flex flex-col items-start" gap="gap1">
         <a
           v-for="project, idx in projects"
@@ -263,12 +269,6 @@ const certificates = [
           <br>
           <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
         </a>
-      </ReuseTitledBox>
-      <ReuseTitledBox title="证书" cls="w-full flex flex-col items-start">
-        <div v-for="certificate, idx in certificates" :key="idx">
-          <i :class="certificate.icon" class="mr1" />
-          <span>{{ certificate.label }}</span>
-        </div>
       </ReuseTitledBox>
     </div>
   </div>

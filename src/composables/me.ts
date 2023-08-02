@@ -42,6 +42,12 @@ export function useMyInfo() {
       desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻。',
       href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
     },
+    {
+      icon: 'i-the-valine-mail',
+      name: 'Valine Mail',
+      desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需再绑定LeanCloud实例的域名，无需定时任务。云函数异步逻辑完善、更详细的log输出。',
+      href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
+    },
   ]
 
   const contributions = [
