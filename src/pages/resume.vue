@@ -110,37 +110,6 @@ const certificates = [
           <li>初期研发中</li>
         </ol>
       </div>
-
-      <div class="flex flex-col gap2">
-        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
-          智能运维<img class="ml2 inline-block h2 select-none" :src="kedacom">
-        </h3>
-        <div class="flex flex-wrap items-center gap2">
-          <TheTech icon="i-logos-vue" label="Vue2" />
-          <TheTech icon="i-logos-element" label="Element UI" />
-          <TheTech icon="i-logos-webpack" label="webpack" />
-        </div>
-        <span class="text-sm text-zinc-500">
-          项目背景：苏州科达是一家摄像头制造企业，其项目的主要业务都是设备的维护和为客户提供城市管理等解决方案。
-          智能运维就是一套设备、用户、配置的管理及数据、图表动态展示的系统，方便客户更轻松的管理设备。
-        </span>
-        <ol class="list-decimal list-inside">
-          <li>前端框架扩展：动态权限变化；三方登录；baseUrl支持相对路径</li>
-          <li>组件：响应式echarts组件；el-tooltip封装文字溢出判断；带有鉴权头的图片；年月日切换组件</li>
-          <li>前端导出excel；uKey登录；webSocket接收告警、进度、权限等</li>
-          <li>页面性能优化；UI细节优化；组件代码重构；去除Jquery等写法</li>
-          <li>
-            开发子项目：<ul class="ml4 list-disc list-inside">
-              <li>迷你巡检系统（覆写框架；新的登录流程）</li>
-              <li>工单管理（动态表格；动态表单）</li>
-              <li>自定义可视化（可拖动组件）</li>
-              <li>数据治理平台（大量echarts图表展示）</li>
-              <li>云平台运维（vis拓扑图）</li>
-            </ul>
-          </li>
-          <li>支持部门其他项目的业务开发，如：解析平台、分布式存储系统、狮山大屏等项目</li>
-        </ol>
-      </div>
     </div>
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pb4 pt8">
@@ -200,6 +169,38 @@ const certificates = [
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="flex flex-col gap2">
         <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
+          智能运维<img class="ml2 inline-block h2 select-none" :src="kedacom">
+        </h3>
+        <div class="flex flex-wrap items-center gap2">
+          <TheTech icon="i-logos-vue" label="Vue2" />
+          <TheTech icon="i-logos-element" label="Element UI" />
+          <TheTech icon="i-logos-webpack" label="webpack" />
+        </div>
+        <span class="text-sm text-zinc-500">
+          项目背景：为购买公司摄像头的客户提供一套管理设备、用户、配置；动态展示数据、图表的系统，方便客户更轻松的管理摄像头设备。
+        </span>
+        <ol class="list-decimal list-inside">
+          <li>前端框架扩展：动态权限变化，实时添加/移除需要权限的按钮/页面；集成公司三方登录；请求baseUrl支持相对路径</li>
+          <li>
+            组件封装：响应式echarts组件，不再担心echarts大小有问题；el-tooltip封装文字溢出判断；
+            需要鉴权的图片组件；年月日切换组件解决Element UI直接修改type面板异常
+          </li>
+          <li>前端导出excel；uKey登录；webSocket接收告警、进度、权限等</li>
+          <li>页面性能优化；UI细节优化；组件代码重构；去除Jquery等写法</li>
+          <li>
+            开发子项目：<ul class="ml4 list-disc list-inside">
+              <li>迷你巡检系统（覆写框架登录流程；动态多层级系统配置）</li>
+              <li>工单管理（动态表格；动态表单）</li>
+              <li>自定义可视化（可拖动组件）</li>
+              <li>数据治理平台（大量echarts图表展示，相似图表封装）</li>
+              <li>云平台运维（vis拓扑图）</li>
+            </ul>
+          </li>
+          <li>支持部门其他项目（解析平台、分布式存储系统、狮山大屏等）的业务开发</li>
+        </ol>
+      </div>
+      <div class="flex flex-col gap2">
+        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
           运维中台<img class="ml2 inline-block h2 select-none" :src="kedacom">
         </h3>
         <div class="flex flex-wrap items-center gap2">
@@ -211,7 +212,7 @@ const certificates = [
         <ol class="list-decimal list-inside">
           <li>该项目基于现成的低代码平台改造开发</li>
           <li>全局日期组件添加格式；在AntD3.x中新建YearPicker</li>
-          <li>不同组件间数据联动；下钻的逻辑优化；支持不同维度的属性各自与整体排序</li>
+          <li>不同组件间数据联动；下钻的逻辑优化；支持不同维度属性各自与整体排序</li>
         </ol>
       </div>
       <div class="flex flex-col gap2">
@@ -225,9 +226,9 @@ const certificates = [
           <TheTech icon="i-logos-tensorflow" label="TensorFlow" />
         </div>
         <ol class="list-decimal list-inside">
-          <li>使用ROS系统操作机器人（C++），过程中涉及SLAM、建图、导航、路径规划等。</li>
-          <li>使用深度学习进行物品识别，从而提供家庭服务。</li>
-          <li>使用深度学习额外完成了水表识别的项目。</li>
+          <li>使用ROS系统操作机器人，掌握了SLAM、建图、导航、路径规划等</li>
+          <li>使用深度学习进行物品识别，从而提供家庭服务</li>
+          <li>使用深度学习额外完成了水表识别的项目</li>
         </ol>
       </div>
       <h2 class="text-8 font-bold text-zinc-900">
@@ -277,6 +278,7 @@ const certificates = [
 .a4 {
   width: 210mm;
   height: 297mm;
+  font-size: 14px;
   background-color: white;
 }
 

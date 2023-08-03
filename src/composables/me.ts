@@ -27,25 +27,25 @@ export function useMyInfo() {
     {
       icon: 'i-the-my-day',
       name: '流光日月',
-      desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划。',
+      desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',
       href: 'https://fly-my-day.netlify.app/',
     },
     {
       icon: 'i-the-dandanplay-vi',
       name: 'dandanplayVi',
-      desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器。',
+      desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器',
       href: 'https://dandanplay-vitesse.netlify.app/',
     },
     {
       icon: 'i-the-liquid-ray',
       name: 'Liquid Ray',
-      desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻。',
+      desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻',
       href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
     },
     {
       icon: 'i-the-valine-mail',
       name: 'Valine Mail',
-      desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需再绑定LeanCloud实例的域名，无需定时任务。云函数异步逻辑完善、更详细的log输出。',
+      desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需再绑定LeanCloud实例的域名，无需定时任务。云函数异步逻辑完善、更详细的log输出',
       href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
     },
   ]
