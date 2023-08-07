@@ -755,3 +755,9 @@ function humanFileSize(bytes: number, si = true, dp = 1) {
   return `${bytes.toFixed(dp)} ${units[u]}`
 }
 ```
+
+## input[type=number] 禁用滚轮
+
+```vue
+<input type="number" @wheel.passive="$event.target.blur()" />
+```
