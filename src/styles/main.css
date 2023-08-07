@@ -126,12 +126,6 @@ html:not(.dark) [img-dark] {
   z-index: 1;
 }
 
-@media print {
-  #__vue-devtools-container__ {
-    display: none !important;
-  }
-}
-
 .article-progress {
   pointer-events: none;
   height: 2px;
