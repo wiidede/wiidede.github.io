@@ -124,6 +124,7 @@ onMounted(() => {
   </article>
   <TheGoBack />
   <TheFooter />
+  <div class="article-progress" />
   <client-only>
     <div class="slide-enter mx-auto pt-4 prose animate-delay-800">
       <TheValine v-if="route.meta.isPost" />
