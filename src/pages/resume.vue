@@ -104,10 +104,42 @@ const certificates = [
           <TheTech icon="i-logos-pinia" label="Pinia" />
         </div>
         <span class="text-sm text-zinc-500">
-          项目背景：为长江口航道局打造一套航道管理系统。
+          项目背景：为长江口航道局打造一套航道管理系统
+        </span>
+        <span class="text-sm text-zinc-500">
+          个人职责：负责框架内容的设计与维护，独自开发五个子系统中的两个
         </span>
         <ol class="list-decimal list-inside">
-          <li>初期研发中</li>
+          <li>
+            前端框架调整：<ul class="ml4 list-disc list-inside">
+              <li>同时运行获取环境配置和挂载App</li>
+              <li>将Axios改为单例模式</li>
+              <li>允许在App挂载完之前调用ElLoading，并确保ElConfig配置正确</li>
+              <li>完善类型定义，去掉框架中的大部分any</li>
+            </ul>
+          </li>
+          <li>五个子系统样式分离</li>
+          <li>使用Vue Grid Layout实现可拖动式自定义工作台，每个模块都异步引入</li>
+          <li>数据字典Composition Api封装，使用useDict('xxx')，并且支持缓存</li>
+          <li>封装表格和表单，支持使用对象数组配置且类型完善</li>
+          <li>封装多选，绑定格式为：'a,b,c'；封装日期选择，绑定开始结束时间两个值</li>
+          <li>封装内容溢出后向左悬浮的组件</li>
+          <li>使用Teleport给ElInput添加prefix</li>
+          <li>ElTable显示合计支持快速定义指定列进行合计</li>
+          <li>封装上传组件，支持预览的时候，图片以ElImage展示</li>
+          <li>使用async-validator校验表格数据，只需和校验表单一样写rules就行</li>
+          <li>
+            帮助其他项目：<ul class="ml4 list-disc list-inside">
+              <li>去掉无意义嵌套路由的组件</li>
+              <li>修改过度封装的组件，分离部分变量到各自页面，防止keepalive的页面在缓存状态仍然运行</li>
+            </ul>
+          </li>
+          <li>
+            支持其他项目：<ul class="ml4 list-disc list-inside">
+              <li>使用Vant开发移动端H5</li>
+              <li>修复项目eslint异常启动失败，修复所有eslint error</li>
+            </ul>
+          </li>
         </ol>
       </div>
     </div>
