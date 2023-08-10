@@ -214,7 +214,7 @@ const certificates = [
         <ol class="list-decimal list-inside">
           <li>前端框架扩展：动态权限变化，实时添加/移除需要权限的按钮/页面；集成公司三方登录；请求baseUrl支持相对路径</li>
           <li>
-            组件封装：响应式echarts组件，不再担心echarts大小有问题；el-tooltip封装文字溢出判断；
+            组件封装：响应式ECharts组件，不再担心ECharts大小有问题；el-tooltip封装文字溢出判断；
             需要鉴权的图片组件；年月日切换组件解决Element UI直接修改type面板异常
           </li>
           <li>前端导出excel；uKey登录；webSocket接收告警、进度、权限等</li>
@@ -224,7 +224,7 @@ const certificates = [
               <li>迷你巡检系统（覆写框架登录流程；动态多层级系统配置）</li>
               <li>工单管理（动态表格；动态表单）</li>
               <li>自定义可视化（可拖动组件）</li>
-              <li>数据治理平台（大量echarts图表展示，相似图表封装）</li>
+              <li>数据治理平台（大量ECharts图表展示，相似图表封装）</li>
               <li>云平台运维（vis拓扑图）</li>
             </ul>
           </li>
