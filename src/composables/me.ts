@@ -25,6 +25,12 @@ export function useMyInfo() {
 
   const projects = [
     {
+      icon: 'i-the-arco-design-nuxt-module',
+      name: 'Arco Design Nuxt Module',
+      desc: '一个Arco Design Vue的Nuxt模块，支持自动自动导入Arco Design组件、图标、hook',
+      href: 'https://www.npmjs.com/package/arco-design-nuxt-module',
+    },
+    {
       icon: 'i-the-my-day',
       name: '流光日月',
       desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',

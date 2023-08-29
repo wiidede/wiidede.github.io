@@ -43,7 +43,7 @@ const {
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <i :class="project.icon" class="h7 w7" />
         </div>
-        <span class="mb1 inline-block text-lg font-medium leading-none text-zinc-900 under-anime group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
+        <span class="text-lg font-medium leading-none text-zinc-900 under-anime !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
         <br>
         <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
       </a>
