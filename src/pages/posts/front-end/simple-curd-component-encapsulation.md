@@ -13,11 +13,50 @@ tags:
 
 # 简单的curd组件封装
 
-特性：主要是合并表格、分页，然后其他内容自己通过slot插入，表格column也使用对象的形式定义
+特性：主要是合并表格、分页，然后其他内容自己通过slot插入，表格column也使用对象的形式定义，支持多级header
+
+首先对table column封装
+
+> TableColumn.vue
+
+```vue
+<script lang="ts" setup>
+import { omit } from 'lodash-es'
+import { CurdColumn } from '@/typings/common'
+
+const props = defineProps<{
+  column: CurdColumn
+}>()
+
+const columnAttr = computed(() => omit(props.column, ['children']))
+</script>
+
+<template>
+  <el-table-column
+    :class-name="column.className || (column.slot && `${column.slot}-column`)"
+    v-bind="columnAttr"
+    #="scope"
+  >
+    <span v-if="column.prop && column.map">{{ column.map.value[scope.row[column.prop]] ?? scope.row[column.prop] }}</span>
+    <slot v-if="column.slot" :name="column.slot" :prop="column.prop" v-bind="scope" />
+    <template v-if="column.children">
+      <TableColumn v-for="child in column.children" :key="child.prop" :column="child">
+        <template v-if="child.slot" #[child.slot]="childScope: any">
+          <slot :name="child.slot" v-bind="childScope" />
+        </template>
+      </TableColumn>
+    </template>
+  </el-table-column>
+</template>
+```
+
+> Curd.vue
 
 ```vue
 <script setup lang="ts">
-import type { ElTable, ElTableColumn } from 'element-plus/es'
+import type { TableInstance } from 'element-plus/es'
+import { omit } from 'lodash-es'
+import TableColumn from './TableColumn.vue'
 import type { CurdColumn, IPage } from '@/typings/common'
 
 const props = defineProps<{
@@ -31,7 +70,25 @@ interface IEmit {
   (event: 'update:page', value: typeof props.page): void
   (event: 'search'): void
 }
-const tableRef = ref<InstanceType<typeof ElTable>>()
+const attrs = useAttrs()
+const tableAttrs = computed(() => omit(attrs, ['class']))
+
+const tableRef = ref<TableInstance>()
+
+const tableWithGroupHeader = computed(() => props.columns.some(column => column.children))
+function getSlots(column: CurdColumn) {
+  const slots: string[] = []
+  const getSlot = (column: CurdColumn) => {
+    if (column.slot)
+      slots.push(column.slot)
+
+    if (column.children)
+      column.children.forEach(getSlot)
+
+  }
+  getSlot(column)
+  return slots
+}
 
 const pageModel = computed({
   get: () => props.page,
@@ -58,30 +115,29 @@ defineExpose({
 </script>
 
 <template>
-  <div class="curd-container h-full flex flex-col">
+  <div class="curd-container box-border h-full flex flex-col">
     <div class="header-line">
       <slot name="header" />
     </div>
-    <div class="table-container flex-auto">
+    <div class="table-container box-border min-h0 w-full flex flex-auto flex-col">
       <el-table
         ref="tableRef"
         :data="tableData"
-        class="flex-auto"
         stripe
         border
+        v-bind="tableAttrs"
+        class="curd-table min-h0 flex-auto"
+        :class="{ 'group-header': tableWithGroupHeader }"
       >
         <template
           v-for="(column, index) in columns"
           :key="column.prop || index"
         >
-          <el-table-column
-            :class-name="column.className || (column.slot && `${column.slot}-column`)"
-            v-bind="column"
-            #="scope"
-          >
-            <span v-if="column.prop && column.map">{{ column.map.value[scope.row[column.prop]] ?? scope.row[column.prop] }}</span>
-            <slot v-if="column.slot" :name="column.slot" v-bind="scope" />
-          </el-table-column>
+          <TableColumn :column="column">
+            <template v-for="slot in getSlots(column)" :key="slot" #[slot]="scope">
+              <slot :name="slot" v-bind="scope" />
+            </template>
+          </TableColumn>
         </template>
       </el-table>
       <el-pagination
@@ -92,27 +148,13 @@ defineExpose({
         :page-sizes="[15, 30, 50]"
         background
         layout="->, total, sizes, prev, pager, next, jumper"
-        h-80px
+        class="h-80px flex-[0_0_auto]"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
       />
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.curd-container{
-  box-sizing: border-box;
-}
-
-.table-container {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-</style>
 ```
 
 ```ts
@@ -123,6 +165,7 @@ export interface IPage extends IPagination {
 export type CurdColumn = ElTableColumnProps & {
   slot?: string
   map?: Ref<Record<string, string>>
+  children?: CurdColumn[]
 }
 ```
 
@@ -131,7 +174,7 @@ export type CurdColumn = ElTableColumnProps & {
 如果想指定props，我也写了一个工具类
 
 ```ts
-export type DefinedKeys<O, Key extends string, Keys> = O & {
+export type DefineKeys<O, Key extends string, Keys> = O & {
   [k in Key]?: Keys
 }
 ```
@@ -139,7 +182,7 @@ export type DefinedKeys<O, Key extends string, Keys> = O & {
 用法：
 
 ```ts
-const columns: DefinedKeys<CurdColumn, 'prop', keyof IData>[] = []
+const columns: DefineKeys<CurdColumn, 'prop', keyof IData>[] = []
 ```
 
 ## 基于这个想法，我觉得el-form可以同样的封装，但是为了灵活，我把el-form-item做了一个组件
