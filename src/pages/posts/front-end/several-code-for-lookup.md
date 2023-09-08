@@ -171,3 +171,47 @@ function validateByApi(url, tip) {
   }
 }
 ```
+
+## 带有列表的表单的校验
+
+比如有一个表单，是船舶合集，数据结构就像
+
+```ts
+const form = {
+  collectionName: '',
+  shipList: [
+    { shipId: '', shipName: '' },
+    { shipId: '', shipName: '' },
+  ]
+}
+```
+
+```vue
+<script>
+const shipFormItems: CurdFormItems = [
+  { label: '船舶名称', prop: 'shipId', map: enteredShipMap },
+  { label: '船舶名称', prop: 'shipName', slot: 'shipName' },
+]
+function getFormItemsShip(index: number): CurdFormItems[] {
+  const prefix = `shipList.${index}.`
+  return shipFormItems.map(item => ({ ...item, itemProp: prefix + item.prop }))
+}
+
+const shipRules: FormRules = {
+  shipId: [{ required: true, message: '请选择船舶名称' }],
+  shipName: [{ required: true, message: '请选择船舶名称' }],
+}
+
+const rules = computed<FormRules>(() => ({
+  collectionName: [{ required: true, message: '请输入船舶合集名称' }],
+  ...form.value?.shipList?.reduce((acc: FormRules, cur, index) => {
+    const prefix = `shipList.${index}.`
+    return {
+      ...acc,
+      [`${prefix}shipId`]: shipRules.shipId,
+      [`${prefix}shipName`]: shipRules.shipName,
+    }
+  }, {}),
+}))
+</script>
+```
