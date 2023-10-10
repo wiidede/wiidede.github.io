@@ -17,7 +17,6 @@ import WebfontDownload from 'vite-plugin-webfont-dl'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
-import liquidRayLight from './public/liquid-ray-light.json'
 import liquidRayDark from './public/liquid-ray.json'
 
 export default defineConfig({
@@ -92,7 +91,7 @@ export default defineConfig({
         // https://prismjs.com/
         md.use(Shiki, {
           theme: {
-            light: liquidRayLight,
+            light: 'material-theme-lighter',
             dark: liquidRayDark,
           },
         })
