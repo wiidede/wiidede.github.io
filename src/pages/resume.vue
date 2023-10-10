@@ -112,8 +112,8 @@ const certificates = [
         <ol class="list-decimal list-inside">
           <li>
             前端框架调整：<ul class="ml4 list-disc list-inside">
-              <li>同时运行获取环境配置和挂载App</li>
-              <li>将Axios改为单例模式</li>
+              <li>同时获取环境配置与挂载App</li>
+              <li>将Axios改为单例模式，新增导出没有全局loading的实例</li>
               <li>允许在App挂载完之前调用ElLoading，并确保ElConfig配置正确</li>
               <li>完善类型定义，去掉框架中的大部分any</li>
             </ul>
@@ -128,6 +128,7 @@ const certificates = [
           <li>ElTable显示合计支持快速定义指定列进行合计</li>
           <li>封装上传组件，支持预览的时候，图片以ElImage展示</li>
           <li>使用async-validator校验表格数据，只需和校验表单一样写rules就行</li>
+          <li>封装contextmenu + floating-ui</li>
           <li>
             帮助其他项目：<ul class="ml4 list-disc list-inside">
               <li>去掉无意义嵌套路由的组件</li>
