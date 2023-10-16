@@ -102,7 +102,7 @@ export function useMyInfo() {
 
 export function useFriends() {
   const friends = [
-    { name: '静かな森', link: 'https://innei.in/', desc: '致虚极，守静笃。', avatar: 'https://innei.ren/api/v2/objects/avatar/d5obusvl8ihmamw5qu.png' },
+    { name: 'CIRCUIT', link: 'https://yang000.cn', desc: '鸯飞漫冬山', avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=58894242&spec=100&img_type=jpg' },
     { name: 'wiidede | 小的的', link: 'https://wiidede.space', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
     { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
   ]
