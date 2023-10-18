@@ -33,6 +33,7 @@ html:not(.dark) .shiki-dark {
   color: var(--fg);
   --un-prose-borders: rgba(125,125,125,0.3);
   --un-prose-headings: #18181B;
+  --un-prose-font-mono: 'JetBrains Mono' ,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .dark .prose {

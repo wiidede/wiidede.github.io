@@ -4,7 +4,7 @@ import {
   presetIcons,
   presetTypography,
   presetUno,
-  // presetWebFonts,
+  presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -41,13 +41,13 @@ export default defineConfig({
       },
     }),
     presetTypography(),
-    // presetWebFonts({
-    //   fonts: {
-    //     sans: 'Mulish',
-    //     serif: 'Bitter',
-    //     mono: 'JetBrains Mono',
-    //   },
-    // }),
+    presetWebFonts({
+      fonts: {
+        sans: 'Mulish',
+        serif: 'Bitter',
+        mono: 'JetBrains Mono',
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),
