@@ -31,6 +31,12 @@ export function useMyInfo() {
       href: 'https://www.npmjs.com/package/arco-design-nuxt-module',
     },
     {
+      icon: 'i-the-vue-range-multi',
+      name: 'Vue Range Multi',
+      desc: '一个支持多个滑块的Vue组件，支持自由添加/删除滑块',
+      href: 'https://www.npmjs.com/package/vue-range-multi',
+    },
+    {
       icon: 'i-the-my-day',
       name: '流光日月',
       desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',
