@@ -6,7 +6,7 @@ import dahua from '/assets/images/dahua.avif'
 const route = useRoute()
 
 const [DefineTitledBox, ReuseTitledBox] = createReusableTemplate<{
-  title: string
+  name: string
   gap?: string
 }>()
 
@@ -46,10 +46,10 @@ const certificates = [
 </script>
 
 <template>
-  <DefineTitledBox v-slot="{ $slots, title, gap }">
+  <DefineTitledBox v-slot="{ $slots, name, gap }">
     <div class="border rd px2 pb4 pt2">
       <h2 class="mb2 px2 text-8 font-bold text-zinc-900">
-        {{ title }}
+        {{ name }}
       </h2>
       <div class="min-h0 flex flex-auto flex-col child:px2" :class="gap">
         <component :is="$slots.default" v-if="$slots.default" />
@@ -123,12 +123,12 @@ const certificates = [
           <li>数据字典Composition Api封装，使用useDict('xxx')，并且支持缓存</li>
           <li>封装表格和表单，支持使用对象数组配置且类型完善</li>
           <li>封装多选，绑定格式为：'a,b,c'；封装日期选择，绑定开始结束时间两个值</li>
-          <li>封装内容溢出后向左悬浮的组件</li>
+          <li>封装元素内容溢出后向左悬浮的组件</li>
           <li>使用Teleport给ElInput添加prefix</li>
           <li>ElTable显示合计支持快速定义指定列进行合计</li>
           <li>封装上传组件，支持预览的时候，图片以ElImage展示</li>
           <li>使用async-validator校验表格数据，只需和校验表单一样写rules就行</li>
-          <li>封装contextmenu + floating-ui</li>
+          <li>封装contextmenu + floating-ui，右键菜单跟随页面滚动</li>
           <li>
             帮助其他项目：<ul class="ml4 list-disc list-inside">
               <li>去掉无意义嵌套路由的组件</li>
@@ -160,7 +160,7 @@ const certificates = [
           class="w-full flex items-center gap1 rd px2 py1 transition hover:bg-zinc-100"
         ><i :class="info.icon" />{{ info.value }}</a>
       </div>
-      <ReuseTitledBox title="技能" class="min-h0 w-full flex flex-auto flex-col" gap="justify-between">
+      <ReuseTitledBox name="技能" class="min-h0 w-full flex flex-auto flex-col" gap="justify-between">
         <div class="h-full flex flex-col items-start justify-between">
           <div v-for="skill in skills" :key="skill.label" class="w-full flex items-center gap1">
             <i :class="skill.icon" />
@@ -173,7 +173,7 @@ const certificates = [
           </div>
         </div>
       </ReuseTitledBox>
-      <ReuseTitledBox title="贡献" class="w-full flex flex-col items-start" gap="gap-0.5">
+      <ReuseTitledBox name="贡献" class="w-full flex flex-col items-start" gap="gap-0.5">
         <a
           v-for="contribution, idx in contributions"
           :key="idx"
@@ -190,7 +190,7 @@ const certificates = [
           <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
         </a>
       </ReuseTitledBox>
-      <ReuseTitledBox title="个性" class="w-full flex flex-col items-start">
+      <ReuseTitledBox name="个性" class="w-full flex flex-col items-start">
         <div v-for="personality, idx in personalities" :key="idx">
           <i :class="personality.icon" class="mr1" />
           <span>{{ personality.label }}</span>
@@ -282,13 +282,13 @@ const certificates = [
     </div>
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
-      <ReuseTitledBox title="证书" class="w-full flex flex-col items-start">
+      <ReuseTitledBox name="证书" class="w-full flex flex-col items-start">
         <div v-for="certificate, idx in certificates" :key="idx">
           <i :class="certificate.icon" class="mr1" />
           <span>{{ certificate.label }}</span>
         </div>
       </ReuseTitledBox>
-      <ReuseTitledBox title="项目" class="w-full flex flex-col items-start" gap="gap1">
+      <ReuseTitledBox name="项目" class="w-full flex flex-col items-start" gap="gap1">
         <a
           v-for="project, idx in projects"
           :key="idx" class="w-full rd p2 leading-none transition hover:bg-zinc-100"
