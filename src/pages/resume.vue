@@ -116,9 +116,11 @@ const certificates = [
               <li>将Axios改为单例模式，新增导出没有全局loading的实例</li>
               <li>允许在App挂载完之前调用ElLoading，并确保ElConfig配置正确</li>
               <li>完善类型定义，去掉框架中的大部分any</li>
+              <li>编写vite插件解决tailwind reset和element-plus button样式冲突</li>
+              <li>提供useConfig、useLayout、useGisMap等组合式函数</li>
             </ul>
           </li>
-          <li>五个子系统样式分离</li>
+          <li>五个子系统公共样式分离</li>
           <li>使用Vue Grid Layout实现可拖动式自定义工作台，每个模块都异步引入</li>
           <li>数据字典Composition Api封装，使用useDict('xxx')，并且支持缓存</li>
           <li>封装表格和表单，支持使用对象数组配置且类型完善</li>
