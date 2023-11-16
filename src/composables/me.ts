@@ -9,7 +9,7 @@ export function useMyInfo() {
     { icon: 'i-logos-google-gmail', label: 'Gmail', href: 'mailto:wiixdede@gmail.com' },
     { icon: 'i-carbon-logo-github text-black dark:text-white', label: 'GitHub', href: 'https://github.com/wiidede' },
     { icon: 'i-the-bilibili text-#00ADEB', label: 'bilibili', href: 'https://space.bilibili.com/33819620' },
-    { icon: 'i-the-coolapk text-#10AA5F', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
+    // { icon: 'i-the-coolapk text-#10AA5F', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
     { icon: 'i-logos-twitter', label: 'Twitter', href: 'https://twitter.com/wiixdede' },
   ]
 
