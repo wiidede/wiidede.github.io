@@ -168,3 +168,7 @@ h6:focus .header-anchor {
 .code-wrap .line {
   white-space: break-spaces;
 }
+
+.prose p code {
+  white-space: pre-wrap;
+}
