@@ -109,6 +109,7 @@ export function useMyInfo() {
 export function useFriends() {
   const friends = [
     { name: 'CIRCUIT', link: 'https://yang000.cn', desc: '鸯飞漫冬山', avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=58894242&spec=100&img_type=jpg' },
+    { name: 'XiYu博客', link: 'https://xiyu.pro', desc: '记录·分享', avatar: 'https://xiyu.pro/img/avatar.webp' },
     { name: 'wiidede | 小的的', link: 'https://wiidede.space', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
     { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
   ]
