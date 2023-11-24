@@ -50,6 +50,8 @@ onMounted(async () => {
 
 #valine-comments :deep(a)  {
   color: inherit;
+  font-weight: bold;
+  --at-apply: under-anime under-base;
 }
 #valine-comments :deep(a:hover)  {
   opacity: 80%;
