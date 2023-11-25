@@ -13,16 +13,6 @@ const content = ref<HTMLDivElement>()
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
 onMounted(() => {
-  const navigate = async () => {
-    if (location.hash) {
-      const titleEl = document.getElementById(location.hash.slice(1))
-      if (titleEl) {
-        const top = Math.max(titleEl.getBoundingClientRect().top + document.documentElement.scrollTop - 80, 0)
-        document.documentElement.scrollTo({ top, behavior: 'smooth' })
-      }
-    }
-  }
-
   const handleAnchors = (
     event: MouseEvent & { target: HTMLElement },
   ) => {
@@ -48,7 +38,7 @@ onMounted(() => {
       const { pathname, hash } = url
       if (hash && (!pathname || pathname === location.pathname)) {
         window.history.replaceState({}, '', hash)
-        navigate()
+        hashNavigate()
       }
       else {
         router.push({ path: pathname, hash })
@@ -56,11 +46,10 @@ onMounted(() => {
     }
   }
 
-  useEventListener(window, 'hashchange', navigate)
+  useEventListener(window, 'hashchange', hashNavigate)
   useEventListener(content.value!, 'click', handleAnchors, { passive: false })
 
-  navigate()
-  setTimeout(navigate, 500)
+  hashNavigate()
 
   const tocEl = document.querySelector<HTMLDivElement>('.table-of-contents')
   const tocAnchorEl = document.querySelector<HTMLDivElement>('.table-of-contents-anchor')

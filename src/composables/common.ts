@@ -5,6 +5,8 @@ export const dayjs = _dayjs
 export const isDark = useDark()
 export const preferredDark = usePreferredDark()
 
+export const isMdScreen = useMediaQuery('(min-width: 768px)')
+
 export function toggleDark(event: MouseEvent) {
   // @ts-expect-error experimental API
   const isAppearanceTransition = document.startViewTransition

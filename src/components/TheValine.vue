@@ -1,4 +1,17 @@
 <script setup lang="ts">
+let isLoaded = false
+
+function emitLoaded(reset = true) {
+  if (isLoaded)
+    return
+  reset && (isLoaded = true)
+  setTimeout(() => {
+    hashNavigate()
+  }, 0)
+}
+
+let observer: MutationObserver
+
 onMounted(async () => {
   const Valine = (await import('valine')).default
   // eslint-disable-next-line no-new
@@ -12,12 +25,47 @@ onMounted(async () => {
     recordIP: true,
     serverURLs: 'https://kdlbggen.lc-cn-e1-shared.com',
   })
+
+  const targetNode = document.getElementById('valine-comments')!
+  let num = 0
+  observer = new MutationObserver((mutationList, observer) => {
+    for (const mutation of mutationList) {
+      if (mutation.type !== 'childList')
+        return
+      const target = mutation.target as HTMLElement
+      if (target.className === 'vnum') {
+        num = Number.parseInt(target.innerText)
+        return
+      }
+      if (['vempty', 'vquote'].includes((mutation.target as HTMLElement).className)) {
+        emitLoaded()
+        observer.disconnect()
+        return
+      }
+      if (target.className === 'vcards') {
+        if (target.childNodes.length === num) {
+          emitLoaded(false)
+          return
+        }
+      }
+      observer.disconnect()
+    }
+  })
+  observer.observe(targetNode, { childList: true, subtree: true })
+})
+
+setTimeout(() => {
+  observer.disconnect()
+}, 10_000)
+
+onUnmounted(() => {
+  observer.disconnect()
 })
 </script>
 
 <template>
   <div id="valine-comments" />
-  <div class="flex justify-end gap2 text-3">
+  <div class="flex items-baseline justify-end gap2 text-3">
     <span class="op50">Powered By</span>
     <a href="https://valine.js.org" target="_blank" class="op50 hover:op100">Valine</a>
   </div>
