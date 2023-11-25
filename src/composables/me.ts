@@ -58,7 +58,7 @@ export function useMyInfo() {
       icon: 'i-the-valine-mail',
       name: 'Valine Mail',
       desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需再绑定LeanCloud实例的域名，无需定时任务。云函数异步逻辑完善、更详细的log输出',
-      href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
+      href: 'https://github.com/wiidede/Valine-Admin',
     },
   ]
 
