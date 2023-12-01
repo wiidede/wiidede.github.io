@@ -51,7 +51,7 @@ export function useMyInfo() {
     {
       icon: 'i-the-dandanplay-vi',
       name: 'dandanplayVi',
-      desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器',
+      desc: 'dandanplay简易web实现。使用CCL实现弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。提供多个播放器',
       href: 'https://dandan.wiidede.space/',
     },
     {

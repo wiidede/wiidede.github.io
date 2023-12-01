@@ -97,7 +97,7 @@ const certificates = [
             长江口航道管理系统
           </h3>
           <img class="inline-block h5 select-none" :src="dahua">
-          <div class="ml-auto text-zinc-500">
+          <div class="ml-auto text-zinc-500/50">
             2022.08 - present
           </div>
         </div>
@@ -214,7 +214,7 @@ const certificates = [
             智能运维
           </h3>
           <img class="inline-block h2 select-none" :src="kedacom">
-          <div class="ml-auto text-zinc-500">
+          <div class="ml-auto text-zinc-500/50">
             2020.06 - 2022.08
           </div>
         </div>
@@ -252,7 +252,7 @@ const certificates = [
             运维中台
           </h3>
           <img class="inline-block h2 select-none" :src="kedacom">
-          <div class="ml-auto text-zinc-500">
+          <div class="ml-auto text-zinc-500/50">
             2021.06 - 2022.04
           </div>
         </div>
@@ -274,7 +274,7 @@ const certificates = [
             家庭服务机器人
           </h3>
           <img class="inline-block h5 select-none" :src="cslg">
-          <div class="ml-auto text-zinc-500">
+          <div class="ml-auto text-zinc-500/50">
             2020.09 - 2020.12
           </div>
         </div>
