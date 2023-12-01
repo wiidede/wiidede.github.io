@@ -15,7 +15,7 @@ tags:
 
 大学毕业设计刚刚做完，做的是水表识别，整个项目源代码放在了[github](https://github.com/wiidede/water-meter-frontend) [gitee](https://gitee.com/wiidede/water-meter-frontend)，前端比较简单，用来上传图片并且展示识别结果。
 
-## 技术点：
+## 技术点
 
 - Vue3.0
 - Element Plus
@@ -42,7 +42,6 @@ export default {
     router.beforeEach(() => {
       if (scrollViewRef.value)
         scrollViewRef.value.wrap.scrollTop = 0
-
     })
     return { scrollViewRef }
   }

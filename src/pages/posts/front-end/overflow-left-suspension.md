@@ -27,7 +27,6 @@ function processOverflow() {
     contentEl.classList.add('is-overflow')
   else
     contentEl.classList.remove('is-overflow')
-
 }
 
 onMounted(() => {
@@ -44,7 +43,6 @@ onMounted(() => {
 onUnmounted(() => {
   if (destroyFunction)
     destroyFunction()
-
 })
 </script>
 

@@ -86,7 +86,6 @@ export default {
           const raw = JSON.parse(rawText)
           if (raw.code && raw.code !== 0)
             this.$message.error(raw.message)
-
         }
       }
     },

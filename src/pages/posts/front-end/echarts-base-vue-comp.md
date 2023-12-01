@@ -220,7 +220,7 @@ const emit = defineEmits<IEmit>()
 type EventNames = 'mouseover' | 'mouseout' | 'click' | 'legendselectchanged'
 interface IEmit {
   (event: 'click', params: any, chart: ReturnType<typeof echarts.init>): void
-  (event: 'resize', params: { width: number; height: number }, chart: ReturnType<typeof echarts.init>): void
+  (event: 'resize', params: { width: number, height: number }, chart: ReturnType<typeof echarts.init>): void
 }
 let chart: ReturnType<typeof echarts.init>
 const echartsRef = ref<HTMLDivElement>()
@@ -301,7 +301,10 @@ defineExpose({
 import { cloneDeep, debounce, get, set } from 'lodash'
 import * as echarts from 'echarts'
 import {
-  onMounted, onUnmounted, ref, watch,
+  onMounted,
+  onUnmounted,
+  ref,
+  watch,
 } from 'vue'
 import { getObjectPaths } from '@/utils/utils'
 
@@ -543,49 +546,61 @@ export default {
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#1890FF' // 0% 处的颜色
+              offset: 0,
+              color: '#1890FF' // 0% 处的颜色
             }, {
-              offset: 1, color: '#5AC8FF' // 100% 处的颜色
+              offset: 1,
+              color: '#5AC8FF' // 100% 处的颜色
             }]
           },
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#E6E6E6' // 0% 处的颜色
+              offset: 0,
+              color: '#E6E6E6' // 0% 处的颜色
             }, {
-              offset: 1, color: '#CCCCCC' // 100% 处的颜色
+              offset: 1,
+              color: '#CCCCCC' // 100% 处的颜色
             }]
           },
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#FFB726' // 0% 处的颜色
+              offset: 0,
+              color: '#FFB726' // 0% 处的颜色
             }, {
-              offset: 1, color: '#FFD659' // 100% 处的颜色
+              offset: 1,
+              color: '#FFD659' // 100% 处的颜色
             }]
           },
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#22D5E6' // 0% 处的颜色
+              offset: 0,
+              color: '#22D5E6' // 0% 处的颜色
             }, {
-              offset: 1, color: '#49BAF2' // 100% 处的颜色
+              offset: 1,
+              color: '#49BAF2' // 100% 处的颜色
             }]
           },
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#81FBB8' // 0% 处的颜色
+              offset: 0,
+              color: '#81FBB8' // 0% 处的颜色
             }, {
-              offset: 1, color: '#45D885' // 100% 处的颜色
+              offset: 1,
+              color: '#45D885' // 100% 处的颜色
             }]
           },
           {
             type: 'linear',
             colorStops: [{
-              offset: 0, color: '#D8795A' // 0% 处的颜色
+              offset: 0,
+              color: '#D8795A' // 0% 处的颜色
             }, {
-              offset: 1, color: '#F8B28E' // 100% 处的颜色
+              offset: 1,
+              color: '#F8B28E' // 100% 处的颜色
             }]
           }
         ],
@@ -630,7 +645,6 @@ export default {
                 return `${params.substring(0, 5)}...`
               else
                 return params
-
             }
           },
           axisLine: {

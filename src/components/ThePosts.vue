@@ -47,8 +47,8 @@ const postsPinnedLength = computed(() => posts.filter(post => post.sticky).lengt
 const postsDisplay = computed(
   () => posts.filter(
     (post, index) => (!currentCategory.value ? true : currentCategory.value === post.category)
-     && (!currentTag.value ? true : (Array.isArray(post.tags) && post.tags.includes(currentTag.value)))
-     && (props.pinned ? (index < postsPinnedLength.value + 3) : true),
+    && (!currentTag.value ? true : (Array.isArray(post.tags) && post.tags.includes(currentTag.value)))
+    && (props.pinned ? (index < postsPinnedLength.value + 3) : true),
   ),
 )
 const showYear = computed(() => props.pinned || postsDisplay.value.length > 9)

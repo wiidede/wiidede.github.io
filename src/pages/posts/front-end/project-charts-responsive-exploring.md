@@ -170,7 +170,10 @@ fontSize自适应效果：
 import { cloneDeep, debounce, get, set } from 'lodash'
 import * as echarts from 'echarts'
 import {
-  onMounted, onUnmounted, ref, watch,
+  onMounted,
+  onUnmounted,
+  ref,
+  watch,
 } from 'vue'
 import { getObjectPaths } from '@/utils/utils'
 

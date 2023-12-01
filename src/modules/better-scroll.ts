@@ -1,5 +1,5 @@
 import { createRouterScroller } from 'vue-router-better-scroller'
-import { type UserModule } from '~/types'
+import type { UserModule } from '~/types'
 
 export const install: UserModule = ({ app, isClient }) => {
   if (isClient) {

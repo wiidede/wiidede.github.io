@@ -65,7 +65,6 @@ function deleteLayout(i: ComponentItem['i']) {
   const draggingIndex = layout.value.findIndex(obj => obj.i === i)
   if (draggingIndex !== -1)
     layout.value.splice(draggingIndex, 1)
-
 }
 function drag(e: DragEvent, comp: ComponentItem) {
   currentComponent.value = comp

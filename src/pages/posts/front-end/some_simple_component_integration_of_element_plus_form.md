@@ -164,7 +164,6 @@ const model = computed({
   set: (value) => {
     if (Array.isArray(value))
       emit('update:modelValue', value.join(','))
-
   },
 })
 </script>
@@ -209,7 +208,6 @@ const fileListModel = computed({
 const onPreview: UploadProps['onPreview'] = (uploadFile) => {
   if (uploadFile.url)
     download('channeldredging', uploadFile.url, uploadFile.name)
-
 }
 
 const pictureUrls = ref<Record<string, string>>({})
@@ -228,7 +226,6 @@ watch(() => props.fileList, (val) => {
     const isPicture = ['jpg', 'png'].includes(suffix as string)
     if (isPicture)
       pictureUrls.value[file.url] = file.url // 这里本意是想对图片url进行处理的
-
   })
 }, {
   immediate: true,

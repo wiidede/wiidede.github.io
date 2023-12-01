@@ -120,7 +120,6 @@ Global.initPermissionWatcher = function (vm, nodeMap) {
     // 如果发现有变化的，提示页面权限变化了
     if (visiblePermissionChanged)
       vm.$message.info('页面权限发生变化！')
-
   })
 }
 ```

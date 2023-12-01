@@ -34,7 +34,7 @@ onMounted(async () => {
         return
       const target = mutation.target as HTMLElement
       if (target.className === 'vnum') {
-        num = Number.parseInt(target.innerText)
+        num = Number.parseInt(target.textContent || '-1')
         return
       }
       if (['vempty', 'vquote'].includes((mutation.target as HTMLElement).className)) {

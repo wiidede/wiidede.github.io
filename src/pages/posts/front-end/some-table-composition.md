@@ -30,7 +30,6 @@ export function useTableColDuplicate<Data>(tableData?: Data[] | Ref<Data[]>, key
     values.forEach((value) => {
       if (values.lastIndexOf(value) !== values.indexOf(value))
         valueTemp.value.add(value)
-
     })
   }, {
     deep: true,

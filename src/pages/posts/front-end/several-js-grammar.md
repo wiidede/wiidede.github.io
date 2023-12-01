@@ -454,7 +454,6 @@ window.parent.postMessage({ action: 'xxx', message: 'this is a msg' }, '*')
 window.addEventListener('message', (evt) => {
   if (evt.data && evt.data.action === 'xxx')
     console.log(evt.data.message)
-
 })
 ```
 
@@ -546,7 +545,6 @@ function setLevel(val, level = 1) {
     item.kcTableLevel = level
     if (item.children)
       setLevel(item.children, level + 1)
-
   })
 }
 ```
@@ -628,7 +626,6 @@ export function useValidateFileDuplicated<T extends string>(form: Partial<Record
       filenameArr.forEach((files, index) => {
         if (files.includes(item))
           indexes.push(index)
-
       })
       const needErrors = indexes.includes(checkKeys.indexOf(currentKey!))
       return needErrors ? `${item} 发现于： ${indexes.map(index => checkLabels?.[index] || checkKeys[index]).join(' | ')}` : ''
@@ -664,8 +661,7 @@ import { promiseTimeout } from '@vueuse/core'
 ## 给Promise加上全局loading
 
 ```ts
-async function withElLoading<T>(fn: Promise<T>,
-  options?: Parameters<typeof ElLoading.service>[0]) {
+async function withElLoading<T>(fn: Promise<T>, options?: Parameters<typeof ElLoading.service>[0]) {
   const loadingInstance = ElLoading.service({
     lock: true,
     fullscreen: true,

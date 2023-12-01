@@ -68,7 +68,6 @@ export default {
     isOverflow() {
       if (this.$refs.overflowTooltipContent)
         this.disabled = this.$refs.overflowTooltipContent.offsetWidth >= this.$refs.overflowTooltipContent.scrollWidth
-
     }
   }
 }
@@ -128,7 +127,6 @@ setTimeout(() => {
   const popper = this.$refs.tooltip.$refs.popper
   if (popper)
     this.autoEnter = popper.offsetHeight < popper.scrollHeight
-
 }, 100)
 ```
 
@@ -198,7 +196,6 @@ export default {
           const popper = this.$refs.tooltip.$refs.popper
           if (popper)
             this.autoEnter = popper.offsetHeight < popper.scrollHeight
-
         }, 100)
       }
     }
@@ -270,7 +267,6 @@ function isOverflow() {
       disabled.value = el.offsetHeight >= el.scrollHeight
     else
       disabled.value = el.offsetWidth >= el.scrollWidth
-
   }
 }
 </script>

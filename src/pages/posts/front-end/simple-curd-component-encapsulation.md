@@ -84,7 +84,6 @@ function getSlots(column: CurdColumn) {
 
     if (column.children)
       column.children.forEach(getSlot)
-
   }
   getSlot(column)
   return slots

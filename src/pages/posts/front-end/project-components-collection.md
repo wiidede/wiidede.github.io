@@ -72,11 +72,11 @@ export default {
   },
   render() {
     return (
-   <i
-    onClick={this.onClick}
-    class={`iconfont icon-component ${this.getIconCls()}`}
-    style={this.getIconStyle()}
-   />
+      <i
+        onClick={this.onClick}
+        class={`iconfont icon-component ${this.getIconCls()}`}
+        style={this.getIconStyle()}
+      />
     )
   }
 }
@@ -165,7 +165,6 @@ export default {
       for (const i in params) {
         if (params[i] === '' || params[i] === undefined || params[i] === null)
           delete params[i]
-
       }
       try {
         const result = await this.getData({
@@ -358,14 +357,12 @@ export const on = (function () {
     return function (element, event, handler) {
       if (element && event && handler)
         element.addEventListener(event, handler, false)
-
     }
   }
   else {
     return function (element, event, handler) {
       if (element && event && handler)
         element.attachEvent(`on${event}`, handler)
-
     }
   }
 })()
@@ -385,25 +382,24 @@ let seed = 0
 function createDocumentHandler(el, binding, vnode) {
   return function (mouseup = {}, mousedown = {}) {
     if (!vnode
-   || !vnode.context
-   || !mouseup.target
-   || !mousedown.target
-   || el.contains(mouseup.target)
-   || el.contains(mousedown.target)
-   || el === mouseup.target
-   || (vnode.context.popperElm
-    && (vnode.context.popperElm.contains(mouseup.target)
-     || vnode.context.popperElm.contains(mousedown.target))))
+      || !vnode.context
+      || !mouseup.target
+      || !mousedown.target
+      || el.contains(mouseup.target)
+      || el.contains(mousedown.target)
+      || el === mouseup.target
+      || (vnode.context.popperElm
+      && (vnode.context.popperElm.contains(mouseup.target)
+      || vnode.context.popperElm.contains(mousedown.target))))
       return
 
     if (binding.expression
-   && el[ctx].methodName
-   && vnode.context[el[ctx].methodName])
+      && el[ctx].methodName
+      && vnode.context[el[ctx].methodName])
       vnode.context[el[ctx].methodName]()
 
     else
       el[ctx].bindingFn && el[ctx].bindingFn()
-
   }
 }
 
