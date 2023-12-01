@@ -91,10 +91,16 @@ const certificates = [
       <h2 class="text-8 font-bold text-zinc-900">
         项目
       </h2>
-      <div class="flex flex-col gap2">
-        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
-          长江口航道管理系统<img class="ml2 inline-block h5 select-none" :src="dahua">
-        </h3>
+      <div class="w-full flex flex-col gap2">
+        <div class="flex flex-[0_0_auto] items-center gap2">
+          <h3 class="text-6 font-medium text-zinc-900">
+            长江口航道管理系统
+          </h3>
+          <img class="inline-block h5 select-none" :src="dahua">
+          <div class="ml-auto text-zinc-500">
+            2022.08 - present
+          </div>
+        </div>
         <div class="flex flex-wrap items-center gap2">
           <TheTech icon="i-logos-vue" label="Vue3" />
           <TheTech icon="i-logos-element" label="Element Plus" />
@@ -202,10 +208,16 @@ const certificates = [
   </div>
   <div class="a4 mx-a flex px4 text-left text-zinc-700">
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
-      <div class="flex flex-col gap2">
-        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
-          智能运维<img class="ml2 inline-block h2 select-none" :src="kedacom">
-        </h3>
+      <div class="w-full flex flex-col gap2">
+        <div class="flex flex-[0_0_auto] items-center gap2">
+          <h3 class="text-6 font-medium text-zinc-900">
+            智能运维
+          </h3>
+          <img class="inline-block h2 select-none" :src="kedacom">
+          <div class="ml-auto text-zinc-500">
+            2020.06 - 2022.08
+          </div>
+        </div>
         <div class="flex flex-wrap items-center gap2">
           <TheTech icon="i-logos-vue" label="Vue2" />
           <TheTech icon="i-logos-element" label="Element UI" />
@@ -234,10 +246,16 @@ const certificates = [
           <li>支持部门其他项目（解析平台、分布式存储系统、狮山大屏等）的业务开发</li>
         </ol>
       </div>
-      <div class="flex flex-col gap2">
-        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
-          运维中台<img class="ml2 inline-block h2 select-none" :src="kedacom">
-        </h3>
+      <div class="w-full flex flex-col gap2">
+        <div class="flex flex-[0_0_auto] items-center gap2">
+          <h3 class="text-6 font-medium text-zinc-900">
+            运维中台
+          </h3>
+          <img class="inline-block h2 select-none" :src="kedacom">
+          <div class="ml-auto text-zinc-500">
+            2021.06 - 2022.04
+          </div>
+        </div>
         <div class="flex flex-wrap items-center gap2">
           <TheTech icon="i-logos-react" label="React" />
           <TheTech icon="i-logos-ant-design" label="Ant Design" />
@@ -250,10 +268,16 @@ const certificates = [
           <li>不同组件间数据联动；下钻的逻辑优化；支持不同维度属性各自与整体排序</li>
         </ol>
       </div>
-      <div class="flex flex-col gap2">
-        <h3 class="mr2 flex flex-[0_0_auto] items-center text-6 font-medium text-zinc-900">
-          家庭服务机器人<img class="ml2 inline-block h5 select-none" :src="cslg">
-        </h3>
+      <div class="w-full flex flex-col gap2">
+        <div class="flex flex-[0_0_auto] items-center gap2">
+          <h3 class="text-6 font-medium text-zinc-900">
+            家庭服务机器人
+          </h3>
+          <img class="inline-block h5 select-none" :src="cslg">
+          <div class="ml-auto text-zinc-500">
+            2020.09 - 2020.12
+          </div>
+        </div>
         <div class="flex flex-wrap items-center gap2">
           <TheTech icon="i-logos-ros w-2em" label="ROS" />
           <TheTech icon="i-logos-python" label="Python" />
@@ -290,9 +314,9 @@ const certificates = [
           <span>{{ certificate.label }}</span>
         </div>
       </ReuseTitledBox>
-      <ReuseTitledBox name="项目" class="w-full flex flex-col items-start" gap="gap1">
+      <ReuseTitledBox name="开源" class="w-full flex flex-col items-start" gap="gap1">
         <a
-          v-for="project, idx in projects"
+          v-for="project, idx in projects.slice(0, 7)"
           :key="idx" class="w-full rd p2 leading-none transition hover:bg-zinc-100"
           :href="project.href"
           target="_blank"

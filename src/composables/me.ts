@@ -40,13 +40,19 @@ export function useMyInfo() {
       icon: 'i-the-my-day',
       name: '流光日月',
       desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',
-      href: 'https://fly-my-day.netlify.app/',
+      href: 'https://day.wiidede.space/',
+    },
+    {
+      icon: 'i-the-reach-star',
+      name: '摘星',
+      desc: '一个目标管理应用，通过记录去摘得属于自己的星星',
+      href: 'https://reach-star.wiidede.space/',
     },
     {
       icon: 'i-the-dandanplay-vi',
       name: 'dandanplayVi',
       desc: 'dandanplay的一个简易web实现。通过CCL实现了一个弹幕播放器，支持设置弹幕样式、显示区域、同屏数量、时间轴偏移。也可以选择其他弹幕播放器',
-      href: 'https://dandanplay-vitesse.netlify.app/',
+      href: 'https://dandan.wiidede.space/',
     },
     {
       icon: 'i-the-liquid-ray',
@@ -57,8 +63,14 @@ export function useMyInfo() {
     {
       icon: 'i-the-valine-mail',
       name: 'Valine Mail',
-      desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需再绑定LeanCloud实例的域名，无需定时任务。云函数异步逻辑完善、更详细的log输出',
+      desc: 'fork于Valine Admin，目的是更好的邮件提醒。无需定时任务。云函数异步逻辑完善、更详细的log输出',
       href: 'https://github.com/wiidede/Valine-Admin',
+    },
+    {
+      icon: 'i-the-ueditor-monaco',
+      name: 'UEditor Monaco',
+      desc: '一个UEditor的demo页，支持使用Monaco编辑富文本源码',
+      href: 'https://ueditor.wiidede.space/',
     },
   ]
 

@@ -4,7 +4,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <div v-if="route.path !== '/'" class="slide-enter m-auto mb-8 mt-8 animate-delay-500 text-left prose">
+  <div v-if="route.path !== '/'" class="slide-enter m-auto mb-8 mt-8 text-left prose animate-delay-500">
     <br>
     <div
       :key="route.path"
