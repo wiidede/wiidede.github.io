@@ -25,26 +25,26 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  deploy-github-pages:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: pnpm
+  # deploy-github-pages:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: pnpm/action-setup@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.x
+  #         cache: pnpm
 
-      - name: Install
-        run: pnpm install
+  #     - name: Install
+  #       run: pnpm install
 
-      - name: Build
-        run: pnpm run build
+  #     - name: Build
+  #       run: pnpm run build
 
-      - name: Deploy Github Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
+  #     - name: Deploy Github Pages 🚀
+  #       uses: JamesIves/github-pages-deploy-action@v4
+  #       with:
+  #         folder: dist
 
   deploy-serve:
     runs-on: ubuntu-latest
