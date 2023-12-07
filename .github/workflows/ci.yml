@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check-and-build:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,6 @@ jobs:
         run: pnpm run typecheck
 
   deploy-github-pages:
-    needs: check-and-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,7 +47,6 @@ jobs:
           folder: dist
 
   deploy-serve:
-    needs: check-and-build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
