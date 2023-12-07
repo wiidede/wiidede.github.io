@@ -41,7 +41,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose a {
-  --at-apply: under-anime under-base;
+  --at-apply: under-anime under-base color-inherit;
 }
 
 .prose a:hover{
