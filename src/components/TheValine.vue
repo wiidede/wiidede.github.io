@@ -23,7 +23,7 @@ onMounted(async () => {
     avatar: 'identicon',
     placeholder: '给我的文章加点评论吧~',
     recordIP: true,
-    serverURLs: 'https://kdlbggen.lc-cn-e1-shared.com',
+    serverURLs: 'https://leancloud.wiidede.space',
   })
 
   const targetNode = document.getElementById('valine-comments')!
