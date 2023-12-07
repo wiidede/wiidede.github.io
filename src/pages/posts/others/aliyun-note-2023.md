@@ -50,7 +50,7 @@ server {
 
     location / {
         root /var/www/cn.wiidede.space;
-        index index.html;
+        try_files $uri $uri/ /index.html;
     }
 }
 ```
@@ -81,7 +81,7 @@ http {
 
       location / {
           root /var/www/cn.wiidede.space;
-          index index.html;
+          try_files $uri $uri/ /index.html;
       }
   }
 }

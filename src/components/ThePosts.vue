@@ -225,12 +225,12 @@ function handleBgOut() {
     </div>
   </template>
 
-  <a
+  <RouterLink
     v-if="pinned"
-    href="/posts"
+    to="/posts"
     class="group w-fit w-fit flex cursor-pointer items-center gap2 font-mono under-anime under-base hover:under-anime-hover !op67"
   >
     更多
     <div i-carbon-chevron-right class="back-icon text-0.8em transition-all duration-250 group-hover:(mr2 translate-x-2)" />
-  </a>
+  </RouterLink>
 </template>

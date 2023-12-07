@@ -60,7 +60,7 @@ http {
     server {
         listen       80;
         server_name  localhost;
-		    location / {
+        location / {
             root C:\Users\wdd\Documents\dh-project\frame\dist;
             try_files $uri $uri/ /index.html;
         }
