@@ -37,7 +37,7 @@ Vite 的教程到这里就结束了，但是在实际项目中我遇到了一些
 
 我们来观察一下 Vite 是如何请求静态资源的（假设项目部署在 /dist 路径下）。
 
-![vite-request](https://wiidede.space/img-store-one/images/clipbord_1688624551580.png)
+![vite-request](https://wiidede.github.io/img-store-one/images/clipbord_1688624551580.png)
 
 这就好像 Vite 知道相对路径具体在哪里，但是我们并不知道。
 

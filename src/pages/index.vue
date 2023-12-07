@@ -12,7 +12,7 @@ const {
 
 <template>
   <div class="slide-enter-content m-auto max-w65ch text-left">
-    <img class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full" alt="wiidede" src="https://wiidede.space/img-store-one/special/avatar.png">
+    <img class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full" alt="wiidede" src="https://wiidede.github.io/img-store-one/special/avatar.png">
 
     <h1 class="mb2 text-8 text-zinc-900 dark:text-zinc-50">
       Hey, I am wiidede 小的的 <span class="wave-hand inline-block animate-count-infinite animate-duration-1800">👋</span>

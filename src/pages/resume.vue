@@ -158,7 +158,7 @@ const certificates = [
         <img
           class="mx-2 mb4 aspect-ratio-square h36 select-none rd-full"
           alt="wiidede"
-          :src="isConservative ? '/assets/images/dede.avif' : 'https://wiidede.space/img-store-one/special/avatar.png'"
+          :src="isConservative ? '/assets/images/dede.avif' : 'https://wiidede.github.io/img-store-one/special/avatar.png'"
         >
         <a
           v-for="info, idx in baseInfoRight"
