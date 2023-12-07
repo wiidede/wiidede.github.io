@@ -1,5 +1,8 @@
 # wiidede
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8e60c924-9b1f-46fc-a885-e22be93ced8b/deploy-status)](https://app.netlify.com/sites/wiidede/deploys)
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+
 **[wiidede.github.io](https://wiidede.space)**
 
 my personal website
