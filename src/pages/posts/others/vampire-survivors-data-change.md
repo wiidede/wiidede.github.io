@@ -8,6 +8,8 @@ categories:
 id: vampire-survivors-data-change
 ---
 
+[[toc]]
+
 # vampire survivors 数据更改
 
 游戏网站：<https://poncle.itch.io/vampire-survivors>
