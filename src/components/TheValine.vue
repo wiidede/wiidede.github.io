@@ -19,7 +19,7 @@ onMounted(async () => {
     el: '#valine-comments',
     app_id: 'kdLBgGeN6AO23LTQWDAqRttz-9Nh9j0Va',
     app_key: 'hWmkOGBqEpSlw81Gbqn4CSuF',
-    path: window.location.pathname,
+    path: window.location.pathname.replace(/\/$/, ''),
     avatar: 'identicon',
     placeholder: '给我的文章加点评论吧~',
     recordIP: true,
