@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 也许你该找个人聊聊
+id: maybe-you-should-talk-to-someone
 ---
 
 [[toc]]

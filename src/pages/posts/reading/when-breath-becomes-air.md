@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 当呼吸化为空气
+id: when-breath-becomes-air
 ---
 
 [[toc]]

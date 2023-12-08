@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 把时间当做朋友
+id: time-as-a-friend
 ---
 
 [[toc]]

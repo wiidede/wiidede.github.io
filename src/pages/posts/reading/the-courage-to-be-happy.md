@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 幸福的勇气
+id: the-courage-to-be-happy
 ---
 
 [[toc]]

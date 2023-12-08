@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 认知觉醒
+id: cognitive-awakening
 ---
 
 [[toc]]

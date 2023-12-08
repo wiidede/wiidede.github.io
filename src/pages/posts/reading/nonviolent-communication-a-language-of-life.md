@@ -5,7 +5,7 @@ tags:
   - 摘抄
 categories:
   - 读书笔记
-id: 非暴力沟通
+id: nonviolent-communication-a-language-of-life
 ---
 
 [[toc]]
