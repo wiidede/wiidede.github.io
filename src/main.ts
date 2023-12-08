@@ -1,8 +1,8 @@
 import { ViteSSG } from 'vite-ssg'
+import { setupRouterScroller } from 'vue-router-better-scroller'
+import NProgress from 'nprogress'
 import App from './App.vue'
-import type { UserModule } from './types'
 import routes from '~pages'
-
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
@@ -25,10 +25,21 @@ export const createApp = ViteSSG(
     routes,
     base: import.meta.env.BASE_URL,
   },
-  (ctx) => {
-    ctx.app.use(ctx.router)
-    // install all modules under `modules/`
-    Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
-      .forEach(i => i.install?.(ctx))
+  ({ router, isClient }) => {
+    if (isClient) {
+      setupRouterScroller(router, {
+        selectors: {
+          window: true,
+        },
+        behavior: 'auto',
+      })
+
+      router.beforeEach(() => {
+        NProgress.start()
+      })
+      router.afterEach(() => {
+        NProgress.done()
+      })
+    }
   },
 )
