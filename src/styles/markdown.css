@@ -112,15 +112,7 @@ h6:focus .header-anchor {
 }
 
 .table-of-contents {
-  --uno: fixed z-200 left-4 top-16 bottom-4 flex flex-col lt-lg:right-4;
-}
-
-.table-of-contents.ul-hidden {
-  --uno: w-fit bottom-unset;
-}
-
-.table-of-contents.ul-hidden > ul {
-  display: none;
+  --uno: fixed z-200 left-4 top-16 bottom-4 flex flex-col;
 }
 
 @media (min-width: 1024px) {
@@ -128,6 +120,30 @@ h6:focus .header-anchor {
     width: calc((100vw - 65ch - 4rem) / 2);
     max-width: 30ch;
   }
+}
+
+@media (max-width: 1023.9px) {
+  .table-of-contents {
+    right: 1rem;
+  }
+
+  .table-of-contents:not(.ul-show) {
+    width: fit-content;
+    bottom: unset;
+  }
+
+  .table-of-contents:not(.ul-show) > ul {
+    display: none;
+  }
+}
+
+.table-of-contents.ul-hidden {
+  width: fit-content;
+  bottom: unset;
+}
+
+.table-of-contents.ul-hidden > ul {
+  display: none;
 }
 
 .table-of-contents-anchor {

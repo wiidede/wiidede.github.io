@@ -54,27 +54,40 @@ onMounted(() => {
   const tocEl = document.querySelector<HTMLDivElement>('.table-of-contents')
   const tocAnchorEl = document.querySelector<HTMLDivElement>('.table-of-contents-anchor')
   const tocUlEl = document.querySelector<HTMLUListElement>('.table-of-contents>ul')
-  if (tocEl && tocAnchorEl && tocUlEl) {
-    tocAnchorEl.addEventListener('click', () => {
-      if (tocEl.classList.contains('ul-hidden'))
-        tocEl.classList.remove('ul-hidden')
-      else
-        tocEl.classList.add('ul-hidden')
-    })
-  }
 
-  if (tocEl && tocUlEl) {
-    tocUlEl.addEventListener('click', () => {
+  if (tocEl && tocAnchorEl && tocUlEl) {
+    const showToc = () => {
+      tocEl.classList.remove('ul-hidden')
+      tocEl.classList.add('ul-show')
+    }
+
+    const hideToc = () => {
+      tocEl.classList.remove('ul-show')
+      tocEl.classList.add('ul-hidden')
+    }
+
+    tocAnchorEl.addEventListener('click', () => {
+      if (tocEl.classList.contains('ul-show'))
+        hideToc()
+      else if (tocEl.classList.contains('ul-hidden'))
+        showToc()
+      else
+        isLargeScreen.value ? hideToc() : showToc()
+    })
+
+    tocUlEl.addEventListener('click', (e) => {
       if (isLargeScreen.value)
         return
-      tocEl.classList.add('ul-hidden')
+      if (e.target === tocUlEl)
+        return
+      hideToc()
+    })
+
+    watch(isLargeScreen, (val) => {
+      if (tocEl.classList.contains('ul-show') || tocEl.classList.contains('ul-hidden'))
+        val ? showToc() : hideToc()
     })
   }
-
-  watchEffect(() => {
-    if (tocEl)
-      isLargeScreen.value ? tocEl.classList.remove('ul-hidden') : tocEl.classList.add('ul-hidden')
-  })
 })
 </script>
 
