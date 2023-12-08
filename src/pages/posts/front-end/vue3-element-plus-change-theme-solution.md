@@ -80,7 +80,6 @@ document.documentElement.style.setProperty('--main', '#808080')
   --font-color: #303133;
 }
 
-
 [data-theme="dark"] {
   --background: #383838;
   --font-color: #eeeeee;

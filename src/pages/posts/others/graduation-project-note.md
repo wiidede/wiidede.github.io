@@ -158,10 +158,8 @@ sudo apt install git
 git config --global user.name wiidede
 git config --global user.email wiixdede@gmail.com
 
-
 # 克隆前后端仓库
 git clone -b dist https://gitee.com/wiidede/water-meter-frontend.git
-
 
 # 安装tree
 sudo apt install tree
@@ -245,12 +243,8 @@ sudo apt install libgl1-mesa-glx
 scp -r -i ssh-key.pem /home/robot/dd_demo/watermeter/WaterMeter/checkpoints root@xx.xx.xx.xx:/app/water-meter-backend
 gunicorn -w 2 -b 127.0.0.1:5001 waterMeter:app
 
-
-
 # 退出虚拟环境
 deactivate
-
-
 
 # 修改配置
 cd /etc/nginx/sites-available/
@@ -276,7 +270,6 @@ sudo vim default
 cd /usr/lib/systemd/system
 vi water-meter-backend.servier
 
-
 # [Unit]
 # After=syslog.target network.target remote-fs.target nss-lookup.target
 # [Service]
@@ -291,7 +284,6 @@ vi water-meter-backend.servier
 # Restart=on-failure
 # [Install]
 # WantedBy=multi-user.target
-
 
 # 添加到开机自启动项
 sudo systemctl enable water-meter-backend.servier

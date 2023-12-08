@@ -135,28 +135,25 @@ import markdown
 
 app=Flask(__name__)
 
-
 @app.route('/alinote')
 def index():
-	content = md2html('/home/uftp/note/aliCloud-note.md')
-	return render_template('index.html',**locals())
-
+  content = md2html('/home/uftp/note/aliCloud-note.md')
+  return render_template('index.html',**locals())
 
 def md2html(filename):
 
-	exts = ['markdown.extensions.extra', 'markdown.extensions.codehilite','markdown.extensions.tables','markdown.extensions.toc']
-	mdcontent = ""
-	with open(filename,'r',encoding='utf-8') as f:
-		mdcontent = f.read()
-		pass
-	html = markdown.markdown(mdcontent,extensions=exts)
-	content = Markup(html)
-	return content
-
+  exts = ['markdown.extensions.extra', 'markdown.extensions.codehilite','markdown.extensions.tables','markdown.extensions.toc']
+  mdcontent = ""
+  with open(filename,'r',encoding='utf-8') as f:
+    mdcontent = f.read()
+    pass
+  html = markdown.markdown(mdcontent,extensions=exts)
+  content = Markup(html)
+  return content
 
 if __name__ == '__main__':
-	app.debug = True
-	app.run(host='0.0.0.0',port = 5000)
+  app.debug = True
+  app.run(host='0.0.0.0',port = 5000)
 ```
 
 把 app.run() 中 host 参数改为0.0.0.0即可给所有人访问

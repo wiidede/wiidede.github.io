@@ -468,7 +468,6 @@ state.count++ // 1
         activeEffect = null;
     }
 
-
     // 接下来是测试的代码
     const ok = new Dep(true);
     const count = new Dep(0);
@@ -524,7 +523,6 @@ state.count++ // 1
         effect();
         activeEffect = null;
     }
-
 
     // Vue 2 采用 Object.defineProperty 为对象上的每一个 key 添加响应式
     // 这样做的缺点就是新增的属性无法自动添加响应式

@@ -48,7 +48,7 @@ const certificates = [
 <template>
   <DefineTitledBox v-slot="{ $slots, name, gap }">
     <div class="border rd px2 pb4 pt2">
-      <h2 class="mb2 px2 text-8 font-bold text-zinc-900">
+      <h2 class="mb2 px2 text-8 text-zinc-900 font-bold">
         {{ name }}
       </h2>
       <div class="min-h0 flex flex-auto flex-col child:px2" :class="gap">
@@ -60,7 +60,7 @@ const certificates = [
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex justify-between pr4">
         <div class="min-w0 flex flex-auto flex-col items-start justify-between gap4 leading-none">
-          <h1 class="text-20 font-bold text-zinc-900">
+          <h1 class="text-20 text-zinc-900 font-bold">
             王子羽
           </h1>
           <div class="grid grid-cols-[auto_auto] w-full justify-between gap-y-1">
@@ -79,7 +79,7 @@ const certificates = [
           <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
         <div class="min-w0 flex-auto">
-          <div class="font-medium text-zinc-900">
+          <div class="text-zinc-900 font-medium">
             {{ experience.name }}
           </div>
           <div class="flex justify-between text-sm font-light">
@@ -88,12 +88,12 @@ const certificates = [
           </div>
         </div>
       </div>
-      <h2 class="text-8 font-bold text-zinc-900">
+      <h2 class="text-8 text-zinc-900 font-bold">
         项目
       </h2>
       <div class="w-full flex flex-col gap2">
         <div class="flex flex-[0_0_auto] items-center gap2">
-          <h3 class="text-6 font-medium text-zinc-900">
+          <h3 class="text-6 text-zinc-900 font-medium">
             长江口航道管理系统
           </h3>
           <img class="inline-block h5 select-none" :src="dahua">
@@ -210,7 +210,7 @@ const certificates = [
     <div class="flex flex-[7] flex-col items-start gap4 px4 pt8">
       <div class="w-full flex flex-col gap2">
         <div class="flex flex-[0_0_auto] items-center gap2">
-          <h3 class="text-6 font-medium text-zinc-900">
+          <h3 class="text-6 text-zinc-900 font-medium">
             智能运维
           </h3>
           <img class="inline-block h2 select-none" :src="kedacom">
@@ -248,7 +248,7 @@ const certificates = [
       </div>
       <div class="w-full flex flex-col gap2">
         <div class="flex flex-[0_0_auto] items-center gap2">
-          <h3 class="text-6 font-medium text-zinc-900">
+          <h3 class="text-6 text-zinc-900 font-medium">
             运维中台
           </h3>
           <img class="inline-block h2 select-none" :src="kedacom">
@@ -270,7 +270,7 @@ const certificates = [
       </div>
       <div class="w-full flex flex-col gap2">
         <div class="flex flex-[0_0_auto] items-center gap2">
-          <h3 class="text-6 font-medium text-zinc-900">
+          <h3 class="text-6 text-zinc-900 font-medium">
             家庭服务机器人
           </h3>
           <img class="inline-block h5 select-none" :src="cslg">
@@ -290,18 +290,18 @@ const certificates = [
           <li>使用深度学习额外完成了水表识别的项目</li>
         </ol>
       </div>
-      <h2 class="text-8 font-bold text-zinc-900">
+      <h2 class="text-8 text-zinc-900 font-bold">
         获奖
       </h2>
       <div class="grid grid-cols-[auto_auto] gap-x-4 gap-y-4">
         <template v-for="award in awards" :key="award.name">
           <div class="grid content-between justify-items-end">
-            <span class="font-medium text-zinc-900">{{ award.award }}</span>
-            <span class="font-light text-zinc-500">{{ award.time }}</span>
+            <span class="text-zinc-900 font-medium">{{ award.award }}</span>
+            <span class="text-zinc-500 font-light">{{ award.time }}</span>
           </div>
           <div class="grid">
-            <span class="font-medium text-zinc-900">{{ award.name }}</span>
-            <span class="font-light text-zinc-600">{{ award.unit }}</span>
+            <span class="text-zinc-900 font-medium">{{ award.name }}</span>
+            <span class="text-zinc-600 font-light">{{ award.unit }}</span>
           </div>
         </template>
       </div>
@@ -324,9 +324,9 @@ const certificates = [
           <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
             <i :class="project.icon" class="h7 w7" />
           </div>
-          <span class="text-lg font-medium leading-tight text-zinc-900">{{ project.name }}</span>
+          <span class="text-lg text-zinc-900 font-medium leading-tight">{{ project.name }}</span>
           <br>
-          <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
+          <span class="text-sm text-zinc-500 font-light leading-tight">{{ project.desc }}</span>
         </a>
       </ReuseTitledBox>
     </div>

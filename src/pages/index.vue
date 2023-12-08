@@ -43,9 +43,9 @@ const {
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <i :class="project.icon" class="h7 w7" />
         </div>
-        <span class="text-lg font-medium leading-none text-zinc-900 under-anime !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
+        <span class="text-lg text-zinc-900 font-medium leading-none under-anime !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
         <br>
-        <span class="text-sm font-light leading-tight text-zinc-500">{{ project.desc }}</span>
+        <span class="text-sm text-zinc-500 font-light leading-tight">{{ project.desc }}</span>
       </a>
     </div>
 
@@ -99,7 +99,7 @@ const {
           <img :alt="experience.name" :src="experience.logo" class="w8 select-none rd-full">
         </div>
         <div class="min-w0 flex-auto">
-          <div class="font-medium text-zinc-900 dark:text-zinc-50">
+          <div class="text-zinc-900 font-medium dark:text-zinc-50">
             {{ experience.name }}
           </div>
           <div class="flex justify-between text-sm font-light">
@@ -116,12 +116,12 @@ const {
     <div class="grid grid-cols-[auto_auto] w-fit gap-x-4 gap-y-4">
       <template v-for="award in awards" :key="award.name">
         <div class="grid content-between justify-items-end">
-          <span class="font-medium text-zinc-900 dark:text-zinc-50">{{ award.award }}</span>
-          <span class="font-light text-zinc-500">{{ award.time }}</span>
+          <span class="text-zinc-900 font-medium dark:text-zinc-50">{{ award.award }}</span>
+          <span class="text-zinc-500 font-light">{{ award.time }}</span>
         </div>
         <div class="grid">
-          <span class="font-medium text-zinc-900 dark:text-zinc-50">{{ award.name }}</span>
-          <span class="font-light text-zinc-600 dark:text-zinc-400">{{ award.unit }}</span>
+          <span class="text-zinc-900 font-medium dark:text-zinc-50">{{ award.name }}</span>
+          <span class="text-zinc-600 font-light dark:text-zinc-400">{{ award.unit }}</span>
         </div>
       </template>
     </div>

@@ -182,7 +182,7 @@ function handleBgOut() {
       }"
     >
       <span
-        class="absolute left--3 top-0 text-5em font-bold line-height-[1] color-transparent text-stroke-2 text-stroke-zinc-5 op20 md:text-6em"
+        class="absolute left--3 top-0 text-5em color-transparent font-bold line-height-[1] text-stroke-2 text-stroke-zinc-5 op20 md:text-6em"
       >{{ getGroupName(post) }}</span>
     </div>
     <div
