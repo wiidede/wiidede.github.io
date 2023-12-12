@@ -14,7 +14,7 @@ tags:
 
 # 给ElInputNumber添加prefix
 
-prefix通过props传递进来，通过teleport将el-input**prefix按照input prefix的方式传给el-input**wrapper下面，我这里prefix采用绝对定位，所以放在最后也没关系，不然的话可能需要dom操作了
+prefix通过props传递进来，通过teleport将el-input__prefix按照input prefix的方式传给el-input__wrapper下面，我这里prefix采用绝对定位，所以放在最后也没关系，不然的话可能需要dom操作了
 
 ```vue
 <script setup lang="ts">

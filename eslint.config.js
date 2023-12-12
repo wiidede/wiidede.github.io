@@ -1,13 +1,10 @@
 import antfu from '@antfu/eslint-config'
+import unocss from '@unocss/eslint-plugin'
 import { FlatCompat } from '@eslint/eslintrc'
 
 const compat = new FlatCompat()
 
 export default antfu(
-  {
-    unocss: true,
-    formatters: true,
-  },
   {
     files: [
       '**/*.md/*.vue',
@@ -20,6 +17,7 @@ export default antfu(
       'vue/valid-attribute-name': 'off',
     },
   },
+  unocss.configs.flat,
   ...compat.config({
     extends: [
       'plugin:case-police/recommended',

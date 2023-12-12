@@ -282,7 +282,7 @@ export default {
 
   i {
     margin-left: 6px;
-    transition: 0.3s;
+    transition: .3s;
 
     &.is-unfold {
       transform: rotateZ(180deg);
@@ -332,10 +332,10 @@ export default {
 
 <style lang="scss" scoped>
 .icon-img {
-  border-radius: 50%;
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
+ border-radius: 50%;
+ height: 100%;
+ display: inline-block;
+ vertical-align: middle;
 }
 
 /* .icon-img:hover{
@@ -346,7 +346,7 @@ export default {
 
 directive - click outside
 
-````js
+```js
 import Vue from 'vue'
 
 const isServer = Vue.prototype.$isServer
@@ -441,7 +441,7 @@ export default {
     delete el[ctx]
   }
 }
-````
+```
 
 ## common-h1
 
@@ -486,11 +486,11 @@ export default {
 
 <style lang="scss" scoped>
 .common-h1 {
-  font-size: 0;
-  background-color: #fafafa;
-  padding-left: 8px;
-  overflow: hidden;
-  margin-bottom: 8px;
+ font-size: 0;
+ background-color: #fafafa;
+ padding-left: 8px;
+ overflow: hidden;
+ margin-bottom: 8px;
 
   &.outer-slot {
     display: flex;
@@ -499,23 +499,23 @@ export default {
     justify-content: space-between;
   }
 
-  .common-h1-title {
-    color: #000;
-    font-size: 20px;
-    line-height: 48px;
+ .common-h1-title {
+  color: #000;
+  font-size: 20px;
+  line-height: 48px;
+ }
+ .common-h1-subtitle {
+  font-size: 12px;
+  color: #333;
+  line-height: 1;
+  margin-top: 6px;
+  margin-bottom: 9px;
+  display: flex;
+  justify-content: space-between;
+  .tool-slot {
+   transform: translateY(-50%);
   }
-  .common-h1-subtitle {
-    font-size: 12px;
-    color: #333;
-    line-height: 1;
-    margin-top: 6px;
-    margin-bottom: 9px;
-    display: flex;
-    justify-content: space-between;
-    .tool-slot {
-      transform: translateY(-50%);
-    }
-  }
+ }
 
   .outer-slot {
     float: right;

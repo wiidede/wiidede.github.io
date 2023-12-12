@@ -33,7 +33,7 @@ tags:
 
 具体代码如下：
 
-```vue
+``` vue
 <script>
 export default {
   setup() {
@@ -77,7 +77,7 @@ export default {
 
 wm-header.vue 代码如下：
 
-```vue
+``` vue
 <script>
 import { reactive, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'

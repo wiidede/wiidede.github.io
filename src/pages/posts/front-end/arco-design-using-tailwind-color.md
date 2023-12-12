@@ -24,7 +24,7 @@ arco design的颜色是它自己定义的，但是我们可以使用tailwind的�
 
 ```css
 /* .uno-slate, .uno-gray, .uno-zinc, .uno-neutral, .uno-stone, .uno-red, .uno-orange, .uno-amber, .uno-yellow, .uno-lime, .uno-green, .uno-emerald, .uno-teal, .uno-cyan, .uno-sky, .uno-blue, .uno-indigo, .uno-violet, .uno-purple, .uno-fuchsia, .uno-pink, .uno-rose { */
-[class*='uno-'] {
+[class*="uno-"] {
   --color-text-1: rgb(var(--primary-9));
   --color-text-2: rgb(var(--primary-7));
   --color-text-3: rgb(var(--primary-5));

@@ -29,7 +29,7 @@ tags:
 
 识别接口主要是上传图片，然后将图片传给识别函数，并且以一定的格式返回识别结果
 
-```python
+``` python
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif', 'JPG', 'JPEG', 'PNG', 'GIF'}
 
 @app.route('/recognize', methods=['POST'])

@@ -24,7 +24,7 @@ id: vampire-survivors-data-change
 
 主要游戏代码都是在`https://html-classic.itch.zone/html/5185382/main.364c22b224c8899d4d20.bundle.js`
 
-可以看到167行（格式化后的）\_0x4774f8这个对象应该存储了所有角色，我们使用Object.keys便利这个对象，得到`'ANTONIO', 'IMELDA', 'PASQUALINA', 'GENNARO',
+可以看到167行（格式化后的）_0x4774f8这个对象应该存储了所有角色，我们使用Object.keys便利这个对象，得到`'ANTONIO', 'IMELDA', 'PASQUALINA', 'GENNARO',
 'CIRO', 'PORTA', 'CAMILLO', 'DOMMARIO', 'GRAZIELLA', 'VERANDA', 'TATANKA', 'MORTACCIO', 'EXDASH', 'undefined', 'LATOEVEST', 'LATODILATO'`
 
 所以最后的值就是
@@ -35,4 +35,4 @@ id: vampire-survivors-data-change
 
 ## 角色数值
 
-既然都看到\_0x4774f8这个对象了，那么里面的数值也就可以随意修改了（使用chrome devtools takeover 功能），无脑通关不是梦
+既然都看到_0x4774f8这个对象了，那么里面的数值也就可以随意修改了（使用chrome devtools takeover 功能），无脑通关不是梦

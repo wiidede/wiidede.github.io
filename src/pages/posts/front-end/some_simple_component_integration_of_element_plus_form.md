@@ -183,7 +183,7 @@ const model = computed({
 
 用法：
 
-````vue
+```vue
 ``
 
 组件代码：
@@ -275,4 +275,4 @@ watch(() => props.fileList, (val) => {
   display: none;
 }
 </style>
-````
+```

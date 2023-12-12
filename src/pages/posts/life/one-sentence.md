@@ -41,7 +41,6 @@ id: one-sentence
 > 躯体有尽时，灵魂无绝期 ——《当呼吸化为空气》
 
 > 别因为你要死了才去做或者不去做某件事情，而是要找到自己认为重要的事情，不管什么时候，只要去做。
->
 > > Then fancies fly away（一切虚妄过眼）
 > > He’ll fear not what men say（他不会在意他人所言）
 > > He’ll labour night and day（他会昼夜不停劳作）
