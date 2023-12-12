@@ -72,40 +72,43 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-#valine-comments :deep(.vinput), #valine-comments :deep(.vquote), #valine-comments :deep(.vimg)  {
+#valine-comments :deep(.vinput),
+#valine-comments :deep(.vquote),
+#valine-comments :deep(.vimg) {
   --uno: btn-border;
 }
 
-#valine-comments :deep(.vwrap)  {
+#valine-comments :deep(.vwrap) {
   --uno: border-zinc/20;
 }
 
-#valine-comments :deep(.vbtn)  {
+#valine-comments :deep(.vbtn) {
   --uno: btn-border;
   color: inherit;
 }
 
-#valine-comments :deep(a.vicon)  {
+#valine-comments :deep(a.vicon) {
   cursor: help;
 }
-#valine-comments :deep(.vicon)  {
+#valine-comments :deep(.vicon) {
   opacity: 0.5;
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#valine-comments :deep(.vicon:hover)  {
+#valine-comments :deep(.vicon:hover) {
   opacity: 0.8;
 }
 
-#valine-comments :deep(a)  {
+#valine-comments :deep(a) {
   color: inherit;
   font-weight: bold;
-  --at-apply: under-anime under-base;
+  --uno: under-anime under-base;
 }
-#valine-comments :deep(a:hover)  {
+#valine-comments :deep(a:hover) {
   opacity: 80%;
 }
 
-#valine-comments :deep(.vh), :deep(.vquote) {
+#valine-comments :deep(.vh),
+:deep(.vquote) {
   border: none !important;
 }
 
@@ -140,7 +143,7 @@ onUnmounted(() => {
 #valine-comments :deep(.vat::before) {
   content: '';
   display: inline-block;
-  --at-apply: i-carbon-reply;
+  --uno: i-carbon-reply;
   font-size: 0.75em;
 }
 #valine-comments :deep(.vat:hover) {

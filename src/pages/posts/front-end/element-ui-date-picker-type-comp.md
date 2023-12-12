@@ -104,7 +104,7 @@ export default {
     height: 30px;
     border: 1px solid #dcdfe6;
     border-right: 0;
-    background: #FFFFFF;
+    background: #ffffff;
     cursor: pointer;
 
     &:first-child {
@@ -117,9 +117,9 @@ export default {
     }
 
     &.active {
-      border: 1px solid #457AE6;
-      background: #457AE6;
-      color: #FFFFFF;
+      border: 1px solid #457ae6;
+      background: #457ae6;
+      color: #ffffff;
     }
   }
 }

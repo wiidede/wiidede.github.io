@@ -40,6 +40,8 @@
     "markdown",
     "json",
     "jsonc",
-    "yaml"
+    "yaml",
+    "css",
+    "toml"
   ]
 }

@@ -24,7 +24,7 @@ tags:
 
 ```css
 :root {
-  --color: #808080
+  --color: #808080;
 }
 ```
 
@@ -80,7 +80,7 @@ document.documentElement.style.setProperty('--main', '#808080')
   --font-color: #303133;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --background: #383838;
   --font-color: #eeeeee;
 }

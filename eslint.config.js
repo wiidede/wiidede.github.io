@@ -6,6 +6,9 @@ const compat = new FlatCompat()
 
 export default antfu(
   {
+    formatters: true,
+  },
+  {
     files: [
       '**/*.md/*.vue',
       '**/*.md/*.js',

@@ -10,7 +10,8 @@
   margin: 0.5em 0;
 }
 
-.shiki-light, .shiki-dark {
+.shiki-light,
+.shiki-dark {
   background: var(--c-card-bg) !important;
 }
 
@@ -28,21 +29,22 @@ html:not(.dark) .shiki-dark {
   --fg-deeper: #000;
 
   color: var(--fg);
-  --un-prose-borders: rgba(125,125,125,0.3);
-  --un-prose-headings: #18181B;
-  --un-prose-font-mono: 'JetBrains Mono' ,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --un-prose-borders: rgba(125, 125, 125, 0.3);
+  --un-prose-headings: #18181b;
+  --un-prose-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 .dark .prose {
-  --un-prose-headings: #FAFAFA;
+  --un-prose-headings: #fafafa;
 }
 
 .prose a {
-  --at-apply: under-anime under-base color-inherit;
+  --uno: under-anime under-base color-inherit;
 }
 
-.prose a:hover{
-  --at-apply: under-anime-hover;
+.prose a:hover {
+  --uno: under-anime-hover;
 }
 
 .prose a code {
@@ -145,8 +147,7 @@ h6:focus .header-anchor {
 
 .table-of-contents-anchor {
   backdrop-filter: blur(4px);
-  --uno: w-fit text-lg lt-lg:(p1 btn-border op80 hover:op100)
-    lt-md:(absolute top--12 left-10) flex-center rd cursor-pointer transition duration-400 bg-white/90 dark:bg-black/90;
+  --uno: 'w-fit text-lg lt-lg:(p1 btn-border op80 hover:op100) lt-md:(absolute top--12 left-10) flex-center rd cursor-pointer transition duration-400 bg-white/90 dark:bg-black/90';
 }
 
 .table-of-contents ul {
@@ -159,7 +160,7 @@ h6:focus .header-anchor {
   overflow-y: auto;
   font-size: 0.8em;
   backdrop-filter: blur(10px);
-  --uno: pl-0 py-2 rounded transition duration-700 list-none md:mt2 lg:mt0 lt-lg:(px2 bg-white/95 dark:bg-black/95 shadow ring-1 ring-zinc/10);
+  --uno: 'pl-0 py-2 rounded transition duration-700 list-none md:mt2 lg:mt0 lt-lg:(px2 bg-white/95 dark:bg-black/95 shadow ring-1 ring-zinc/10)';
 }
 
 .table-of-contents > ul > li > a {
@@ -171,11 +172,11 @@ h6:focus .header-anchor {
 }
 
 .table-of-contents ul > li {
-  --uno: leading-loose marker:c-zinc/50;
+  --uno: 'leading-loose marker:c-zinc/50';
 }
 
 .table-of-contents ul > li > a {
-  --uno: inline-block leading-inherit align-top w-full op75 hover:op100 transition before:hidden after:hidden;
+  --uno: 'inline-block leading-inherit align-top w-full op75 hover:op100 transition before:hidden after:hidden';
 }
 
 .code-wrap .line {
