@@ -106,7 +106,7 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .rotate {
   animation: rotation 2s infinite linear;
 }
