@@ -12,7 +12,9 @@ id: amazing-css
 
 ## GlowCard
 
-<div class="flex gap4">
-<GlowCard class="flex-auto h-30ch"></GlowCard>
-<GlowCard class="flex-auto h-30ch"></GlowCard>
+<div class="grid grid-cols-2 gap4">
+  <GlowCard class="aspect-square"></GlowCard>
+  <GlowCard class="aspect-square"></GlowCard>
+  <GlowCard class="aspect-square"></GlowCard>
+  <GlowCard class="aspect-square"></GlowCard>
 </div>

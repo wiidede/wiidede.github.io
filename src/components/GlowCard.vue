@@ -77,6 +77,18 @@ onUnmounted(() => {
   --gradient: conic-gradient(
     from 180deg at 50% 70%,
     hsla(0, 0%, 98%, 1) 0deg,
+    #ffcd1a 72.0000010728836deg,
+    #ff6b6b 144.0000021457672deg,
+    #9bd5ff 216.00000858306885deg,
+    #4dffbf 288.0000042915344deg,
+    hsla(0, 0%, 98%, 1) 1turn
+  );
+}
+
+.dark .glow-card {
+  --gradient: conic-gradient(
+    from 180deg at 50% 70%,
+    hsla(0, 0%, 98%, 1) 0deg,
     #eec32d 72.0000010728836deg,
     #ec4b4b 144.0000021457672deg,
     #709ab9 216.00000858306885deg,
@@ -90,6 +102,7 @@ onUnmounted(() => {
   --start: 0;
   background: var(--c-card-bg);
   padding: 2rem;
+  border-radius: var(--border-radius);
   /* aspect-ratio: 330 / 400; */
   position: relative;
 }
