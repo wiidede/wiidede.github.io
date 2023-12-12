@@ -119,14 +119,22 @@ export function useMyInfo() {
 }
 
 export function useFriends() {
-  const friends = [
+  interface Friend {
+    name: string
+    link: string
+    desc: string
+    avatar: string
+  }
+
+  const friends: Friend[] = [
     { name: 'CIRCUIT', link: 'https://yang000.cn', desc: '鸯飞漫冬山', avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=58894242&spec=100&img_type=jpg' },
     { name: 'XiYu博客', link: 'https://xiyu.pro', desc: '记录·分享', avatar: 'https://xiyu.pro/img/avatar.webp' },
+    { name: '小孙同学', link: 'https://blog.sunguoqi.com', desc: '路虽远行则将至，事随难做则必成！', avatar: 'https://blog.sunguoqi.com/images/avatar.jpg' },
     { name: 'wiidede | 小的的', link: 'https://wiidede.space', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
     { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
   ]
 
-  const idols = [
+  const idols: Friend[] = [
     { name: 'Anthony Fu', link: 'https://antfu.me', desc: 'A ship in harbor is safe, but that is not what ships are built for.', avatar: 'https://github.com/antfu.png' },
     { name: 'Evan You', link: 'https://evanyou.me', desc: '', avatar: 'https://github.com/yyx990803.png' },
   ]
