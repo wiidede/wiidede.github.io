@@ -10,11 +10,8 @@
   margin: 0.5em 0;
 }
 
-.shiki-light {
-  background: #fafafa80 !important;
-}
-.shiki-dark {
-  background: #25252680 !important;
+.shiki-light, .shiki-dark {
+  background: var(--c-card-bg) !important;
 }
 
 html.dark .shiki-light {

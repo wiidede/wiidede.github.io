@@ -14,6 +14,7 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import UnoCSS from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import WebfontDownload from 'vite-plugin-webfont-dl'
+import autoprefixer from 'autoprefixer'
 
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
@@ -124,6 +125,14 @@ export default defineConfig({
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools(),
   ],
+
+  css: {
+    postcss: {
+      plugins: [
+        autoprefixer({}),
+      ],
+    },
+  },
 
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
