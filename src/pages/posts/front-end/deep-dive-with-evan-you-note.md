@@ -76,38 +76,38 @@ v-for --> `list.map(() => {return h(...)})`
 ```html
 <script src="https://unpkg.com/vue"></script>
 <style>
-    .mt-4 {
-        margin: 10px;
-    }
+  .mt-4 {
+    margin: 10px;
+  }
 </style>
 
 <div id="app"></div>
 
 <script>
-    const {h, createApp} = Vue
+  const { h, createApp } = Vue
 
-    // 定义 Stack 组件
-    const Stack = {
-        props: ['size'], // 视频中尤大貌似没有指明 props
-        render() {
-            // 获取默认插槽
-            const slot = this.$slots.default
-                ? this.$slots.default()
-                : []
+  // 定义 Stack 组件
+  const Stack = {
+    props: ['size'], // 视频中尤大貌似没有指明 props
+    render() {
+      // 获取默认插槽
+      const slot = this.$slots.default ? this.$slots.default() : []
 
-            // 将插槽中的所有内容套上 div，并且读取 props 上的 size 属性，
-            // 并构成类名
-            return h('div', {class: 'stack'}, slot.map(child => {
-                return h('div', {class: `mt-${this.$props.size}`}, [
-                    child
-                ])
-            }))
-        }
-    }
+      // 将插槽中的所有内容套上 div，并且读取 props 上的 size 属性，
+      // 并构成类名
+      return h(
+        'div',
+        { class: 'stack' },
+        slot.map((child) => {
+          return h('div', { class: `mt-${this.$props.size}` }, [child])
+        }),
+      )
+    },
+  }
 
-    // App 组件
-    const App = {
-        template: `
+  // App 组件
+  const App = {
+    template: `
             <Stack size="4">
             <div>hello</div>
             <Stack size="4">
@@ -116,13 +116,13 @@ v-for --> `list.map(() => {return h(...)})`
             </Stack>
             </Stack>
         `,
-        components: {
-            Stack
-        }
-    }
+    components: {
+      Stack,
+    },
+  }
 
-    // 创建 vue 实例并挂载到 DOM 上
-    createApp(App).mount('#app')
+  // 创建 vue 实例并挂载到 DOM 上
+  createApp(App).mount('#app')
 </script>
 ```
 
@@ -146,82 +146,74 @@ v-for --> `list.map(() => {return h(...)})`
 <div id="app"></div>
 
 <script>
-    function h(tag, props, children) {
+  function h(tag, props, children) {}
 
-    }
+  function mount(vnode, container) {}
 
-    function mount(vnode, container) {
+  const vdom = h('div', { class: 'red' }, [h('span', null, ['hello'])])
 
-    }
-
-    const vdom = h('div', {class: 'red'}, [
-        h('span', null, ['hello'])
-    ])
-
-    mount(vdom, document.getElementById('app'))
+  mount(vdom, document.getElementById('app'))
 </script>
 ```
 
 即：h 生成 vdom，将 vdom 挂载到真实 dom 上
 
-## 5 -  Creating a Mount function
+## 5 - Creating a Mount function
 
 实现一个简单的 mount
 
 ```html
 <style>
-    .red {
-        color: red;
-    }
+  .red {
+    color: red;
+  }
 </style>
 <div id="app"></div>
 
 <script>
-    // 渲染函数 直接返回一个简单的 vNode
-    function h(tag, props, children) {
-        return {
-            tag,
-            props,
-            children
-        }
+  // 渲染函数 直接返回一个简单的 vNode
+  function h(tag, props, children) {
+    return {
+      tag,
+      props,
+      children,
+    }
+  }
+
+  // 将 vNode 挂载到真实的 DOM 上面
+  function mount(vnode, container) {
+    // 根据 vNode 信息创建 DOM
+    const el = (vnode.el = document.createElement(vnode.tag))
+
+    // props
+    if (vnode.props) {
+      for (const key in vnode.props) {
+        const value = vnode.props[key]
+        // 设置 DOM 的属性
+        el.setAttribute(key, value)
+      }
+    }
+    // children
+    if (vnode.children) {
+      // 如果是字符串，直接修改 textContent
+      if (typeof vnode.children === 'string') {
+        el.textContent = vnode.children
+      } else {
+        // 数组里面默认都是 vNode
+        vnode.children.forEach((child) => {
+          mount(child, el)
+        })
+      }
     }
 
-    // 将 vNode 挂载到真实的 DOM 上面
-    function mount(vnode, container) {
-        // 根据 vNode 信息创建 DOM
-        const el = vnode.el = document.createElement(vnode.tag)
+    // 将创建的 DOM 元素放到 container 中
+    container.appendChild(el)
+  }
 
-        // props
-        if (vnode.props) {
-            for (const key in vnode.props) {
-                const value = vnode.props[key];
-                // 设置 DOM 的属性
-                el.setAttribute(key, value)
-            }
-        }
-        // children
-        if (vnode.children) {
-            // 如果是字符串，直接修改 textContent
-            if (typeof vnode.children === 'string') {
-                el.textContent = vnode.children
-            } else {
-                // 数组里面默认都是 vNode
-                vnode.children.forEach(child => {
-                    mount(child, el)
-                })
-            }
-        }
+  // 直接 h、mount 即可看到页面上已经出现了红色的 hello
+  const vdom = h('div', { class: 'red' }, [h('span', null, 'hello')])
 
-        // 将创建的 DOM 元素放到 container 中
-        container.appendChild(el)
-    }
-
-    // 直接 h、mount 即可看到页面上已经出现了红色的 hello
-    const vdom = h('div', {class: 'red'}, [
-        h('span', null, 'hello')
-    ])
-
-    mount(vdom, document.getElementById('app'))
+  mount(vdom, document.getElementById('app'))
 </script>
 ```
 
@@ -231,148 +223,143 @@ v-for --> `list.map(() => {return h(...)})`
 
 ```html
 <style>
-    .red {
-        color: red;
-    }
+  .red {
+    color: red;
+  }
 
-    .green {
-        color: green;
-    }
+  .green {
+    color: green;
+  }
 </style>
 <div id="app"></div>
 
 <script>
-    // 渲染函数 直接返回一个简单的 vNode
-    function h(tag, props, children) {
-        return {
-            tag,
-            props,
-            children
-        }
+  // 渲染函数 直接返回一个简单的 vNode
+  function h(tag, props, children) {
+    return {
+      tag,
+      props,
+      children,
+    }
+  }
+
+  // 将 vNode 挂载到真实的 DOM 上面
+  function mount(vnode, container) {
+    // 根据 vNode 信息创建 DOM
+    const el = (vnode.el = document.createElement(vnode.tag))
+
+    // props
+    if (vnode.props) {
+      for (const key in vnode.props) {
+        const value = vnode.props[key]
+        // 设置 DOM 的属性
+        el.setAttribute(key, value)
+      }
+    }
+    // children
+    if (vnode.children) {
+      // 如果是字符串，直接修改 textContent
+      if (typeof vnode.children === 'string') {
+        el.textContent = vnode.children
+      } else {
+        // 数组里面默认都是 vNode
+        vnode.children.forEach((child) => {
+          mount(child, el)
+        })
+      }
     }
 
-    // 将 vNode 挂载到真实的 DOM 上面
-    function mount(vnode, container) {
-        // 根据 vNode 信息创建 DOM
-        const el = vnode.el = document.createElement(vnode.tag)
+    // 将创建的 DOM 元素放到 container 中
+    container.appendChild(el)
+  }
 
-        // props
-        if (vnode.props) {
-            for (const key in vnode.props) {
-                const value = vnode.props[key];
-                // 设置 DOM 的属性
-                el.setAttribute(key, value)
-            }
+  // 直接 h、mount 即可看到页面上已经出现了红色的 hello
+  const vdom = h('div', { class: 'red' }, [h('span', null, 'hello')])
+
+  mount(vdom, document.getElementById('app'))
+
+  // patch 阶段
+  function patch(n1, n2) {
+    // 如果两个 node 是相同类型的
+    if (n1.tag === n2.tag) {
+      // 拿到旧的节点的 DOM
+      const el = (n2.el = n1.el)
+      // props
+      const oldProps = n1.props || {}
+      const newProps = n2.props || {}
+      // 遍历新的属性，如果和旧的属性不相等，那么就设置新的属性
+      for (const key in newProps) {
+        const oldValue = oldProps[key]
+        const newValue = newProps[key]
+        if (newValue !== oldValue) {
+          el.setAttribute(key, newValue)
         }
-        // children
-        if (vnode.children) {
-            // 如果是字符串，直接修改 textContent
-            if (typeof vnode.children === 'string') {
-                el.textContent = vnode.children
-            } else {
-                // 数组里面默认都是 vNode
-                vnode.children.forEach(child => {
-                    mount(child, el)
-                })
-            }
+      }
+      // 遍历旧的属性，如果发现新的属性没有这项了，则删除旧的属性
+      for (const key in oldProps) {
+        if (!(key in newProps)) {
+          el.removeAttribute(key)
         }
+      }
 
-        // 将创建的 DOM 元素放到 container 中
-        container.appendChild(el)
-    }
-
-    // 直接 h、mount 即可看到页面上已经出现了红色的 hello
-    const vdom = h('div', {class: 'red'}, [
-        h('span', null, 'hello')
-    ])
-
-    mount(vdom, document.getElementById('app'))
-
-    // patch 阶段
-    function patch(n1, n2) {
-        // 如果两个 node 是相同类型的
-        if (n1.tag === n2.tag) {
-            // 拿到旧的节点的 DOM
-            const el = n2.el = n1.el
-            // props
-            const oldProps = n1.props || {}
-            const newProps = n2.props || {}
-            // 遍历新的属性，如果和旧的属性不相等，那么就设置新的属性
-            for (const key in newProps) {
-                const oldValue = oldProps[key]
-                const newValue = newProps[key]
-                if (newValue !== oldValue) {
-                    el.setAttribute(key, newValue)
-                }
-            }
-            // 遍历旧的属性，如果发现新的属性没有这项了，则删除旧的属性
-            for (const key in oldProps) {
-                if (!(key in newProps)) {
-                    el.removeAttribute(key)
-                }
-            }
-
-            // children
-            const oldChildren = n1.children
-            const newChildren = n2.children
-            if (typeof newChildren === 'string') {
-                if (typeof oldChildren === 'string') {
-                    // 新的孩子和旧的孩子都是 string 类型，即都是文本类型
-                    if (newChildren !== oldChildren) {
-                        // 直接替换 textContent
-                        el.textContent = newChildren
-                    }
-                } else {
-                    // 新孩子是文本节点，但是旧孩子是数组，直接设置 textContent，
-                    // 这样会覆盖旧的子 DOM 节点，并丢弃它们
-                    el.textContent = newChildren
-                }
-            } else {
-                if (typeof oldChildren === 'string') {
-                    // 新孩子是数组，但是旧孩子是文本节点
-                    // 清空旧的文本节点
-                    el.innerText = ''
-                    // 遍历数组，将子 vNode 挂载到 el 上
-                    newChildren.forEach(child => {
-                        mount(child, el)
-                    })
-                } else {
-                    // 新孩子和旧孩子都为数组
-                    // diff 阶段
-                    // diff 在 Vue 内部有两种方式，一种是通过 key，一种是遍历比较
-                    // 这里直接遍历
-                    // 获取共有的长度，直接每个子节点都进行 patch
-                    // 这样可能非常低效，但是足够直观并且能保证一致性
-                    const commonLength = Math.min(oldChildren.length, newChildren.length)
-                    for (let i = 0; i < commonLength; i++) {
-                        patch(oldChildren[i], newChildren[i])
-                    }
-                    if (newChildren.length > oldChildren.length) {
-                        // 如果新孩子更长，将新孩子多余的节点添加到 DOM 上
-                        newChildren.slice(oldChildren.length).forEach(child => {
-                            mount(child, el)
-                        })
-                    } else if (newChildren.length < oldChildren.length) {
-                        // 如果旧孩子更长，将旧孩子多余的节点从 DOM 上移除
-                        oldChildren.slice(newChildren.length).forEach(child => {
-                            el.removeChild(child.el)
-                        })
-                    }
-                }
-            }
-
+      // children
+      const oldChildren = n1.children
+      const newChildren = n2.children
+      if (typeof newChildren === 'string') {
+        if (typeof oldChildren === 'string') {
+          // 新的孩子和旧的孩子都是 string 类型，即都是文本类型
+          if (newChildren !== oldChildren) {
+            // 直接替换 textContent
+            el.textContent = newChildren
+          }
         } else {
-            // 如果两个 node 是不同类型的，则需要用新的 node 替换 旧的 node
-            // 这里省略
-            // replace
+          // 新孩子是文本节点，但是旧孩子是数组，直接设置 textContent，
+          // 这样会覆盖旧的子 DOM 节点，并丢弃它们
+          el.textContent = newChildren
         }
+      } else {
+        if (typeof oldChildren === 'string') {
+          // 新孩子是数组，但是旧孩子是文本节点
+          // 清空旧的文本节点
+          el.innerText = ''
+          // 遍历数组，将子 vNode 挂载到 el 上
+          newChildren.forEach((child) => {
+            mount(child, el)
+          })
+        } else {
+          // 新孩子和旧孩子都为数组
+          // diff 阶段
+          // diff 在 Vue 内部有两种方式，一种是通过 key，一种是遍历比较
+          // 这里直接遍历
+          // 获取共有的长度，直接每个子节点都进行 patch
+          // 这样可能非常低效，但是足够直观并且能保证一致性
+          const commonLength = Math.min(oldChildren.length, newChildren.length)
+          for (let i = 0; i < commonLength; i++) {
+            patch(oldChildren[i], newChildren[i])
+          }
+          if (newChildren.length > oldChildren.length) {
+            // 如果新孩子更长，将新孩子多余的节点添加到 DOM 上
+            newChildren.slice(oldChildren.length).forEach((child) => {
+              mount(child, el)
+            })
+          } else if (newChildren.length < oldChildren.length) {
+            // 如果旧孩子更长，将旧孩子多余的节点从 DOM 上移除
+            oldChildren.slice(newChildren.length).forEach((child) => {
+              el.removeChild(child.el)
+            })
+          }
+        }
+      }
+    } else {
+      // 如果两个 node 是不同类型的，则需要用新的 node 替换 旧的 node
+      // 这里省略
+      // replace
     }
+  }
 
-    const vdom2 = h('div', {class: 'green'}, [
-        h('span', null, 'changed!')
-    ])
+  const vdom2 = h('div', { class: 'green' }, [h('span', null, 'changed!')])
 
-    patch(vdom, vdom2)
+  patch(vdom, vdom2)
 </script>
 ```
 
@@ -419,77 +406,76 @@ state.count++ // 1
 
 ```html
 <script>
-    // 记录当前的 effect
-    let activeEffect;
+  // 记录当前的 effect
+  let activeEffect
 
-    // 创建一个 Dep 类
-    class Dep {
-        // 构造的时候，记录 effect 到 subscribers 集合中
-        // 这里直接把值记录在 Dep 中
-        constructor(value) {
-            this.subscribers = new Set();
-            this._value = value;
-        }
-
-        // 获取的时候收集依赖
-        get value() {
-            this.depend();
-            return this._value;
-        }
-
-        // 赋值的时候通知更新
-        set value(newValue) {
-            this._value = newValue;
-            this.notify();
-        }
-
-        // 将当前的 effect 放入 subscribers 集合
-        // 使用集合可以避免重复收集依赖
-        depend() {
-            if (activeEffect) {
-                this.subscribers.add(activeEffect);
-            }
-        }
-
-        // 更新的时候，把集合里的 effect 都执行一遍
-        notify() {
-            this.subscribers.forEach(effect => {
-                effect()
-            });
-        }
+  // 创建一个 Dep 类
+  class Dep {
+    // 构造的时候，记录 effect 到 subscribers 集合中
+    // 这里直接把值记录在 Dep 中
+    constructor(value) {
+      this.subscribers = new Set()
+      this._value = value
     }
 
-    // 把传入进来的回调函数设置成当前的 effect
-    // 然后立马执行一遍回调函数
-    // 执行完后清空当前的 effect
-    function watchEffect(effect) {
-        activeEffect = effect;
-        effect();
-        activeEffect = null;
+    // 获取的时候收集依赖
+    get value() {
+      this.depend()
+      return this._value
     }
 
-    // 接下来是测试的代码
-    const ok = new Dep(true);
-    const count = new Dep(0);
+    // 赋值的时候通知更新
+    set value(newValue) {
+      this._value = newValue
+      this.notify()
+    }
 
-    watchEffect(() => {
-        if (ok.value) {
-            console.log(count.value);
-        } else {
-            console.log('error branch');
-        }
-    })
+    // 将当前的 effect 放入 subscribers 集合
+    // 使用集合可以避免重复收集依赖
+    depend() {
+      if (activeEffect) {
+        this.subscribers.add(activeEffect)
+      }
+    }
 
-    count.value++;
-    ok.value = false;
-    // 尤大希望执行这一遍后，count 的依赖被删除，
-    // 因为 watchEffect 中不会再执行到 count.value，
-    // 但接下来改变 count 还是会触发 watchEffect，因为 count 的依赖还存在，
-    // 所以触发了 console.log('error branch')
-    // 所以 Vue 3 的源码中，每次都会整理依赖
-    count.value++;
+    // 更新的时候，把集合里的 effect 都执行一遍
+    notify() {
+      this.subscribers.forEach((effect) => {
+        effect()
+      })
+    }
+  }
+
+  // 把传入进来的回调函数设置成当前的 effect
+  // 然后立马执行一遍回调函数
+  // 执行完后清空当前的 effect
+  function watchEffect(effect) {
+    activeEffect = effect
+    effect()
+    activeEffect = null
+  }
+
+  // 接下来是测试的代码
+  const ok = new Dep(true)
+  const count = new Dep(0)
+
+  watchEffect(() => {
+    if (ok.value) {
+      console.log(count.value)
+    } else {
+      console.log('error branch')
+    }
+  })
+
+  count.value++
+  ok.value = false
+  // 尤大希望执行这一遍后，count 的依赖被删除，
+  // 因为 watchEffect 中不会再执行到 count.value，
+  // 但接下来改变 count 还是会触发 watchEffect，因为 count 的依赖还存在，
+  // 所以触发了 console.log('error branch')
+  // 所以 Vue 3 的源码中，每次都会整理依赖
+  count.value++
 </script>
-
 ```
 
 ## 9 - Building the Reactive API
@@ -498,153 +484,153 @@ state.count++ // 1
 
 ```html
 <script>
-    let activeEffect;
+  let activeEffect
 
-    // 有了 reactive，Dep 中无需记录值，值就在原来的对象上
-    // Dep 只是单纯地收集依赖，执行 effect
-    class Dep {
-        subscribers = new Set();
+  // 有了 reactive，Dep 中无需记录值，值就在原来的对象上
+  // Dep 只是单纯地收集依赖，执行 effect
+  class Dep {
+    subscribers = new Set()
 
-        depend() {
-            if (activeEffect) {
-                this.subscribers.add(activeEffect);
-            }
-        }
-
-        notify() {
-            this.subscribers.forEach(effect => {
-                effect()
-            });
-        }
+    depend() {
+      if (activeEffect) {
+        this.subscribers.add(activeEffect)
+      }
     }
 
-    function watchEffect(effect) {
-        activeEffect = effect;
-        effect();
-        activeEffect = null;
+    notify() {
+      this.subscribers.forEach((effect) => {
+        effect()
+      })
     }
+  }
 
-    // Vue 2 采用 Object.defineProperty 为对象上的每一个 key 添加响应式
-    // 这样做的缺点就是新增的属性无法自动添加响应式
-    function reactive(raw) {
-        Object.keys(raw).forEach(key => {
-            const dep = new Dep();
-            let value = raw[key];
+  function watchEffect(effect) {
+    activeEffect = effect
+    effect()
+    activeEffect = null
+  }
 
-            Object.defineProperty(raw, key, {
-                get() {
-                    // 获取 key 对应的值时添加依赖
-                    dep.depend();
-                    return value;
-                },
-                set(newValue) {
-                    // 设置 key 对应的值时进行更新
-                    value = newValue;
-                    dep.notify();
-                }
-            })
-        })
+  // Vue 2 采用 Object.defineProperty 为对象上的每一个 key 添加响应式
+  // 这样做的缺点就是新增的属性无法自动添加响应式
+  function reactive(raw) {
+    Object.keys(raw).forEach((key) => {
+      const dep = new Dep()
+      let value = raw[key]
 
-        return raw
-    }
-
-    const state = reactive({
-        count: 0
+      Object.defineProperty(raw, key, {
+        get() {
+          // 获取 key 对应的值时添加依赖
+          dep.depend()
+          return value
+        },
+        set(newValue) {
+          // 设置 key 对应的值时进行更新
+          value = newValue
+          dep.notify()
+        },
+      })
     })
 
-    watchEffect(() => {
-        console.log(state.count)
-    });
+    return raw
+  }
 
-    state.count++
+  const state = reactive({
+    count: 0,
+  })
+
+  watchEffect(() => {
+    console.log(state.count)
+  })
+
+  state.count++
 </script>
 ```
 
 接下来是 Vue 3 的做法，也就是修改 reactive 的实现。
 
-Vue 2 采用 Object.defineProperty，对每一个 key 做响应式处理，而 Vue  3 使用 Proxy，是直接对整个对象本身做响应式处理，这样的好处就是新添加的属性，也可以被自动处理，并且使用 Proxy 可以直接处理数组，而不是像 Vue 2，针对数组特殊处理，修改数组的原型链，这种比较 hack 的方式进行处理。
+Vue 2 采用 Object.defineProperty，对每一个 key 做响应式处理，而 Vue 3 使用 Proxy，是直接对整个对象本身做响应式处理，这样的好处就是新添加的属性，也可以被自动处理，并且使用 Proxy 可以直接处理数组，而不是像 Vue 2，针对数组特殊处理，修改数组的原型链，这种比较 hack 的方式进行处理。
 
 ```html
 <script>
-    let activeEffect;
+  let activeEffect
 
-    class Dep {
-        subscribers = new Set();
+  class Dep {
+    subscribers = new Set()
 
-        depend() {
-            if (activeEffect) {
-                this.subscribers.add(activeEffect);
-            }
-        }
-
-        notify() {
-            this.subscribers.forEach(effect => {
-                effect()
-            });
-        }
+    depend() {
+      if (activeEffect) {
+        this.subscribers.add(activeEffect)
+      }
     }
 
-    function watchEffect(effect) {
-        activeEffect = effect;
-        effect();
-        activeEffect = null;
+    notify() {
+      this.subscribers.forEach((effect) => {
+        effect()
+      })
     }
+  }
 
-    // 创建一个存放 deps 的弱引用 Map，key 为 target 本身
-    // 即需要响应式处理的对象本身
-    // WeakMap 只能用 object 作为 key，并且无法被遍历
-    // 当 target 不再需要的时候，可以正确地被垃圾处理机制回收
-    const targetMap = new WeakMap();
+  function watchEffect(effect) {
+    activeEffect = effect
+    effect()
+    activeEffect = null
+  }
 
-    function getDep(target, key) {
-        // 获取 target 对应的 deps，不存在就创建
-        let depsMap = targetMap.get(target);
-        if (!depsMap) {
-            depsMap = new Map();
-            targetMap.set(target, depsMap);
-        }
-        // 获取 target[key] 对应的 dep，不存在就创建
-        let dep = depsMap.get(key);
-        if (!dep) {
-            dep = new Dep();
-            depsMap.set(key, dep);
-        }
-        return dep
+  // 创建一个存放 deps 的弱引用 Map，key 为 target 本身
+  // 即需要响应式处理的对象本身
+  // WeakMap 只能用 object 作为 key，并且无法被遍历
+  // 当 target 不再需要的时候，可以正确地被垃圾处理机制回收
+  const targetMap = new WeakMap()
+
+  function getDep(target, key) {
+    // 获取 target 对应的 deps，不存在就创建
+    let depsMap = targetMap.get(target)
+    if (!depsMap) {
+      depsMap = new Map()
+      targetMap.set(target, depsMap)
     }
-
-    const reactiveHandlers = {
-        // 因为 get 和 set 里都需要获取 dep，故抽成一个获取 dep 的函数
-        get(target, key, receiver) {
-            const dep = getDep(target, key);
-            // 收集依赖
-            dep.depend();
-            // 使用 Reflect 确保与原始的 get 一致
-            return Reflect.get(target, key, receiver);
-        },
-        set(target, key, value, receiver) {
-            const dep = getDep(target, key);
-            // Proxy 的 set 需要返回一个值
-            const result = Reflect.set(target, key, value, receiver);
-            // 通知更新
-            dep.notify();
-            return result;
-        },
+    // 获取 target[key] 对应的 dep，不存在就创建
+    let dep = depsMap.get(key)
+    if (!dep) {
+      dep = new Dep()
+      depsMap.set(key, dep)
     }
+    return dep
+  }
 
-    function reactive(raw) {
-        // 使用 Proxy，更方便地拦截处理
-        return new Proxy(raw, reactiveHandlers);
-    }
+  const reactiveHandlers = {
+    // 因为 get 和 set 里都需要获取 dep，故抽成一个获取 dep 的函数
+    get(target, key, receiver) {
+      const dep = getDep(target, key)
+      // 收集依赖
+      dep.depend()
+      // 使用 Reflect 确保与原始的 get 一致
+      return Reflect.get(target, key, receiver)
+    },
+    set(target, key, value, receiver) {
+      const dep = getDep(target, key)
+      // Proxy 的 set 需要返回一个值
+      const result = Reflect.set(target, key, value, receiver)
+      // 通知更新
+      dep.notify()
+      return result
+    },
+  }
 
-    const state = reactive({
-        count: 0
-    })
+  function reactive(raw) {
+    // 使用 Proxy，更方便地拦截处理
+    return new Proxy(raw, reactiveHandlers)
+  }
 
-    watchEffect(() => {
-        console.log(state.count)
-    });
+  const state = reactive({
+    count: 0,
+  })
 
-    state.count++
+  watchEffect(() => {
+    console.log(state.count)
+  })
+
+  state.count++
 </script>
 ```
 
@@ -658,30 +644,29 @@ Vue 2 采用 Object.defineProperty，对每一个 key 做响应式处理，而 V
 
 ```html
 <script>
-    // vdom
+  // vdom
 
-    function h(tag, props, children) {...}
+  function h(tag, props, children) {...}
 
-    function mount(vnode, container) {...}
+  function mount(vnode, container) {...}
 
-    function patch(n1, n2) {...}
+  function patch(n1, n2) {...}
 
-    // reactivity
+  // reactivity
 
-    let activeEffect;
+  let activeEffect;
 
-    class Dep {...}
+  class Dep {...}
 
-    function watchEffect(effect) {...}
+  function watchEffect(effect) {...}
 
-    const targetMap = new WeakMap();
+  const targetMap = new WeakMap();
 
-    function getDep(target, key) {...}
+  function getDep(target, key) {...}
 
-    const reactiveHandlers = {...}
+  const reactiveHandlers = {...}
 
-    function reactive(raw) {...}
-
+  function reactive(raw) {...}
 </script>
 ```
 
@@ -690,48 +675,52 @@ Vue 2 采用 Object.defineProperty，对每一个 key 做响应式处理，而 V
 ```html
 <div id="app"></div>
 <script>
-    // vdom
-    // reactivity
+  // vdom
+  // reactivity
 
-    // App 组件
-    const App = {
-        data: reactive({
-            count: 0
-        }),
-        render() {
-            return h('div', {
-                // 这里需要在 mount 中添加事件处理，之前没有实现
-                onClick: () => {
-                    this.data.count++
-                }
-            }, String(this.data.count)) // 第三个参数这里只支持 String
-        }
-    }
+  // App 组件
+  const App = {
+    data: reactive({
+      count: 0,
+    }),
+    render() {
+      return h(
+        'div',
+        {
+          // 这里需要在 mount 中添加事件处理，之前没有实现
+          onClick: () => {
+            this.data.count++
+          },
+        },
+        String(this.data.count),
+      ) // 第三个参数这里只支持 String
+    },
+  }
 
-    // 挂载 App
-    function mountApp(component, container) {
-        let isMounted = false
-        let prevVdom
-        // component 组件中有响应式对象发生变化，便会执行以下函数
-        watchEffect(() => {
-            if (!isMounted) {
-                // 没有挂载，即初始化
-                // 记录旧的 vdom
-                prevVdom = component.render()
-                // 挂载
-                mount(prevVdom, container)
-                isMounted = true
-            } else {
-                // 获取新的 vdom
-                const newVdom = component.render()
-                // patch
-                patch(prevVdom, newVdom)
-                prevVdom = newVdom
-            }
-        })
-    }
+  // 挂载 App
+  function mountApp(component, container) {
+    let isMounted = false
+    let prevVdom
+    // component 组件中有响应式对象发生变化，便会执行以下函数
+    watchEffect(() => {
+      if (!isMounted) {
+        // 没有挂载，即初始化
+        // 记录旧的 vdom
+        prevVdom = component.render()
+        // 挂载
+        mount(prevVdom, container)
+        isMounted = true
+      } else {
+        // 获取新的 vdom
+        const newVdom = component.render()
+        // patch
+        patch(prevVdom, newVdom)
+        prevVdom = newVdom
+      }
+    })
+  }
 
-    mountApp(App, document.getElementById('app'))
+  mountApp(App, document.getElementById('app'))
 </script>
 ```
 
@@ -775,81 +764,82 @@ Composition API
 <div id="app"></div>
 
 <script>
-    const {createApp, ref, watchEffect} = Vue
+  const { createApp, ref, watchEffect } = Vue
 
-    // 进一步简化在组件中的 use
-    function usePost(getId) {
-        return useFetch(() => `https://jsonplaceholder.typicode.com/todos/${getId()}`)
-    }
+  // 进一步简化在组件中的 use
+  function usePost(getId) {
+    return useFetch(
+      () => `https://jsonplaceholder.typicode.com/todos/${getId()}`,
+    )
+  }
 
-    // 抽出 fetch，并且你可以在的 useFetch 中使用 watchEffect 来监听传进来的值的变化
-    function useFetch(getUrl) {
-        const data = ref(null)
-        const error = ref(null)
-        const isPending = ref(true)
+  // 抽出 fetch，并且你可以在的 useFetch 中使用 watchEffect 来监听传进来的值的变化
+  function useFetch(getUrl) {
+    const data = ref(null)
+    const error = ref(null)
+    const isPending = ref(true)
 
-        watchEffect(() => {
-            // reset
-            data.value = null
-            error.value = null
-            isPending.value = true
-            // fetch
-            fetch(getUrl())
-                .then(res => res.json())
-                .then(_data => {
-                    data.value = _data
-                })
-                .catch(err => {
-                    error.value = err
-                })
-                .finally(() => {
-                    isPending.value = false
-                })
+    watchEffect(() => {
+      // reset
+      data.value = null
+      error.value = null
+      isPending.value = true
+      // fetch
+      fetch(getUrl())
+        .then((res) => res.json())
+        .then((_data) => {
+          data.value = _data
         })
+        .catch((err) => {
+          error.value = err
+        })
+        .finally(() => {
+          isPending.value = false
+        })
+    })
 
-        return {
-            data,
-            error,
-            isPending
-        }
+    return {
+      data,
+      error,
+      isPending,
     }
+  }
 
-    const Post = {
-        template: `
+  const Post = {
+    template: `
             <div v-if="isPending">loading</div>
             <div v-else-if="data">{{ data }}</div>
             <div v-else-if="error">Something went Wrong: {{ error.message }}</div>
         `,
-        props: ['id'],
-        setup(props) {
-            // prop.id 被传到了 useFetch 的 watchEffect 中
-            // 所以 prop.id 变化，即可重新 fetch
-            const {data, error, isPending} = usePost(() => props.id)
+    props: ['id'],
+    setup(props) {
+      // prop.id 被传到了 useFetch 的 watchEffect 中
+      // 所以 prop.id 变化，即可重新 fetch
+      const { data, error, isPending } = usePost(() => props.id)
 
-            return {
-                data,
-                error,
-                isPending
-            }
-        }
-    }
+      return {
+        data,
+        error,
+        isPending,
+      }
+    },
+  }
 
-    const App = {
-        components: {Post},
-        data() {
-            return {
-                id: 1
-            }
-        },
-        template: `
+  const App = {
+    components: { Post },
+    data() {
+      return {
+        id: 1,
+      }
+    },
+    template: `
             <button @click="id++">change ID</button>
             <Post :id="id"></Post>
-        `
-    }
+        `,
+  }
 
-    createApp(App).mount('#app')
+  createApp(App).mount('#app')
 </script>
-
 ```
 
 ## 15 - Parting Thoughts

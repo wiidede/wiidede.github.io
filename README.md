@@ -15,9 +15,9 @@ Special thanks to [Anthony Fu](https://antfu.me/)
 
 <br>
 
-* [博客地址(Vite)](https://wiidede.space)
-* [旧博客(VuePress)](https://wiidede.github.io/wiidede-vuepress-blog/)
-* [旧博客(Hexo)](https://wiidede.github.io/wiidede-hexo-blog/)
+- [博客地址(Vite)](https://wiidede.space)
+- [旧博客(VuePress)](https://wiidede.github.io/wiidede-vuepress-blog/)
+- [旧博客(Hexo)](https://wiidede.github.io/wiidede-hexo-blog/)
 
 <br>
 

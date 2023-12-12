@@ -17,9 +17,9 @@ sticky: 2
 
 ```css
 span {
-    background: linear-gradient(360deg, #97E9FF 0%, #FFFFFF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(360deg, #97e9ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 ```
 
@@ -27,7 +27,7 @@ span {
 
 ```css
 p {
-    text-shadow: 0 0 12px rgba(24, 230, 255, 0.63);
+  text-shadow: 0 0 12px rgba(24, 230, 255, 0.63);
 }
 ```
 
@@ -35,9 +35,9 @@ p {
 
 ```css
 p {
-    word-break: keep-all;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+  word-break: keep-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 ```
 
@@ -45,9 +45,9 @@ p {
 
 ```css
 p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 ```
 
@@ -55,16 +55,16 @@ p {
 
 ```css
 .iconfont + .iconfont {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 /* 任意两个连续的 `iconfont` 类中后面一个添加 `margin-left` 属性 */
 ```
 
 ## 平滑滚动 （直接修改offsetTop都能平滑滚动）
 
-``` css
+```css
 .container {
-    scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 ```
 
@@ -74,8 +74,8 @@ firefox 的 width `fit-content` 目前还需要加前缀
 
 ```css
 div {
-    width: fit-content;
-    width: -moz-fit-content;
+  width: fit-content;
+  width: -moz-fit-content;
 }
 ```
 
@@ -85,9 +85,9 @@ div {
 
 ```css
 div {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 ```

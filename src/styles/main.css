@@ -23,7 +23,8 @@ html.dark {
   --c-scrollbar-hover: #444;
 }
 
-html.hidden-scroll, html.hidden-scroll.dark {
+html.hidden-scroll,
+html.hidden-scroll.dark {
   --c-scrollbarTrack: transparent;
   --c-scrollbar: transparent;
   --c-scrollbar-hover: transparent;
@@ -83,7 +84,8 @@ html.hidden-scroll, html.hidden-scroll.dark {
 ::-webkit-scrollbar:horizontal {
   height: 6px;
 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
   background: var(--c-scrollbarTrack);
   border-radius: 10px;
 }

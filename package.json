@@ -44,6 +44,7 @@
     "enso": "1.0.0-alpha.3",
     "eslint": "^8.55.0",
     "eslint-plugin-case-police": "^0.6.1",
+    "eslint-plugin-format": "^0.1.0",
     "feed": "^4.2.2",
     "fs-extra": "^11.2.0",
     "https-localhost": "^4.7.1",

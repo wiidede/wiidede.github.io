@@ -13,7 +13,7 @@ id: listen-the-clipboard-and-match
 
 # 监听剪贴板 在文字中匹配相应的内容 适用于题库
 
-最近有考试，还有题库，我就把之前写的监听剪贴板来搜索题库的程序拿了出来。虽然可能你更希望直接帮你答好，但有些网站只有一次考试机会，所以监听剪贴板反而更通用，虽然你 `ctrl + c` 可能会按的有点累，但总比一题一题搜（`ctrl + c` `切换到题库` `ctrl + f`   `ctrl + v`）快一点
+最近有考试，还有题库，我就把之前写的监听剪贴板来搜索题库的程序拿了出来。虽然可能你更希望直接帮你答好，但有些网站只有一次考试机会，所以监听剪贴板反而更通用，虽然你 `ctrl + c` 可能会按的有点累，但总比一题一题搜（`ctrl + c` `切换到题库` `ctrl + f` `ctrl + v`）快一点
 
 当然如果你有更好的方法也可以留言或者告诉我
 
@@ -21,7 +21,7 @@ id: listen-the-clipboard-and-match
 
 话不多说，很简单的代码直接上了
 
-```python
+````python
 import pyperclip
 import time
 import re
@@ -46,6 +46,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-```
+````
 
 其中关于正则表示的原理可以参考[这里](/reg-about-match-the-forward)

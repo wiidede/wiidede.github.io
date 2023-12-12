@@ -23,10 +23,11 @@ id: element-ui-time-picker-add-now-button
 
 ```html
 <el-time-picker
-        @click.native="handleClickTime"
-        v-model="value"
-        :picker-options="{selectableRange: '18:00:00 - 20:00:00'}"
-        placeholder="请选择时间">
+  @click.native="handleClickTime"
+  v-model="value"
+  :picker-options="{selectableRange: '18:00:00 - 20:00:00'}"
+  placeholder="请选择时间"
+>
 </el-time-picker>
 ```
 
