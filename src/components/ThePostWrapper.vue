@@ -125,11 +125,12 @@ onMounted(() => {
     <slot />
   </article>
   <TheGoBack />
-  <TheFooter />
+  <TheFooter>
+    <client-only>
+      <div v-if="route.meta.isPost" class="slide-enter mx-auto w-65ch pt-4 prose animate-delay-800">
+        <TheValine />
+      </div>
+    </client-only>
+  </TheFooter>
   <div class="article-progress" />
-  <client-only>
-    <div class="slide-enter mx-auto pt-4 prose animate-delay-800">
-      <TheValine v-if="route.meta.isPost" />
-    </div>
-  </client-only>
 </template>

@@ -34,7 +34,7 @@ provide(ProvideShowBgKey, showBg)
     class="print:hidden"
   />
   <main
-    :class="showHeader ? 'px4 pt4 pb10' : ''"
+    :class="showHeader ? 'px4 pt4 pb6' : ''"
     text="center zinc-700 dark:zinc-200"
   >
     <RouterView />
