@@ -127,7 +127,7 @@ onMounted(() => {
   <TheGoBack />
   <TheFooter>
     <client-only>
-      <div v-if="route.meta.isPost" class="slide-enter mx-auto w-65ch pt-4 prose animate-delay-800">
+      <div v-if="route.meta.isPost" class="slide-enter w-full pt-4 animate-delay-800">
         <TheValine />
       </div>
     </client-only>
