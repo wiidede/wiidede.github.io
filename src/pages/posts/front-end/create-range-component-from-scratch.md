@@ -1,6 +1,6 @@
 ---
 title: 从零开始打造一个支持多个滑块的组件
-date: 2023-10-24 10:22:24
+date: 2023-10-24T10:22:24+08:00
 id: create-range-component-from-scratch
 categories:
   - 前端

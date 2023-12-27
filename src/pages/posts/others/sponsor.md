@@ -1,6 +1,6 @@
 ---
 title: 赞赏
-date: 2020-09-15 10:02:02
+date: 2020-09-15T10:02:02+08:00
 tags:
   - wiidede
 categories:

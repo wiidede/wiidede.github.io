@@ -1,6 +1,6 @@
 ---
 title: 前端框架设计想发
-date: 2022-06-09 20:21:52
+date: 2022-06-09T20:21:52+08:00
 id: frontend-frame-idea
 categories:
   - 前端

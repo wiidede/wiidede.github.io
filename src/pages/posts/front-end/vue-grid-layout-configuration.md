@@ -1,6 +1,6 @@
 ---
 title: vue-grid-layout-组件配置
-date: 2022-09-29 14:33:16
+date: 2022-09-29T14:33:16+08:00
 id: vue-grid-layout-configuration
 categories:
   - 前端

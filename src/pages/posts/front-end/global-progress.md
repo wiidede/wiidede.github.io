@@ -1,6 +1,6 @@
 ---
 title: 全局进度条
-date: 2022-07-06 17:22:37
+date: 2022-07-06T17:22:37+08:00
 id: global-progress
 categories:
   - 前端

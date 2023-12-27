@@ -1,6 +1,6 @@
 ---
 title: 带有token的图片vue组件：authImg，使用axios下载图片
-date: 2022-07-08 13:52:29
+date: 2022-07-08T13:52:29+08:00
 id: auth-img-vue-comp
 categories:
   - 前端

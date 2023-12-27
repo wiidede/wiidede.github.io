@@ -1,6 +1,6 @@
 ---
 title: vue的小技巧总结
-date: 2021-12-27 15:23:50
+date: 2021-12-27T15:23:50+08:00
 id: several-vue-skills
 categories:
   - 前端

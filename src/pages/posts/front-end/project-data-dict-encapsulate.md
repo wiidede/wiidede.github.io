@@ -1,6 +1,6 @@
 ---
 title: 项目数据字典封装
-date: 2022-11-08 13:53:31
+date: 2022-11-08T13:53:31+08:00
 id: project-data-dict-encapsulate
 categories:
   - 前端

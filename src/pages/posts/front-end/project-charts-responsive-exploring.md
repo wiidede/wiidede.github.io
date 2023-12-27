@@ -1,6 +1,6 @@
 ---
 title: 图表组件响应式探索
-date: 2022-11-11 14:07:42
+date: 2022-11-11T14:07:42+08:00
 id: project-charts-responsive-exploring
 categories:
   - 前端

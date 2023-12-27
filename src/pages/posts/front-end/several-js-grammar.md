@@ -1,6 +1,6 @@
 ---
 title: 整理一些js写法
-date: 2020-10-22 09:57:27
+date: 2020-10-22T09:57:27+08:00
 tags:
   - JavaScript
 categories:

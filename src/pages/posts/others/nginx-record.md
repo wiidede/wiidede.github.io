@@ -1,6 +1,6 @@
 ---
 title: nginx record
-date: 2023-07-06 15:09:56
+date: 2023-07-06T15:09:56+08:00
 tags:
   - nginx
 categories:

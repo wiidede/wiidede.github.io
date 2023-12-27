@@ -1,6 +1,6 @@
 ---
 title: arco-design快速使用tailwind的颜色、unocss动态颜色
-date: 2023-05-23 10:32:59
+date: 2023-05-23T10:32:59+08:00
 id: arco-design-using-tailwind-color
 categories:
   - 前端

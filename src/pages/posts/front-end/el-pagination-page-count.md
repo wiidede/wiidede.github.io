@@ -1,6 +1,6 @@
 ---
 title: ElPagination添加页数总数
-date: 2022-09-06 10:40:28
+date: 2022-09-06T10:40:28+08:00
 id: el-pagination-page-count
 categories:
   - 前端

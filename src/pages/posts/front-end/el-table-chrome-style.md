@@ -1,6 +1,6 @@
 ---
 title: el-tab做成chrome类似的tab样式
-date: 2022-09-06 10:57:17
+date: 2022-09-06T10:57:17+08:00
 id: el-table-chrome-style
 categories:
   - 前端

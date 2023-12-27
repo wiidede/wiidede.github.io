@@ -1,6 +1,6 @@
 ---
 title: 我写的一些可以日后参考的代码
-date: 2022-04-15 15:18:37
+date: 2022-04-15T15:18:37+08:00
 id: several-code-for-lookup
 categories:
   - 前端

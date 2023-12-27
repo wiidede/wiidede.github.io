@@ -1,6 +1,6 @@
 ---
 title: 前端基础知识查漏补缺
-date: 2022-02-09 19:15:22
+date: 2022-02-09T19:15:22+08:00
 id: frontend-knowledge-checking-for-gaps
 categories:
   - 前端

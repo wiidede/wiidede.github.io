@@ -1,6 +1,6 @@
 ---
 title: 文本数字溢出后，按比例缩小，vue组件封装
-date: 2023-01-16 15:22:18
+date: 2023-01-16T15:22:18+08:00
 id: overflow-text-resize
 categories:
   - 前端

@@ -1,6 +1,6 @@
 ---
 title: 全局动态权限判断（Vue指令）
-date: 2022-01-27 15:51:21
+date: 2022-01-27T15:51:21+08:00
 id: frame-permission-dynamic-judge
 categories:
   - 前端

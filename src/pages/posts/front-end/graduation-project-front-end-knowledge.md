@@ -1,6 +1,6 @@
 ---
 title: 毕业设计（水表识别）前端知识整理
-date: 2021-06-04 17:52:12
+date: 2021-06-04T17:52:12+08:00
 id: graduation-project-front-end-knowledge
 categories:
   - 前端

@@ -1,6 +1,6 @@
 ---
 title: git 本地切换帐号
-date: 2020-09-15 12:11:52
+date: 2020-09-15T12:11:52+08:00
 tags:
   - git
 categories:

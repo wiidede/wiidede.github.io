@@ -1,6 +1,6 @@
 ---
 title: ElementPlus Form一些简单的组件整合
-date: 2023-01-16 15:24:40
+date: 2023-01-16T15:24:40+08:00
 id: some_simple_component_integration_of_element_plus_form
 categories:
   - 前端

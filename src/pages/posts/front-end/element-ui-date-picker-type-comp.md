@@ -1,6 +1,6 @@
 ---
 title: element UI el-date-picker 年月日切换组件
-date: 2021-12-27 10:15:45
+date: 2021-12-27T10:15:45+08:00
 id: element-ui-date-picker-type-comp
 categories:
   - 前端

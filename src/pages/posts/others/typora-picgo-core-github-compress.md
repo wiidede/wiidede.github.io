@@ -1,6 +1,6 @@
 ---
 title: typora+picgo-core+github+compress 压缩后上传 github 图床
-date: 2022-05-04 08:58:41
+date: 2022-05-04T08:58:41+08:00
 tags:
   - picgo
 categories:

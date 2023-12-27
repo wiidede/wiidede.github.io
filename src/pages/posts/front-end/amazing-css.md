@@ -1,6 +1,6 @@
 ---
 title: amazing css
-date: 2023-12-12 14:03:35
+date: 2023-12-12T14:03:35+08:00
 tags:
   - CSS
 categories:

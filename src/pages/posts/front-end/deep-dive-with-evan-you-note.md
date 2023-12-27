@@ -1,6 +1,6 @@
 ---
 title: Deep Dive with Evan You 笔记
-date: 2022-02-09 19:15:22
+date: 2022-02-09T19:15:22+08:00
 id: deep-dive-with-evan-you-note
 categories:
   - 前端

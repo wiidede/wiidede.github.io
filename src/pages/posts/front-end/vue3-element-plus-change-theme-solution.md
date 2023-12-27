@@ -1,6 +1,6 @@
 ---
 title: vue3 + ElementPlus 换肤方案（Css变量）
-date: 2021-08-25 17:00:36
+date: 2021-08-25T17:00:36+08:00
 id: vue3-element-plus-change-theme-solution
 categories:
   - 前端

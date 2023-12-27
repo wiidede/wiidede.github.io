@@ -1,6 +1,6 @@
 ---
 title: 简单的curd组件封装
-date: 2022-12-31 16:47:50
+date: 2022-12-31T16:47:50+08:00
 id: simple-curd-component-encapsulation
 categories:
   - 前端

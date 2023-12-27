@@ -1,6 +1,6 @@
 ---
 title: 表格使用async-validator检验composition
-date: 2023-01-16 15:24:40
+date: 2023-01-16T15:24:40+08:00
 id: table-uses-async-validator-to-check
 categories:
   - 前端

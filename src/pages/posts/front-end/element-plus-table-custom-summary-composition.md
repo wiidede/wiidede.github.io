@@ -1,6 +1,6 @@
 ---
 title: ElementPlus表格自定义合计列composition
-date: 2023-01-16 15:03:29
+date: 2023-01-16T15:03:29+08:00
 id: element-plus-table-custom-summary-composition
 categories:
   - 前端

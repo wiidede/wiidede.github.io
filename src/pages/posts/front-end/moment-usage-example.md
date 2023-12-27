@@ -1,6 +1,6 @@
 ---
 title: Moment的一些使用方法
-date: 2021-09-30 09:50:19
+date: 2021-09-30T09:50:19+08:00
 id: moment-usage-example
 categories:
   - 前端

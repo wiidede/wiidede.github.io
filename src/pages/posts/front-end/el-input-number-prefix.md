@@ -1,6 +1,6 @@
 ---
 title: 给ElInputNumber添加prefix
-date: 2022-09-06 10:22:53
+date: 2022-09-06T10:22:53+08:00
 id: el-input-number-prefix
 categories:
   - 前端

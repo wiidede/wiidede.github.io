@@ -1,6 +1,6 @@
 ---
 title: Vite base使用相对路径踩坑，获取public绝对路径
-date: 2023-10-17 16:59:36
+date: 2023-10-17T16:59:36+08:00
 id: vite-base-relative-path
 categories:
   - 前端
