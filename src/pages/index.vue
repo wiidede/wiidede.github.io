@@ -5,8 +5,8 @@ const {
   projects,
   contributions,
   skills,
-  experiences,
-  awards,
+  // experiences,
+  // awards,
 } = useMyInfo()
 </script>
 
@@ -90,7 +90,7 @@ const {
       </div>
     </div>
 
-    <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
+    <!-- <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       经历
     </h2>
     <div class="space-y-4">
@@ -124,7 +124,7 @@ const {
           <span class="text-zinc-600 font-light dark:text-zinc-400">{{ award.unit }}</span>
         </div>
       </template>
-    </div>
+    </div> -->
 
     <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       写在最后
