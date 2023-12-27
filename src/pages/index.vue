@@ -33,7 +33,7 @@ const {
     <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       项目
     </h2>
-    <div class="grid grid-cols-1 mx--2 gap2 md:grid-cols-3">
+    <div class="grid grid-cols-1 mx--2 gap2 md:grid-cols-2">
       <a
         v-for="project, idx in projects"
         :key="idx" class="group w-full rd p2 leading-none transition hover:bg-zinc/10"

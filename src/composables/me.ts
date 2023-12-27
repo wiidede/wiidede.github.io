@@ -27,7 +27,7 @@ export function useMyInfo() {
     {
       icon: 'i-the-arco-design-nuxt-module',
       name: 'Arco Design Nuxt Module',
-      desc: '一个Arco Design Vue的Nuxt模块，支持自动自动导入Arco Design组件、图标、hook',
+      desc: '一个Arco Design Vue的Nuxt模块，支持自动自动导入Arco Design组件、图标等',
       href: 'https://www.npmjs.com/package/arco-design-nuxt-module',
     },
     {
