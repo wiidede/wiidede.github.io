@@ -29,6 +29,8 @@ use icon
 </CheckboxIndicator>
 ```
 
+## final code
+
 ```vue
 <script setup lang="ts">
 import type { CheckboxRootEmits, CheckboxRootProps } from 'radix-vue'
@@ -56,3 +58,7 @@ const forwarded = useForwardPropsEmits(props, emits)
   </CheckboxRoot>
 </template>
 ````
+
+## Result
+
+![image-20240129172618644](https://wiidede.github.io/img-store-one/images/image-20240129172618644.webp)
