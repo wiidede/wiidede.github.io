@@ -67,6 +67,18 @@ export function useMyInfo() {
       href: 'https://github.com/wiidede/Valine-Admin',
     },
     {
+      icon: 'i-the-coding-movie',
+      name: 'Coding Movie',
+      desc: '生成一些简单的效果、素材用于剪辑',
+      href: 'https://coding-movie.wiidede.space/',
+    },
+    {
+      icon: 'i-the-law-wallpaper',
+      name: '律法壁纸',
+      desc: '轮播律法条例',
+      href: 'https://law.wiidede.space/',
+    },
+    {
       icon: 'i-the-ueditor-monaco',
       name: 'UEditor Monaco',
       desc: '一个UEditor的demo页，支持使用Monaco编辑富文本源码',
