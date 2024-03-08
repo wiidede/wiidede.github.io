@@ -3,6 +3,7 @@
 import cslg from '/assets/images/cslg.avif'
 import kedacom from '/assets/images/kedacom.png'
 import dahua from '/assets/images/dahua.avif'
+import travel from '/assets/images/travel.avif'
 
 export function useMyInfo() {
   const contacts = [
@@ -107,9 +108,10 @@ export function useMyInfo() {
   ]
 
   const experiences = [
-    { logo: cslg, name: '常熟理工学院', post: '物联网工程', time: '2017.09 - 2021.6' },
-    { logo: kedacom, name: '苏州科达科技股份有限公司', post: '前端工程师', time: '2020.07 - 2022.8' },
-    { logo: dahua, name: '上海达华测绘科技有限公司', post: '前端工程师', time: '2022.08 - present' },
+    { logo: cslg, name: '常熟理工学院', post: '物联网工程', time: '2017.09 - 2021.06' },
+    { logo: kedacom, name: '苏州科达科技股份有限公司', post: '前端工程师', time: '2020.07 - 2022.08' },
+    { logo: dahua, name: '上海达华测绘科技有限公司', post: '前端工程师', time: '2022.08 - 2024.02' },
+    { logo: travel, name: 'gap', post: 'undefined', time: '2024.03 - present' },
   ]
 
   const awards = [

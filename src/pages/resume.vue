@@ -98,7 +98,7 @@ const certificates = [
           </h3>
           <img class="inline-block h5 select-none" :src="dahua">
           <div class="ml-auto text-zinc-500/50">
-            2022.08 - present
+            2022.08 - 2024.02
           </div>
         </div>
         <div class="flex flex-wrap items-center gap2">
@@ -111,8 +111,7 @@ const certificates = [
         </div>
         <span class="text-sm text-zinc-500">
           项目背景：为长江口航道局打造一套航道管理系统
-        </span>
-        <span class="text-sm text-zinc-500">
+          <br>
           个人职责：负责框架内容的设计与维护，独自开发五个子系统中的两个
         </span>
         <ol class="list-decimal list-inside">
@@ -140,7 +139,7 @@ const certificates = [
           <li>
             帮助其他项目：<ul class="ml4 list-disc list-inside">
               <li>去掉无意义嵌套路由的组件</li>
-              <li>修改过度封装的组件，分离部分变量到各自页面，防止keepalive的页面在缓存状态仍然运行</li>
+              <li>拆离过度封装的storage，防止keepalive中的页面仍在后台运行</li>
             </ul>
           </li>
           <li>
