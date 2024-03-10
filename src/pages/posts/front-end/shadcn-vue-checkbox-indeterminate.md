@@ -61,4 +61,4 @@ const forwarded = useForwardPropsEmits(props, emits)
 
 ## Result
 
-![image-20240129172618644](https://wiidede.github.io/img-store-one/images/image-20240129172618644.webp)
+![image-20240129172618644](https://img.wiidede.space/images/image-20240129172618644.webp)

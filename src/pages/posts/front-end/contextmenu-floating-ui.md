@@ -15,7 +15,7 @@ tags:
 
 ## 先看效果
 
-![002](https://wiidede.github.io/img-store-one/images/002.gif)
+![002](https://img.wiidede.space/images/002.gif)
 
 ## 组件特点
 

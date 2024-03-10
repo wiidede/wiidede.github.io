@@ -40,7 +40,7 @@ id: typora-picgo-core-github-compress
 
 4. 然后成功
 
-   ![image-20220504082530013](https://wiidede.github.io/img-store-one/images/image-20220504082530013.png)
+   ![image-20220504082530013](https://img.wiidede.space/images/image-20220504082530013.png)
 
 5. 安装 compress 插件（可选，我直接压缩成webp了，本地压缩，而且体积小，缺点可能就是画质一般般，但是都用github图床了，这就足够了）
 
@@ -53,7 +53,7 @@ id: typora-picgo-core-github-compress
 
 6. 测试最终效果(我是个憨批，把token放出来了，下图的已经没用了，马上就换了一个😑)
 
-   ![image-20220504085315955](https://wiidede.github.io/img-store-one/images/image-20220504085315955.webp)
+   ![image-20220504085315955](https://img.wiidede.space/images/image-20220504085315955.webp)
 
 7. mac (using custom command)
 

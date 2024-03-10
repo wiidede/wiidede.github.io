@@ -24,17 +24,17 @@ tags:
 
 > el-avatar的size，想要自定义大小，只能传number，number又被转成px：
 
-![image-20221114103731583](https://wiidede.github.io/img-store-one/images/image-20221114103731583.png)
+![image-20221114103731583](https://img.wiidede.space/images/image-20221114103731583.png)
 
 同样的 BI 项目还用到 `vue-grid-layout`和`echarts` 这两个组件，默认单位其实都是px，无法更改。
 
 > vue-grid-layout
 
-![image-20221114104009574](https://wiidede.github.io/img-store-one/images/image-20221114104009574.png)
+![image-20221114104009574](https://img.wiidede.space/images/image-20221114104009574.png)
 
 > echarts
 
-![image-20221114103838134](https://wiidede.github.io/img-store-one/images/image-20221114103838134.png)
+![image-20221114103838134](https://img.wiidede.space/images/image-20221114103838134.png)
 
 ## VueGridLayout 响应式组件封装
 
@@ -51,7 +51,7 @@ tags:
 
 > 响应式组件中计算出的值：
 
-![image-20221114105731381](https://wiidede.github.io/img-store-one/images/image-20221114105731381.png)
+![image-20221114105731381](https://img.wiidede.space/images/image-20221114105731381.png)
 
 > GridLayoutDynamic.vue
 
@@ -114,10 +114,10 @@ const marginDynamic = computed(() => (usingDynamic
 
 > el-tab 未激活的页面：
 
-![image-20221114102619482](https://wiidede.github.io/img-store-one/images/image-20221114102619482.png)
+![image-20221114102619482](https://img.wiidede.space/images/image-20221114102619482.png)
 
 比如在官网实例中，你给iframe里面的body加上display: none之后，缩放窗口，然后再把display: none取消掉，你就会发现echarts没了：
-![image-20221114115313886](https://wiidede.github.io/img-store-one/images/image-20221114115313886.png)
+![image-20221114115313886](https://img.wiidede.space/images/image-20221114115313886.png)
 
 为了解决以上两点，你可能会在页面上多写一些东西，在相应的时刻调用resize。
 
@@ -139,9 +139,9 @@ const marginDynamic = computed(() => (usingDynamic
 
 fontSize自适应效果：
 
-![image-20221114105418438](https://wiidede.github.io/img-store-one/images/image-20221114105418438.png)
+![image-20221114105418438](https://img.wiidede.space/images/image-20221114105418438.png)
 
-![image-20221114104942806](https://wiidede.github.io/img-store-one/images/image-20221114104942806.png)
+![image-20221114104942806](https://img.wiidede.space/images/image-20221114104942806.png)
 
 ### Echarts组件封装
 
