@@ -89,6 +89,63 @@ http {
 }
 ```
 
-## 后续
+## 解析不同域名，解析不同路径，转发本地端口
 
-由于wiidede.space下面有多个项目，所以不太好直接把域名解析到阿里云的服务器
+```conf
+  server {
+    listen 80;
+    server_name ~^(?:cn\.)?wiidede\.space$;
+
+    location / {
+      root /var/www/cn.wiidede.space;
+      try_files $uri.html $uri $uri/ /index.html;
+    }
+  }
+
+  server {
+    listen 80;
+    server_name sub.wiidede.space;
+
+    location / {
+      proxy_pass http://localhost:21001;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+    }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name wiidede.space;
+
+    ssl_certificate /etc/nginx/ssl/wiidede.space.pem;
+    ssl_certificate_key /etc/nginx/ssl/wiidede.space.key;
+
+      location / {
+          root /var/www/cn.wiidede.space;
+          try_files $uri.html $uri $uri/ /index.html;
+      }
+
+      location /img {
+          alias /var/www/img;
+      }
+  }
+
+  server {
+    listen 443 ssl;
+    server_name cn.wiidede.space;
+
+    ssl_certificate /etc/nginx/ssl/cn.wiidede.space.pem;
+    ssl_certificate_key /etc/nginx/ssl/cn.wiidede.space.key;
+
+      location / {
+          root /var/www/cn.wiidede.space;
+          try_files $uri.html $uri $uri/ /index.html;
+      }
+  }
+```
+
+## docker
+
+docker compose up -d
