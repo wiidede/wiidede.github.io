@@ -155,7 +155,7 @@ onUnmounted(() => {
     conic-gradient(
       from
         calc(
-          ((var(--start) + (var(--spread) * 0.25))- (var(--spread) * 1.5)) *
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
             1deg
         ),
       hsl(0 0% 100% / 0.15) 0deg,
