@@ -215,3 +215,49 @@ const rules = computed<FormRules>(() => ({
 }))
 </script>
 ```
+
+## 缓存promise结果，并且配置在3小时内有效
+
+```ts
+export function useAsyncMemoizeStorage<Result extends Promise<unknown>, Args extends unknown[]>(resolver: (...args: Args) => Result, key: string, storage: Storage = localStorage) {
+  const cache = ref(new Map<string, any>())
+  const cacheStorage = useStorage(key, cache, storage)
+
+  return async (...args: Args) => {
+    const argKey = JSON.stringify(args)
+    const lastModified = cacheStorage.value.get('last-modified') as number || 0
+    if (cacheStorage.value.has(argKey) && Date.now() - lastModified < 3 * 60 * 60 * 1000)
+      return cacheStorage.value.get(argKey) as Awaited<Result>
+    const result = await resolver(...args)
+    cacheStorage.value.set(argKey, result)
+    cacheStorage.value.set('last-modified', Date.now())
+    return result
+  }
+}
+```
+
+test
+
+```ts
+function getDataAsync<T>(data: T, timeout: number): Promise<T> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(data)
+    }, timeout)
+  })
+}
+
+describe('useAsyncMemoizeStorage', () => {
+  const getData = async <T>(data: T) => await getDataAsync(data, 100)
+  const get = useAsyncMemoizeStorage(getData, 'test_useAsyncMemoizeStorage')
+  it('should works', async () => {
+    const time1 = Date.now()
+    expect(await get(123)).toEqual(123)
+    const time2 = Date.now()
+    expect(time2 - time1 > 100).toBe(true)
+    expect(await get(123)).toEqual(123)
+    const time3 = Date.now()
+    expect(time3 - time2 < 100).toBe(true)
+  })
+})
+```
