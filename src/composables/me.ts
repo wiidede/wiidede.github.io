@@ -38,10 +38,10 @@ export function useMyInfo() {
       href: 'https://www.npmjs.com/package/vue-range-multi',
     },
     {
-      icon: 'i-the-my-day',
-      name: '流光日月',
-      desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',
-      href: 'https://day.wiidede.space/',
+      icon: 'i-the-exif-gallery',
+      name: 'Exif Gallery',
+      desc: '集成 AI 智能处理、浏览器图片压缩等功能的全栈相册解决方案',
+      href: 'https://photo.wiidede.space/',
     },
     {
       icon: 'i-the-reach-star',
@@ -60,6 +60,12 @@ export function useMyInfo() {
       name: 'Liquid Ray',
       desc: '一个一体化、无缝的vscode主题插件，色彩偏霓虹、梦幻',
       href: 'https://marketplace.visualstudio.com/items?itemName=wiidede.liquid-ray',
+    },
+    {
+      icon: 'i-the-my-day',
+      name: '流光日月',
+      desc: '一个规划一天计划的小页面，显示当前计划的进度，可以存在多个计划，支持通过url分享计划',
+      href: 'https://day.wiidede.space/',
     },
     {
       icon: 'i-the-valine-mail',
