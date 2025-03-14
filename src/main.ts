@@ -1,14 +1,14 @@
+import NProgress from 'nprogress'
 import { ViteSSG } from 'vite-ssg'
 import { setupRouterScroller } from 'vue-router-better-scroller'
-import NProgress from 'nprogress'
-import App from './App.vue'
 import routes from '~pages'
+import App from './App.vue'
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 
 routes.forEach((route) => {
-  const match = route.path.match(/^\/posts\/.*\/(.*)$/)
+  const match = route.path.match(/^\/posts\/[^/]+\/([^/]+)$/)
   if (match) {
     route.path = `/${match[1]}`
     if (route.meta)

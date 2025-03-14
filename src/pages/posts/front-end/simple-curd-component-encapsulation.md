@@ -21,8 +21,8 @@ tags:
 
 ```vue
 <script lang="ts" setup>
-import { omit } from 'lodash-es'
 import { CurdColumn } from '@/typings/common'
+import { omit } from 'lodash-es'
 
 const props = defineProps<{
   column: CurdColumn
@@ -54,10 +54,10 @@ const columnAttr = computed(() => omit(props.column, ['children']))
 
 ```vue
 <script setup lang="ts">
+import type { CurdColumn, IPage } from '@/typings/common'
 import type { TableInstance } from 'element-plus/es'
 import { omit } from 'lodash-es'
 import TableColumn from './TableColumn.vue'
-import type { CurdColumn, IPage } from '@/typings/common'
 
 const props = defineProps<{
   columns: CurdColumn[]
@@ -194,9 +194,9 @@ const columns: DefineKeys<CurdColumn, 'prop', keyof IData>[] = []
 
 ```vue
 <script setup lang="ts">
+import type { CurdFormItems } from '@/typings/common'
 import { unref } from 'vue'
 import WddUpload from './WddUpload.vue'
-import type { CurdFormItems } from '@/typings/common'
 
 const props = defineProps<{
   formItems: CurdFormItems[]

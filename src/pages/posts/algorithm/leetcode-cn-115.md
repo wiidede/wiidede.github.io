@@ -27,23 +27,23 @@ id: leetcode-cn-115
 ### 代码
 
 ```javascript
-var numDistinct = function(s, t) {
-    let cnt = 0
-    let dfs = (s, t) => {
-        if (t.length === 0) {
-            cnt ++
-            return
-        }
-
-        for(let i = 0; i < s.length; ++i) {
-            if (s[i] === t[0]) {
-                dfs(s.slice(i + 1), t.slice(1))
-            }
-        }
+function numDistinct(s, t) {
+  let cnt = 0
+  const dfs = (s, t) => {
+    if (t.length === 0) {
+      cnt++
+      return
     }
-    dfs(s,t)
-    return cnt
-};
+
+    for (let i = 0; i < s.length; ++i) {
+      if (s[i] === t[0]) {
+        dfs(s.slice(i + 1), t.slice(1))
+      }
+    }
+  }
+  dfs(s, t)
+  return cnt
+}
 ```
 
 ## 动态规划
@@ -70,18 +70,19 @@ var numDistinct = function(s, t) {
 ### 代码
 
 ```javascript
-var numDistinct = function(s, t) {
-    let dp = new Array(t.length + 1).fill(0).map(() => new Array(s.length + 1).fill(0))
-    dp[0] = new Array(s.length + 1).fill(1)
-    for (let j = 1; j <= t.length; ++j) {
-        for (let i = 1; i <= s.length; ++ i) {
-            if (t[j - 1] === s[i - 1]) {
-                dp[j][i] = dp[j][i - 1] + dp[j - 1][i - 1]
-            } else {
-                dp[j][i] = dp[j][i - 1]
-            }
-        }
+function numDistinct(s, t) {
+  const dp = Array.from({ length: t.length + 1 }).fill(0).map(() => Array.from({ length: s.length + 1 }).fill(0))
+  dp[0] = Array.from({ length: s.length + 1 }).fill(1)
+  for (let j = 1; j <= t.length; ++j) {
+    for (let i = 1; i <= s.length; ++i) {
+      if (t[j - 1] === s[i - 1]) {
+        dp[j][i] = dp[j][i - 1] + dp[j - 1][i - 1]
+      }
+      else {
+        dp[j][i] = dp[j][i - 1]
+      }
     }
-    return dp[t.length][s.length]
-};
+  }
+  return dp[t.length][s.length]
+}
 ```

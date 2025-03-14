@@ -22,10 +22,10 @@ tags:
 使用起来非常简单，只要传入key，就能获取到ref值：`const statusMap = useDictData('normal_status')`
 
 ```ts
-import { defineStore } from 'pinia'
 import type { Ref } from 'vue'
-import { IDictData } from '@/typings/DataDictionary'
 import { getDictDataApi } from '@/service/DataDictionary'
+import { IDictData } from '@/typings/DataDictionary'
+import { defineStore } from 'pinia'
 
 export const useCommonStore = defineStore('common', () => {
   const getDictData = async (dictKey: string): Promise<Record<string, IDictData>> => {

@@ -35,12 +35,12 @@ export function useGetSummaries(props: string[]) {
       const values = data.map(item => Number(item[column.property]))
       if (!values.every(value => Number.isNaN(value))) {
         sums[index] = `${values.reduce((prev, curr) => {
-        const value = Number(curr)
-        if (!Number.isNaN(value))
-          return prev + curr
+          const value = Number(curr)
+          if (!Number.isNaN(value))
+            return prev + curr
 
-        return prev
-      }, 0)}`
+          return prev
+        }, 0)}`
       }
       else {
         sums[index] = 'N/A'

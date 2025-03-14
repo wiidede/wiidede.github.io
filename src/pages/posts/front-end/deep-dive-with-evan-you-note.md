@@ -768,9 +768,7 @@ Composition API
 
   // 进一步简化在组件中的 use
   function usePost(getId) {
-    return useFetch(
-      () => `https://jsonplaceholder.typicode.com/todos/${getId()}`,
-    )
+    return useFetch(() => `https://jsonplaceholder.typicode.com/todos/${getId()}`)
   }
 
   // 抽出 fetch，并且你可以在的 useFetch 中使用 watchEffect 来监听传进来的值的变化

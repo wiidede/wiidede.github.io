@@ -1,23 +1,23 @@
 import { resolve } from 'node:path'
-import fs from 'fs-extra'
-import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import generateSitemap from 'vite-ssg-sitemap'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'unplugin-vue-markdown/vite'
+import autoprefixer from 'autoprefixer'
+import fs from 'fs-extra'
 import matter from 'gray-matter'
-import VueDevTools from 'vite-plugin-vue-devtools'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
-import UnoCSS from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
-import WebfontDownload from 'vite-plugin-webfont-dl'
-import autoprefixer from 'autoprefixer'
-
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import Markdown from 'unplugin-vue-markdown/vite'
+import { defineConfig } from 'vite'
+import Pages from 'vite-plugin-pages'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import WebfontDownload from 'vite-plugin-webfont-dl'
+
+import generateSitemap from 'vite-ssg-sitemap'
 import liquidRayDark from './public/liquid-ray.json'
 
 export default defineConfig({
@@ -138,7 +138,7 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    crittersOptions: {
+    beastiesOptions: {
       reduceInlineStyles: false,
     },
     onFinished() {

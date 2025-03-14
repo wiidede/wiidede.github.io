@@ -57,8 +57,8 @@ tags:
 
 ```vue
 <script setup>
-import { computed } from 'vue'
 import { useWindowSize } from '@vueuse/core'
+import { computed } from 'vue'
 
 const props = defineProps({
   rowHeight: {
@@ -167,15 +167,15 @@ fontSize自适应效果：
 
 ```vue
 <script setup>
-import { cloneDeep, debounce, get, set } from 'lodash'
+import { getObjectPaths } from '@/utils/utils'
 import * as echarts from 'echarts'
+import { cloneDeep, debounce, get, set } from 'lodash'
 import {
   onMounted,
   onUnmounted,
   ref,
   watch,
 } from 'vue'
-import { getObjectPaths } from '@/utils/utils'
 
 const props = defineProps({
   option: {

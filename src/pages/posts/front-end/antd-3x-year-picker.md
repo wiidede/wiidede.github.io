@@ -20,8 +20,8 @@ tags:
  * Custom yearPicker for antd 3.x datePicker does not have picker option
  */
 
-import React, { FC, forwardRef, useState } from 'react'
 import { DatePicker } from 'antd'
+import React, { FC, forwardRef, useState } from 'react'
 
 interface IYearPicker {
   placeholder: string

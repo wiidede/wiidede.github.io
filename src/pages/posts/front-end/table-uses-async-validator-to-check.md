@@ -15,8 +15,8 @@ tags:
 # 表格使用async-validator检验composition
 
 ```ts
-import Schema from 'async-validator'
 import type { Rules, ValidateError, ValidateFieldsError } from 'async-validator'
+import Schema from 'async-validator'
 
 export async function validateTable(table: Record<string, unknown>[], rules: Rules) {
   const validator = new Schema(rules)

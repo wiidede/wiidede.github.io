@@ -1,10 +1,10 @@
 <script lang="ts" setup>
+import type { TypedOptions } from 'typed.js'
 import { promiseTimeout } from '@vueuse/core'
 import Typed from 'typed.js'
-import type { TypedOptions } from 'typed.js'
 
 const props = withDefaults(defineProps<{
-  delay: number
+  delay?: number
 }>(), {
   delay: 0,
 })

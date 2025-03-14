@@ -16,11 +16,7 @@ tags:
 
 ```html
 <label>
-  <input
-    v-model.number="age"
-    type="number"
-    oninput="value=value.replace(/[^\-\d]/g, '')"
-  />
+  <input v-model.number="age" type="number" oninput="value=value.replace(/[^\-\d]/g, '')" />
 </label>
 ```
 

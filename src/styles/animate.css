@@ -23,8 +23,7 @@
     --enter-stage-truly: min(var(--enter-stage), var(--enter-offset-time));
     animation: slide-enter 1s both 1;
     animation-delay: calc(
-      var(--enter-initial) + (var(--enter-step) + var(--enter-offset)) *
-        (var(--enter-stage-truly) + 1) / 2
+      var(--enter-initial) + (var(--enter-step) + var(--enter-offset)) * (var(--enter-stage-truly) + 1) / 2
     );
   }
 

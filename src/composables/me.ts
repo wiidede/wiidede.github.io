@@ -1,8 +1,8 @@
 // @unocss-include
 
 import cslg from '/assets/images/cslg.avif'
-import kedacom from '/assets/images/kedacom.png'
 import dahua from '/assets/images/dahua.avif'
+import kedacom from '/assets/images/kedacom.png'
 import travel from '/assets/images/travel.avif'
 
 export function useMyInfo() {

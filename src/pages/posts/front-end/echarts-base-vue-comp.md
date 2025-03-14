@@ -149,7 +149,6 @@ const data = {
 后续可以通过这个组件拿到 echarts 和 option 类型，需要增加也在这里增加
 
 ```ts
-import * as echarts from 'echarts/core'
 import {
   BarChart,
   // 系列类型的定义后缀都为 SeriesOption
@@ -172,6 +171,7 @@ import {
   // 内置数据转换器组件 (filter, sort)
   TransformComponent
 } from 'echarts/components'
+import * as echarts from 'echarts/core'
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 import { CanvasRenderer } from 'echarts/renderers'
 
@@ -208,9 +208,9 @@ export default echarts
 
 ```vue
 <script lang="ts" setup>
+import type { ECOption } from './echarts'
 import { debounce } from 'lodash-es'
 import echarts from './echarts'
-import type { ECOption } from './echarts'
 
 const props = defineProps<{
   option: ECOption
@@ -298,15 +298,15 @@ defineExpose({
 
 ```vue
 <script setup>
-import { cloneDeep, debounce, get, set } from 'lodash'
+import { getObjectPaths } from '@/utils/utils'
 import * as echarts from 'echarts'
+import { cloneDeep, debounce, get, set } from 'lodash'
 import {
   onMounted,
   onUnmounted,
   ref,
   watch,
 } from 'vue'
-import { getObjectPaths } from '@/utils/utils'
 
 const props = defineProps({
   option: {
@@ -513,7 +513,6 @@ export default {
     id: {
       type: String,
       required: true,
-      default: ''
     },
     className: {
       type: String,

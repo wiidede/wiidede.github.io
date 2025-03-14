@@ -128,7 +128,8 @@ onUnmounted(() => {
   inset: -5px;
   border: 10px solid transparent;
   border-radius: var(--border-radius);
-  mask: linear-gradient(#0000, #0000),
+  mask:
+    linear-gradient(#0000, #0000),
     conic-gradient(
       from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
       #000 0deg,
@@ -151,13 +152,10 @@ onUnmounted(() => {
   background: var(--border);
   background-attachment: fixed;
   border-radius: var(--border-radius);
-  mask: linear-gradient(#0000, #0000),
+  mask:
+    linear-gradient(#0000, #0000),
     conic-gradient(
-      from
-        calc(
-          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
-            1deg
-        ),
+      from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) * 1deg),
       hsl(0 0% 100% / 0.15) 0deg,
       white,
       hsl(0 0% 100% / 0.15) calc(var(--spread) * 2.5deg)
@@ -181,13 +179,10 @@ onUnmounted(() => {
   --alpha: 0;
   inset: 0;
   border: var(--border-width) solid transparent;
-  mask: linear-gradient(#0000, #0000),
+  mask:
+    linear-gradient(#0000, #0000),
     conic-gradient(
-      from
-        calc(
-          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) *
-            1deg
-        ),
+      from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) * 1deg),
       #0000 0deg,
       #fff,
       #0000 calc(var(--spread) * 0.5deg)

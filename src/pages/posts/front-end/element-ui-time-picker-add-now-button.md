@@ -34,15 +34,15 @@ id: element-ui-time-picker-add-now-button
 \<script\>
 
 ```javascript
-handleClickTime() {
-  let footer = document.querySelector('.el-time-panel__footer');
-  let element = document.createElement('input');
-  element.type = 'button';
-  element.value = '此刻';
+function handleClickTime() {
+  const footer = document.querySelector('.el-time-panel__footer')
+  const element = document.createElement('input')
+  element.type = 'button'
+  element.value = '此刻'
   element.addEventListener('click', () => {
-    console.log('点击此刻按钮');
-  });
-  footer.appendChild(element);
+    console.log('点击此刻按钮')
+  })
+  footer.appendChild(element)
 }
 ```
 

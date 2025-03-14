@@ -21,7 +21,7 @@ import GridItem from '@/components/GridLayout/components/grid-item.vue'
 import GridLayout from '@/components/GridLayout/components/grid-layout.vue'
 
 withDefaults(defineProps<{
-  edit: boolean
+  edit?: boolean
 }>(), {
   edit: false,
 })

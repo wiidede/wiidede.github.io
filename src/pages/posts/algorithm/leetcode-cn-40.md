@@ -23,19 +23,19 @@ candidates 中的每个数字在每个组合中只能使用一次。
 一般的回溯
 
 ```javascript
-var template = function(candidates, target) {
-  let ret = [] // 结果
-  let dfs = (path, pos) => {
-    if (/* 该路径不再满足某条件 */) {
+function template(candidates, target) {
+  const ret = [] // 结果
+  const dfs = (path, pos) => {
+    if (/* 该路径不再满足某条件 */void 0) {
       return
     }
-    if (/* 该路径满足某条件，将路径放入结果中*/) {
+    if (/* 该路径满足某条件，将路径放入结果中 */void 0) {
       ret.push([...path])
     }
 
     // 遍历解决
     for (let i = pos; i < candidates.length; ++i) {
-      if (/* 满足某条件，不再判断此分支 */) {
+      if (/* 满足某条件，不再判断此分支 */void 0) {
         continue
       }
       // 路径增加正在遍历的节点
@@ -50,7 +50,7 @@ var template = function(candidates, target) {
   dfs([], 0)
 
   return ret
-};
+}
 ```
 
 这道题因为涉及到组合的综合，也就是当前路径的sum，所以我们把sum也作为一个参数一直传进去，如果sum超过了，分支结束，sum正好等于target（满足条件），存入该路径
@@ -77,27 +77,28 @@ var template = function(candidates, target) {
  * @param {number} target
  * @return {number[][]}
  */
-var combinationSum2 = function(candidates, target) {
-    let ret = []
-    candidates.sort((a, b) => a - b)
-    let dfs = (path, pos, sum) => {
-        if (sum > target) {
-            return
-        } else if (sum === target) {
-            ret.push([...path])
-        }
-
-        for (let i = pos; i < candidates.length; ++i) {
-            if (i > pos && candidates[i] === candidates[i - 1]) {
-                continue
-            }
-            path.push(candidates[i])
-            dfs(path, i + 1, sum + candidates[i])
-            path.pop()
-        }
+function combinationSum2(candidates, target) {
+  const ret = []
+  candidates.sort((a, b) => a - b)
+  const dfs = (path, pos, sum) => {
+    if (sum > target) {
+      return
     }
-    dfs([], 0, 0)
+    else if (sum === target) {
+      ret.push([...path])
+    }
 
-    return ret
-};
+    for (let i = pos; i < candidates.length; ++i) {
+      if (i > pos && candidates[i] === candidates[i - 1]) {
+        continue
+      }
+      path.push(candidates[i])
+      dfs(path, i + 1, sum + candidates[i])
+      path.pop()
+    }
+  }
+  dfs([], 0, 0)
+
+  return ret
+}
 ```

@@ -34,7 +34,7 @@ const store = new Vuex.Store({
     ]
   },
   getters: {
-    doneTodos: state => {
+    doneTodos: (state) => {
       return state.todos.filter(todo => todo.done)
     }
   }
@@ -42,7 +42,7 @@ const store = new Vuex.Store({
 
 getters: {
   // ...
-  getTodoById: (state) => (id) => {
+  getTodoById: state => (id) => {
     return state.todos.find(todo => todo.id === id)
   }
 }
@@ -53,13 +53,13 @@ getters: {
 ### 去掉数组中值为index的项目
 
 ```javascript
-this.arr = this.arr.filter((item) => item !== index);
+this.arr = this.arr.filter(item => item !== index)
 ```
 
 ### 判断数组中有没有值为index的项目
 
 ```javascript
-this.arr.filter((item) => item === index).length !== 0
+this.arr.filter(item => item === index).length !== 0
 ```
 
 ## 获取数组中某一属性的值组成数组
@@ -82,13 +82,13 @@ const isinclude = array1.includes(2)
 如果直接将对象传进去，将会改变原有对象，建议传{...obj}进去
 
 ```javascript
-const reverseKV = (obj) => {
- Object.keys(obj).forEach(k => {
-  let value = obj[k];
-  obj[value] = k;
-  delete obj[k];
- });
- return obj;
+function reverseKV(obj) {
+  Object.keys(obj).forEach((k) => {
+    const value = obj[k]
+    obj[value] = k
+    delete obj[k]
+  })
+  return obj
 }
 ```
 
@@ -97,21 +97,21 @@ const reverseKV = (obj) => {
 优雅一点，可以用lodash的findIndex()
 
 ```javascript
-const findElem = (arrayToSearch, attr, val) => {
- for (let i = 0; i < arrayToSearch.length; i++) {
-  if (arrayToSearch[i][attr] === val) {
-   return i;
+function findElem(arrayToSearch, attr, val) {
+  for (let i = 0; i < arrayToSearch.length; i++) {
+    if (arrayToSearch[i][attr] === val) {
+      return i
+    }
   }
- }
- return -1;
+  return -1
 }
 ```
 
 ## 判断页面上的字符是否溢出
 
 ```javascript
-const isOverflow = (element) => {
- return element ? element[0].offsetWidth >= element[0].scrollWidth : false;
+function isOverflow(element) {
+  return element ? element[0].offsetWidth >= element[0].scrollWidth : false
 }
 ```
 
@@ -120,25 +120,26 @@ const isOverflow = (element) => {
 ## 时间格式化
 
 ```javascript
-const timeFormat = (value) => {
- return value === 0 ? '-' : moment(value).format('YYYY-MM-DD HH:mm:ss');
+function timeFormat(value) {
+  return value === 0 ? '-' : moment(value).format('YYYY-MM-DD HH:mm:ss')
 }
 ```
 
 ## 复制到剪贴板
 
 ```javascript
-const copyToClipboard = (content) => {
- let tempEl = document.createElement('input');
- tempEl.setAttribute('value', content);
- document.body.appendChild(tempEl);
- tempEl.select();
- if (document.execCommand('copy')) {
-  this.$message.success('复制成功');
- } else {
-  this.$message.error('复制失败');
- }
- document.body.removeChild(tempEl);
+function copyToClipboard(content) {
+  const tempEl = document.createElement('input')
+  tempEl.setAttribute('value', content)
+  document.body.appendChild(tempEl)
+  tempEl.select()
+  if (document.execCommand('copy')) {
+    this.$message.success('复制成功')
+  }
+  else {
+    this.$message.error('复制失败')
+  }
+  document.body.removeChild(tempEl)
 }
 ```
 
@@ -171,12 +172,12 @@ copyToClipboard('Lorem ipsum') // 'Lorem ipsum' copied to clipboard.
 ## 事件中的offsetX，offsetY，只有chrome能算准，火狐firefox会时常为0，这时候就需要换一种算法
 
 ```javascript
-//firefox event.offsetX 时常为0
+// firefox event.offsetX 时常为0
 // let ox = event.offsetX; //
 // let oy = event.offsetY;
-let srcObj = event.target || event.srcElement;
-let ox = event.offsetX || (event.clientX - srcObj.getBoundingClientRect().left);
-let oy = event.offsetY || (event.clientY - srcObj.getBoundingClientRect().top);
+const srcObj = event.target || event.srcElement
+const ox = event.offsetX || (event.clientX - srcObj.getBoundingClientRect().left)
+const oy = event.offsetY || (event.clientY - srcObj.getBoundingClientRect().top)
 ```
 
 ## div支持拖动并限制四周不超过浏览器页面
@@ -186,33 +187,33 @@ let oy = event.offsetY || (event.clientY - srcObj.getBoundingClientRect().top);
 元素中拖动无法点击的元素：`@mousedown.stop`
 
 ```javascript
-const move = (e) => {
-    let draggableElement = this.$refs['popper'] || e.target;        //获取目标元素
-    // 算出鼠标相对元素的位置
-    let disX = e.clientX - draggableElement.offsetLeft;
-    let disY = e.clientY - draggableElement.offsetTop;
-    document.onmousemove = (e) => {       //鼠标按下并移动的事件
-        // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
-        let left = e.clientX - disX;
-        let top = e.clientY - disY;
-        let bottom = window.innerHeight - draggableElement.offsetHeight;
-        let right = window.innerWidth - draggableElement.offsetWidth;
-        // 限制拖出页面
-        top <= 0 && (top = 0);
-        left <= 0 && (left = 0);
-        left >= right && (left = right);
-        top >= bottom && (top = bottom);
-        // 移动当前元素
-        draggableElement.style.left = left + 'px';
-        draggableElement.style.top = top + 'px';
-        // 这两句如果拖动元素没有设置bottom和right可以去掉
-        draggableElement.style.bottom = 'unset';
-        draggableElement.style.right = 'unset';
-    };
-    document.onmouseup = () => {
-        document.onmousemove = null;
-        document.onmouseup = null;
-    };
+function move(e) {
+  const draggableElement = this.$refs.popper || e.target // 获取目标元素
+  // 算出鼠标相对元素的位置
+  const disX = e.clientX - draggableElement.offsetLeft
+  const disY = e.clientY - draggableElement.offsetTop
+  document.onmousemove = (e) => { // 鼠标按下并移动的事件
+    // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
+    let left = e.clientX - disX
+    let top = e.clientY - disY
+    const bottom = window.innerHeight - draggableElement.offsetHeight
+    const right = window.innerWidth - draggableElement.offsetWidth
+    // 限制拖出页面
+    top <= 0 && (top = 0)
+    left <= 0 && (left = 0)
+    left >= right && (left = right)
+    top >= bottom && (top = bottom)
+    // 移动当前元素
+    draggableElement.style.left = `${left}px`
+    draggableElement.style.top = `${top}px`
+    // 这两句如果拖动元素没有设置bottom和right可以去掉
+    draggableElement.style.bottom = 'unset'
+    draggableElement.style.right = 'unset'
+  }
+  document.onmouseup = () => {
+    document.onmousemove = null
+    document.onmouseup = null
+  }
 }
 ```
 
@@ -221,29 +222,29 @@ const move = (e) => {
 如果真的请求特别多，建议去使用更好的（官方一些的）方法
 
 ```javascript
-const handleRequestQueue = (paramsArr, maxLength, callback, failCallback) => {
-    const paramsLength = paramsArr.length;
-    const requestsQueue = [];
-    const results = [];
-    let i = 0;
-    const handleRequest = (param) => {
-        const req = api.getSomething(param).then(res => {
-            const len = results.push(res);
-            typeof callback === 'function' && callback(res);
-            if (len < paramsLength && i + 1 < paramsLength) {
-                requestsQueue.shift();
-                handleRequest(paramsArr[++i]);
-            }
-            // 所有请求发送完毕
-        }).catch(e => {
-            results.push(e);
-            typeof failCallback === 'function' && failCallback(e, data);
-        });
-        if (requestsQueue.push(req) < maxLength) {
-            handleRequest(paramsArr[++i]);
-        }
-    };
-    handleRequest(paramsArr[i]);
+function handleRequestQueue(paramsArr, maxLength, callback, failCallback) {
+  const paramsLength = paramsArr.length
+  const requestsQueue = []
+  const results = []
+  let i = 0
+  const handleRequest = (param) => {
+    const req = api.getSomething(param).then((res) => {
+      const len = results.push(res)
+      typeof callback === 'function' && callback(res)
+      if (len < paramsLength && i + 1 < paramsLength) {
+        requestsQueue.shift()
+        handleRequest(paramsArr[++i])
+      }
+      // 所有请求发送完毕
+    }).catch((e) => {
+      results.push(e)
+      typeof failCallback === 'function' && failCallback(e, data)
+    })
+    if (requestsQueue.push(req) < maxLength) {
+      handleRequest(paramsArr[++i])
+    }
+  }
+  handleRequest(paramsArr[i])
 }
 ```
 
@@ -252,22 +253,23 @@ const handleRequestQueue = (paramsArr, maxLength, callback, failCallback) => {
 ### [javascript-switch-object](https://www.30secondsofcode.org/blog/s/javascript-switch-object) 代替switch语法、switch的优雅写法
 
 ```javascript
-const switchFn = (lookupObject, defaultCase = '_default') =>
-  expression => (lookupObject[expression] || lookupObject[defaultCase])();
+function switchFn(lookupObject, defaultCase = '_default') {
+  return expression => (lookupObject[expression] || lookupObject[defaultCase])()
+}
 
-const knownFruit = () => console.log('Known fruit');
-const unknownFruit = () => console.log('Unknown fruit');
+const knownFruit = () => console.log('Known fruit')
+const unknownFruit = () => console.log('Unknown fruit')
 
 const logFruit = {
-  'apples': knownFruit,
-  'oranges': knownFruit,
-  'default': unknownFruit
-};
+  apples: knownFruit,
+  oranges: knownFruit,
+  default: unknownFruit
+}
 
-const fruitSwitch = switchFn(logFruit, 'default');
+const fruitSwitch = switchFn(logFruit, 'default')
 
-fruitSwitch('apples'); // Logs: 'Known fruit'
-fruitSwitch('pineapples'); // Logs: 'Unknown fruit'
+fruitSwitch('apples') // Logs: 'Known fruit'
+fruitSwitch('pineapples') // Logs: 'Unknown fruit'
 ```
 
 ### [getURLParameters](https://www.30secondsofcode.org/js/s/get-url-parameters) 在Vue中你可以使用 route 来获取参数
@@ -564,8 +566,8 @@ const reverseKeyValue = (obj: Record<string, string>) => Object.fromEntries(Obje
 ## ElementPlus 表格常用格式化
 
 ```ts
-import dayjs from 'dayjs'
 import type { TableColumnCtx } from 'element-plus/es/components/table/src/table-column/defaults'
+import dayjs from 'dayjs'
 
 export function tableDecimalFormatter<T>(row: T, column: TableColumnCtx<T>, cellValue: unknown, index: number) {
   const number = Number(cellValue)
@@ -584,7 +586,7 @@ export function tableDateFormatter<T>(row: T, column: TableColumnCtx<T>, cellVal
 export function validateAccount(rule: any, value: string, callback: any) {
   if (!value)
     return callback(new Error('请输入账户名'))
-  if (!/^[a-zA-Z0-9_]{1,32}$/.test(value))
+  if (!/^\w{1,32}$/.test(value))
     return callback(new Error('账户名只能包含字母、数字、下划线，最长32位'))
 
   return callback()
@@ -598,7 +600,7 @@ export function validatePhoneNumber(rule: any, value: string, callback: any) {
 }
 
 export function validateEmail(rule: any, value: string, callback: any) {
-  if (value && !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value))
+  if (value && !/^[^<>()[\]\\.,;:\s@"]+(?:\.[^<>()[\]\\.,;:\s@"]+)*|".+"@(?:\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\]|[a-z\-0-9]+\.)+[a-z]{2,}$/i.test(value))
     return callback(new Error('邮箱格式不正确'))
 
   return callback()
@@ -709,12 +711,12 @@ export function getDuplicates(arr: any[]) {
 function slyEncode(str: string, times = 3) {
   const randomCode = (i: number) => `=${'0'.repeat(i)}`.replace(/[^=]/g, s => ((Math.random() + ~~s) * 0x10000 >> ~~s).toString(16).padStart(4, '0'))
   const encode = (s: string, i = 1) => randomCode(i) + window.btoa(s)
-  return Array(times).fill(0).map((_, i) => i + 1).reduce((pre, i) => encode(pre, i), str)
+  return Array.from({ length: times }).map((_, i) => i + 1).reduce((pre, i) => encode(pre, i), str)
 }
 
 function slyDecode(str: string, times = 3) {
   const decode = (s: string, i = 1) => window.atob(s.slice(i * 4 + 1))
-  return Array(times).fill(0).map((_, i) => times - i).reduce((pre, i) => decode(pre, i), str)
+  return Array.from({ length: times }).map((_, i) => times - i).reduce((pre, i) => decode(pre, i), str)
 }
 ```
 

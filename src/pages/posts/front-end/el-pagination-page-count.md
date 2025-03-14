@@ -37,8 +37,8 @@ import PageCount from './pageCount.vue'
 
 ```vue
 <script setup lang="ts">
-import { inject } from 'vue'
 import { elPaginationKey } from 'element-plus'
+import { inject } from 'vue'
 
 const elPagination = inject(elPaginationKey)!
 </script>
