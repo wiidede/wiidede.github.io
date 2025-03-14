@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="inline-flex items-center gap1">
-    <i :class="icon" />
+    <div :class="icon" />
     <span class="text-sm text-zinc-600">{{ label }}</span>
   </div>
 </template>

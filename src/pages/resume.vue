@@ -65,7 +65,7 @@ const certificates = [
           </h1>
           <div class="grid grid-cols-[auto_auto] w-full justify-between gap-y-1">
             <div v-for="info, idx in baseInfoLeft" :key="idx" class="flex items-center gap1">
-              <i :class="info.icon" />
+              <div :class="info.icon" />
               <span>{{ info.value }}</span>
             </div>
           </div>
@@ -165,19 +165,19 @@ const certificates = [
           :href="info.href"
           target="_blank"
           class="w-full flex items-center gap1 rd px2 py1 transition hover:bg-zinc-100"
-        ><i :class="info.icon" />{{ info.value }}</a>
+        ><div :class="info.icon" />{{ info.value }}</a>
       </div>
       <ReuseTitledBox name="技能" class="min-h0 w-full flex flex-auto flex-col" gap="justify-between">
-        <div class="h-full flex flex-col items-start justify-between">
-          <div v-for="skill in skills" :key="skill.label" class="w-full flex items-center gap1">
-            <i :class="skill.icon" />
+        <div class="grid grid-cols-[auto_1fr] h-full max-w30ch items-center gap-1">
+          <template v-for="skill in skills" :key="skill.label">
+            <div :class="skill.icon" class="w-1.2em" />
             <div class="w-full flex flex-col">
               <span class="leading-tight">{{ skill.label }}</span>
-              <div class="h1 w-full rd-full bg-zinc-100">
-                <div class="h1 rd-full bg-rose-200" :style="{ width: `${skill.value}%` }" />
+              <div class="h1 w-full rd-full bg-zinc-100/67 dark:bg-zinc-700">
+                <div class="h1 rd-full bg-rose-200 dark:bg-rose-700" :style="{ width: `${skill.value}%` }" />
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </ReuseTitledBox>
       <ReuseTitledBox name="贡献" class="w-full flex flex-col items-start" gap="gap-0.5">
@@ -194,12 +194,12 @@ const certificates = [
             class="h-4.8 w-4.8 select-none"
           >
           <span class="h4 inline-flex items-center leading-none">{{ contribution.name }}</span>
-          <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
+          <span class="flex items-center gap-2px c-#8250df"><div i-the-merged-pr />{{ contribution.count }}</span>
         </a>
       </ReuseTitledBox>
       <ReuseTitledBox name="个性" class="w-full flex flex-col items-start">
-        <div v-for="personality, idx in personalities" :key="idx">
-          <i :class="personality.icon" class="mr1" />
+        <div v-for="personality, idx in personalities" :key="idx" class="flex items-center gap-1">
+          <div :class="personality.icon" />
           <span>{{ personality.label }}</span>
         </div>
       </ReuseTitledBox>
@@ -308,8 +308,8 @@ const certificates = [
     <div class="h-full b-r" />
     <div class="flex flex-[3] flex-col items-start gap4 px4 pt8">
       <ReuseTitledBox name="证书" class="w-full flex flex-col items-start">
-        <div v-for="certificate, idx in certificates" :key="idx">
-          <i :class="certificate.icon" class="mr1" />
+        <div v-for="certificate, idx in certificates" :key="idx" class="flex items-center gap-1">
+          <div :class="certificate.icon" />
           <span>{{ certificate.label }}</span>
         </div>
       </ReuseTitledBox>
@@ -321,7 +321,7 @@ const certificates = [
           target="_blank"
         >
           <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200">
-            <i :class="project.icon" class="h7 w7" />
+            <div :class="project.icon" class="h7 w7" />
           </div>
           <span class="text-lg text-zinc-900 font-medium leading-tight">{{ project.name }}</span>
           <br>

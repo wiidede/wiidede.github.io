@@ -17,16 +17,16 @@ const {
     <h1 class="mb2 text-8 text-zinc-900 dark:text-zinc-50">
       Hey, I am wiidede 小的的 <span class="wave-hand inline-block animate-count-infinite animate-duration-1800">👋</span>
     </h1>
-    <div class="mx--2 mb8 space-x-4">
+    <div class="mx--2 mb8 flex items-center gap-2">
       <a
         v-for="contact, idx in contacts"
         :key="idx"
         :href="contact.href"
         class="rd px2 py-1 hover:bg-zinc/10"
-      ><i :class="contact.icon" /></a>
+      ><div :class="contact.icon" /></a>
     </div>
-    <div v-for="personality, idx in personalities" :key="idx">
-      <i :class="personality.icon" class="mr1" />
+    <div v-for="personality, idx in personalities" :key="idx" class="flex items-center gap-1">
+      <div :class="personality.icon" />
       <span>{{ personality.label }}</span>
     </div>
 
@@ -41,7 +41,7 @@ const {
         target="_blank"
       >
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
-          <i :class="project.icon" class="h7 w7" />
+          <div :class="project.icon" class="h7 w7" />
         </div>
         <span class="text-lg text-zinc-900 font-medium leading-none under-anime !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
         <br>
@@ -71,23 +71,23 @@ const {
           class="h-4.8 w-4.8 select-none"
         >
         <span class="h4 inline-flex items-center leading-none under-anime group-hover:under-anime-hover">{{ contribution.name }}</span>
-        <span class="flex items-center gap-2px c-#8250df"><i i-the-merged-pr />{{ contribution.count }}</span>
+        <span class="flex items-center gap-2px c-#8250df"><div i-the-merged-pr />{{ contribution.count }}</span>
       </a>
     </div>
 
     <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
       技能
     </h2>
-    <div class="max-w30ch flex flex-col items-start justify-between gap2">
-      <div v-for="skill in skills" :key="skill.label" class="w-full flex items-center gap1">
-        <i :class="skill.icon" />
+    <div class="grid grid-cols-[auto_1fr] max-w30ch items-center gap-x-1 gap-y-2">
+      <template v-for="skill in skills" :key="skill.label">
+        <div :class="skill.icon" class="w-1.2em" />
         <div class="w-full flex flex-col">
           <span class="leading-tight">{{ skill.label }}</span>
           <div class="h1 w-full rd-full bg-zinc-100/67 dark:bg-zinc-700">
             <div class="h1 rd-full bg-rose-200 dark:bg-rose-700" :style="{ width: `${skill.value}%` }" />
           </div>
         </div>
-      </div>
+      </template>
     </div>
 
     <!-- <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">

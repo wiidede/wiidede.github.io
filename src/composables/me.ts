@@ -7,11 +7,11 @@ import travel from '/assets/images/travel.avif'
 
 export function useMyInfo() {
   const contacts = [
-    { icon: 'i-logos-google-gmail', label: 'Gmail', href: 'mailto:wiixdede@gmail.com' },
+    { icon: 'i-logos-google-gmail text-0.8em', label: 'Gmail', href: 'mailto:wiixdede@gmail.com' },
     { icon: 'i-carbon-logo-github text-black dark:text-white', label: 'GitHub', href: 'https://github.com/wiidede' },
     { icon: 'i-the-bilibili text-#00ADEB', label: 'bilibili', href: 'https://space.bilibili.com/33819620' },
-    // { icon: 'i-the-coolapk text-#10AA5F', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
-    { icon: 'i-logos-twitter', label: 'Twitter', href: 'https://twitter.com/wiixdede' },
+    { icon: 'i-the-coolapk text-#10AA5F text-1.2em', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
+    { icon: 'i-logos-x text-0.9em', label: 'Twitter', href: 'https://xxxxxxxxxxxx.com/wiixdede' },
   ]
 
   const personalities = [
@@ -148,8 +148,8 @@ export function useFriends() {
 
   const friends: Friend[] = [
     { name: 'CIRCUIT', link: 'https://yang000.cn', desc: '鸯飞漫冬山', avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=58894242&spec=100&img_type=jpg' },
-    { name: 'XiYu博客', link: 'https://xiyu.pro', desc: '记录·分享', avatar: 'https://xiyu.pro/img/avatar.webp' },
-    { name: '小孙同学', link: 'https://blog.sunguoqi.com', desc: '路虽远行则将至，事随难做则必成！', avatar: 'https://blog.sunguoqi.com/images/avatar.jpg' },
+    { name: 'XiYu博客', link: 'https://xiyu.pro', desc: '记录·分享', avatar: 'https://gravatar.loli.net/avatar/16a8d4c0491cf8cec54e6ab8f65e4fa6' },
+    { name: '小孙同学', link: 'https://blog.sunguoqi.com', desc: '路虽远行则将至，事随难做则必成！', avatar: 'https://assets.guoqi.dev/images/avatar.png' },
     { name: 'wiidede | 小的的', link: 'https://wiidede.space', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
     { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
   ]

@@ -4,8 +4,8 @@ import {
   presetAttributify,
   presetIcons,
   presetTypography,
-  presetUno,
   presetWebFonts,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -24,16 +24,11 @@ export default defineConfig({
     ['flex-h-center', 'flex justify-center'],
   ],
   presets: [
-    presetUno(),
+    presetWind3(),
     presetAttributify(),
     presetIcons({
       scale: 1.2,
       warn: true,
-      extraProperties: {
-        'display': 'inline-block',
-        'vertical-align': 'middle',
-        'flex': '0 0 auto',
-      },
       collections: {
         the: FileSystemIconLoader(
           './assets/icons',
