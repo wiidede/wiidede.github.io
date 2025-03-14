@@ -1,6 +1,6 @@
 ---
 title: Exif Gallery Nuxt
-date: 2023-12-12T14:03:35+08:00
+date: 2025-03-14T19:53:47+08:00
 tags:
   - CSS
 categories:
