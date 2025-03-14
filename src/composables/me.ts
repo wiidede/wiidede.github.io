@@ -11,7 +11,7 @@ export function useMyInfo() {
     { icon: 'i-carbon-logo-github text-black dark:text-white', label: 'GitHub', href: 'https://github.com/wiidede' },
     { icon: 'i-the-bilibili text-#00ADEB', label: 'bilibili', href: 'https://space.bilibili.com/33819620' },
     { icon: 'i-the-coolapk text-#10AA5F text-1.2em', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
-    { icon: 'i-logos-x text-0.9em', label: 'Twitter', href: 'https://xxxxxxxxxxxx.com/wiixdede' },
+    { icon: 'i-the-x text-0.9em', label: 'Twitter', href: 'https://x.com/wiixdede' },
   ]
 
   const personalities = [
