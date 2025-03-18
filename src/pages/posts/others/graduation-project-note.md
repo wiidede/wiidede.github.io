@@ -41,7 +41,7 @@ sudo vim /etc/nginx/nginx.conf
 
 > /etc/nginx/nginx.conf
 
-```conf
+```nginx
 #最简单的配置
 worker_processes 1;
 events {
@@ -66,7 +66,7 @@ http {
 
 > /etc/nginx/conf/mime.types
 
-```conf
+```nginx
 types {
   text/html                             html htm shtml;
   text/css                              css;

@@ -1,11 +1,13 @@
 import { resolve } from 'node:path'
+import MarkdownItShiki from '@shikijs/markdown-it'
+import { transformerNotationDiff, transformerNotationHighlight, transformerNotationWordHighlight } from '@shikijs/transformers'
+import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import Vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
 import anchor from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
-import Shiki from 'markdown-it-shiki'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import UnoCSS from 'unocss/vite'
@@ -16,23 +18,20 @@ import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import WebfontDownload from 'vite-plugin-webfont-dl'
-
 import generateSitemap from 'vite-ssg-sitemap'
+import liquidRayLight from './public/liquid-ray-light.json'
 import liquidRayDark from './public/liquid-ray.json'
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '~/': `${resolve(__dirname, 'src')}/`,
-    },
+    alias: [
+      { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
+    ],
   },
 
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
-      script: {
-        defineModel: true,
-      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -88,14 +87,31 @@ export default defineConfig({
       },
       wrapperClasses: 'prose prose-sm m-auto text-left slide-enter-content',
       headEnabled: true,
-      markdownItSetup(md) {
-        // https://prismjs.com/
-        md.use(Shiki, {
-          theme: {
-            light: 'material-theme-lighter',
+      exportFrontmatter: false,
+      exposeFrontmatter: false,
+      exposeExcerpt: false,
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
+      async markdownItSetup(md) {
+        md.use(await MarkdownItShiki({
+          themes: {
             dark: liquidRayDark,
+            light: liquidRayLight,
           },
-        })
+          defaultColor: false,
+          cssVariablePrefix: '--s-',
+          transformers: [
+            transformerTwoslash({
+              explicitTrigger: true,
+              renderer: rendererRich(),
+            }),
+            transformerNotationDiff(),
+            transformerNotationHighlight(),
+            transformerNotationWordHighlight(),
+          ],
+        }))
+
         md.use(anchor, {
           // slugify,
           permalink: anchor.permalink.linkInsideHeader({

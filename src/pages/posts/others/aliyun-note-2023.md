@@ -45,7 +45,7 @@ vim /etc/nginx/nginx.conf
 
 找到http块，并在该块内添加以下内容：
 
-```conf
+```nginx
 server {
     listen 80;
     server_name cn.wiidede.space;
@@ -72,7 +72,7 @@ A 记录
 
 ## https
 
-```conf
+```nginx
 http {
   server {
     listen 443 ssl;
@@ -91,7 +91,7 @@ http {
 
 ## 解析不同域名，解析不同路径，转发本地端口
 
-```conf
+```nginx
   server {
     listen 80;
     server_name ~^(?:cn\.)?wiidede\.space$;

@@ -36,7 +36,7 @@ apt-get install ubuntu-desktop
 vi /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
 ```
 
-```conf
+```ini
 [Seat:*]
 user-session=ubuntu
 greeter-show-manual-login=true
@@ -72,7 +72,7 @@ sudo apt-get install vsftpd
 sudo vi /etc/vsftpd.conf
 ```
 
-```conf
+```ini
 # 修改vsftpd.conf
 anonymous_enable=YES
 anon_root=/root/ftp
