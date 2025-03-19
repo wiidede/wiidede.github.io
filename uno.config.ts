@@ -1,5 +1,4 @@
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
-import { createLocalFontProcessor } from '@unocss/preset-web-fonts/local'
 import {
   defineConfig,
   presetAttributify,
@@ -43,7 +42,6 @@ export default defineConfig({
         serif: 'Bitter',
         mono: 'JetBrains Mono',
       },
-      processors: createLocalFontProcessor(),
     }),
   ],
   transformers: [
