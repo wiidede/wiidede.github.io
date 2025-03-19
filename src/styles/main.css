@@ -5,9 +5,9 @@
   --c-bg: #fff;
   --c-bg-rgb: 255, 255, 255;
   --c-card-bg: #f6f6f7b0;
-  --c-scrollbarTrack: #fff6;
-  --c-scrollbar: #eee;
-  --c-scrollbar-hover: #bbb;
+  --c-bg-secondary: #fff6;
+  --c-primary: #eee;
+  --c-active: #bbb;
 }
 html {
   scroll-behavior: smooth;
@@ -18,9 +18,15 @@ html.dark {
   --c-bg: #050505;
   --c-bg-rgb: 5, 5, 5;
   --c-card-bg: #25252680;
-  --c-scrollbarTrack: #1116;
-  --c-scrollbar: #333;
-  --c-scrollbar-hover: #444;
+  --c-bg-secondary: #1116;
+  --c-primary: #333;
+  --c-active: #444;
+}
+
+html {
+  --c-scrollbarTrack: var(--c-bg-secondary);
+  --c-scrollbar: var(--c-primary);
+  --c-scrollbar-hover: var(--c-active);
 }
 
 html.hidden-scroll,
