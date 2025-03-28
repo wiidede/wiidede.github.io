@@ -10,8 +10,9 @@ export function useMyInfo() {
     { icon: 'i-logos-google-gmail text-0.8em', label: 'Gmail', href: 'mailto:wiixdede@gmail.com' },
     { icon: 'i-carbon-logo-github text-black dark:text-white', label: 'GitHub', href: 'https://github.com/wiidede' },
     { icon: 'i-the-bilibili text-#00ADEB', label: 'bilibili', href: 'https://space.bilibili.com/33819620' },
-    { icon: 'i-the-coolapk text-#10AA5F text-1.2em', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
+    { icon: 'i-the-xiaohongshu text-#EA3F4A text-1.2em', label: '小红书', href: 'https://www.xiaohongshu.com/user/profile/5d98c7080000000001003beb' },
     { icon: 'i-the-x text-0.9em', label: 'Twitter', href: 'https://x.com/wiixdede' },
+    { icon: 'i-the-coolapk text-#10AA5F text-1.2em', label: 'CoolApk', href: 'http://www.coolapk.com/u/641913' },
   ]
 
   const personalities = [
