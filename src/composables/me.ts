@@ -18,11 +18,12 @@ export function useMyInfo() {
   const personalities = [
     { icon: 'i-carbon-code', label: '代码强迫症' },
     { icon: 'i-carbon-logo-figma', label: '喜欢简洁有趣的设计' },
-    { icon: 'i-carbon-camera', label: '想拍人像的风光摄影' },
-    { icon: 'i-carbon-worship', label: '虚假的二次元' },
-    { icon: 'i-carbon-pedestrian', label: '跑步&跳操' },
-    { icon: 'i-carbon-carbon-for-ibm-product', label: '热爱科技' },
-    { icon: 'i-carbon-restaurant-fine', label: '追求高效简洁的生活' },
+    { icon: 'i-carbon-camera', label: '忘了什么是摄影' },
+    { icon: 'i-carbon-earth-southeast-asia-filled', label: '忘了到处旅游的意义' },
+    { icon: 'i-carbon-face-wink', label: '还是喜欢二次元' },
+    { icon: 'i-carbon-cyclist', label: '跑步、跳操、骑行' },
+    { icon: 'i-carbon-carbon-for-ibm-product', label: '遥想曾经追求参数' },
+    { icon: 'i-carbon-pedestrian', label: '直至慢慢品味生活' },
   ]
 
   const projects = [

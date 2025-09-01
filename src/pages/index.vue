@@ -25,9 +25,11 @@ const {
         class="rd px2 py-1 hover:bg-zinc/10"
       ><div :class="contact.icon" /></a>
     </div>
-    <div v-for="personality, idx in personalities" :key="idx" class="flex items-center gap-1">
-      <div :class="personality.icon" />
-      <span>{{ personality.label }}</span>
+    <div class="columns-1 gap-x-4 gap-y-2 md:columns-3 min-[414px]:columns-2">
+      <div v-for="personality, idx in personalities" :key="idx" class="flex items-center gap-2">
+        <div :class="personality.icon" />
+        <span>{{ personality.label }}</span>
+      </div>
     </div>
 
     <h2 class="mb4 mt12 text-7 text-zinc-900 dark:text-zinc-50">
@@ -36,7 +38,7 @@ const {
     <div class="grid grid-cols-1 mx--2 gap2 md:grid-cols-2">
       <a
         v-for="project, idx in projects"
-        :key="idx" class="group w-full rd p2 leading-none transition hover:bg-zinc/10"
+        :key="idx" class="group w-full rd p-2 leading-none transition hover:bg-zinc/10"
         :href="project.href"
         target="_blank"
       >
