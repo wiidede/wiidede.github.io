@@ -47,6 +47,7 @@ const el = ref<HTMLCanvasElement>()
 const { round, max } = Math
 
 let ts = 0
+let timer: number
 let scrollHandler: () => void
 let resizeHandler: () => void
 onMounted(async () => {
@@ -133,6 +134,10 @@ onMounted(async () => {
   }
   window.addEventListener('resize', resizeHandler)
 
+  timer = window.setInterval(() => {
+    updateCanvas()
+  }, 200)
+
   router.beforeEach(() => {
     startUpdate(timeout)
   })
@@ -141,6 +146,7 @@ onMounted(async () => {
 onUnmounted(() => {
   window.removeEventListener('scroll', scrollHandler)
   window.removeEventListener('resize', resizeHandler)
+  window.clearInterval(timer)
 })
 </script>
 
