@@ -167,7 +167,6 @@ fontSize自适应效果：
 
 ```vue
 <script setup>
-import { getObjectPaths } from '@/utils/utils'
 import * as echarts from 'echarts'
 import { cloneDeep, debounce, get, set } from 'lodash'
 import {
@@ -176,6 +175,7 @@ import {
   ref,
   watch,
 } from 'vue'
+import { getObjectPaths } from '@/utils/utils'
 
 const props = defineProps({
   option: {

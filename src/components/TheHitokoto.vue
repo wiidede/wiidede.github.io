@@ -94,7 +94,7 @@ onUnmounted(() => {
 
 <template>
   <div class="flex items-center gap2 op50">
-    <span i-carbon-circle-dash class="text-0 op0 transition-all icon-btn" :class="{ 'rotate text-4 !op100 pointer-events-none': isFetching }" />
+    <span i-carbon-circle-dash class="icon-btn text-0 op0 transition-all" :class="{ 'rotate text-4 !op100 pointer-events-none': isFetching }" />
     <span
       class="text min-w0 flex-auto cursor-pointer transition-opacity transition-duration-400"
       :class="{ op0: isFetching }"

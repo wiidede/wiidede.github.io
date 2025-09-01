@@ -43,7 +43,7 @@ const {
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center rd-full ring-1 ring-zinc-200 dark:ring-zinc-800">
           <div :class="project.icon" class="h7 w7" />
         </div>
-        <span class="text-lg text-zinc-900 font-medium leading-none under-anime !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
+        <span class="under-anime text-lg text-zinc-900 font-medium leading-none !inline group-hover:under-anime-hover dark:text-zinc-50">{{ project.name }}</span>
         <br>
         <span class="text-sm text-zinc-500 font-light leading-tight">{{ project.desc }}</span>
       </a>
@@ -70,7 +70,7 @@ const {
           :src="`https://github.com/${contribution.owner}.png?size=48`"
           class="h-4.8 w-4.8 select-none"
         >
-        <span class="h4 inline-flex items-center leading-none under-anime group-hover:under-anime-hover">{{ contribution.name }}</span>
+        <span class="under-anime h4 inline-flex items-center leading-none group-hover:under-anime-hover">{{ contribution.name }}</span>
         <span class="flex items-center gap-2px c-#8250df"><div i-the-merged-pr />{{ contribution.count }}</span>
       </a>
     </div>

@@ -228,7 +228,7 @@ function handleBgOut() {
   <RouterLink
     v-if="pinned"
     to="/posts"
-    class="group w-fit w-fit flex cursor-pointer items-center gap2 font-mono under-anime under-base hover:under-anime-hover !op67"
+    class="group under-anime under-base w-fit flex cursor-pointer items-center gap2 font-mono hover:under-anime-hover !op67"
   >
     更多
     <div i-carbon-chevron-right class="back-icon text-0.8em transition-all duration-250 group-hover:(mr2 translate-x-2)" />

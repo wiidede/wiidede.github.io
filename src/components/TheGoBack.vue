@@ -8,7 +8,7 @@ const router = useRouter()
     <br>
     <div
       :key="route.path"
-      class="group w-fit w-fit flex cursor-pointer items-center gap4 font-mono op67 under-anime-r under-base hover:under-anime-hover"
+      class="group under-anime-r under-base w-fit w-fit flex cursor-pointer items-center gap4 font-mono op67 hover:under-anime-hover"
       @click="router.back()"
     >
       返回

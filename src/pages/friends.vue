@@ -23,7 +23,7 @@ const {
           <img v-if="friend.avatar.startsWith('http')" :src="friend.avatar" class="aspect-ratio-square h9 w9">
           <div v-else :class="friend.avatar" />
         </div>
-        <span class="mb1 inline-block text-lg text-zinc-900 font-medium leading-none under-anime group-hover:under-anime-hover dark:text-zinc-50">{{ friend.name }}</span>
+        <span class="under-anime mb1 inline-block text-lg text-zinc-900 font-medium leading-none group-hover:under-anime-hover dark:text-zinc-50">{{ friend.name }}</span>
         <br>
         <span class="text-sm text-zinc-500 font-light leading-tight">{{ friend.desc }}</span>
       </a>
@@ -43,7 +43,7 @@ const {
         <div class="float-left mr2 aspect-ratio-square h10 inline-flex flex-[0_0_auto] items-center justify-center ring-1 ring-zinc-200 dark:ring-zinc-800">
           <img :src="idol.avatar" class="aspect-ratio-square h9 w9">
         </div>
-        <span class="mb1 inline-block text-lg text-zinc-900 font-medium leading-none under-anime group-hover:under-anime-hover dark:text-zinc-50">{{ idol.name }}</span>
+        <span class="under-anime mb1 inline-block text-lg text-zinc-900 font-medium leading-none group-hover:under-anime-hover dark:text-zinc-50">{{ idol.name }}</span>
         <br>
         <span class="text-sm text-zinc-500 font-light leading-tight">{{ idol.desc }}</span>
       </a>

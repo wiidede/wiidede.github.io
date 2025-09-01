@@ -23,9 +23,9 @@ tags:
 
 ```ts
 import type { Ref } from 'vue'
+import { defineStore } from 'pinia'
 import { getDictDataApi } from '@/service/DataDictionary'
 import { IDictData } from '@/typings/DataDictionary'
-import { defineStore } from 'pinia'
 
 export const useCommonStore = defineStore('common', () => {
   const getDictData = async (dictKey: string): Promise<Record<string, IDictData>> => {

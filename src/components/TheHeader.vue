@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <RouterLink class="header-card fixed ml2 mt2 rd-full px2 py1 text-6 text-black outline-none icon-btn dark:text-white" to="/" focusable="false">
+  <RouterLink class="header-card fixed ml2 mt2 icon-btn rd-full px2 py1 text-6 text-black outline-none dark:text-white" to="/" focusable="false">
     <div i-the-wiidede />
   </RouterLink>
   <header class="header-card fixed right-0 top-0 ml-auto mr4 mt3 w-fit rd-5 px3 py1 text-black ring-zinc/30 transition-all duration-400 dark:text-white hover:ring-1">
