@@ -151,9 +151,9 @@ export function useFriends() {
   const friends: Friend[] = [
     { name: 'CIRCUIT', link: 'https://yang000.cn', desc: '鸯飞漫冬山', avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=58894242&spec=100&img_type=jpg' },
     { name: 'XiYu博客', link: 'https://xiyu.pro', desc: '记录·分享', avatar: 'https://gravatar.loli.net/avatar/16a8d4c0491cf8cec54e6ab8f65e4fa6' },
-    { name: '小孙同学', link: 'https://blog.sunguoqi.com', desc: '路虽远行则将至，事随难做则必成！', avatar: 'https://assets.guoqi.dev/images/avatar.png' },
-    { name: 'Luxynth', link: 'https://www.luxynth.cn', desc: '我心匪石不可转', avatar: 'https://www.luxynth.cn/assets/images/avatar.jpg' },
+    { name: 'Luxynth', link: 'https://luxynth.cn', desc: '我心匪石不可转', avatar: 'https://luxynth.cn/assets/images/avatar.jpg' },
     { name: 'wiidede | 小的的', link: 'https://wiidede.space', desc: '是小的的呐，愿你眼里有光，心中有爱', avatar: 'https://github.com/wiidede.png' },
+    { name: 'SNOWS', link: 'https://snows.chat', desc: 'welcome to the real world.it sucks,youre gonna love it', avatar: 'https://foruda.gitee.com/avatar/1756797583886460777/12127599_hxs-12138_1756797583.png' },
     { name: '申请友链', link: '#new', desc: '很高兴认识你', avatar: 'i-carbon-user-follow' },
   ]
 
