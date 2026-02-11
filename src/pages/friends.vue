@@ -82,7 +82,7 @@ const {
     <TheFooter />
     <client-only>
       <div class="slide-enter mx-auto max-w100ch pt-4 prose animate-delay-800">
-        <TheWaline />
+        <TheCWD />
       </div>
     </client-only>
   </div>
