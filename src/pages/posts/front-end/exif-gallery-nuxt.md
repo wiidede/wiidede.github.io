@@ -25,7 +25,7 @@ id: exif-gallery-nuxt
 
 体验地址：<https://photo.wiidede.space/>
 
-Github: <https://github.com/wiidede/exif-gallery-nuxt>
+GitHub: <https://github.com/wiidede/exif-gallery-nuxt>
 
 特性：
 

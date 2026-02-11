@@ -23,7 +23,8 @@ onMounted(() => {
       && event.x > CARD_BOUNDS.left - CONFIG.proximity
       && event.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity
       && event.y > CARD_BOUNDS.top - CONFIG.proximity
-      && event.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity) {
+      && event.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+    ) {
       // If within proximity set the active opacity
       CARD.style.setProperty('--active', String(1))
     }

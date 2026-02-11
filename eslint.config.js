@@ -1,5 +1,5 @@
 import antfu from '@antfu/eslint-config'
-import pluginCasePolice from 'eslint-plugin-case-police'
+// import pluginCasePolice from 'eslint-plugin-case-police'
 
 export default antfu(
   {
@@ -18,14 +18,15 @@ export default antfu(
       'vue/valid-attribute-name': 'off',
     },
   },
-  {
-    name: 'case-police',
-    files: ['**/*.?([cm])[jt]s?(x)'],
-    plugins: {
-      'case-police': pluginCasePolice,
-    },
-    rules: {
-      'case-police/string-check': 'warn',
-    },
-  },
+  // FIXME: not support eslint 10
+  // {
+  //   name: 'case-police',
+  //   files: ['**/*.?([cm])[jt]s?(x)'],
+  //   plugins: {
+  //     'case-police': pluginCasePolice,
+  //   },
+  //   rules: {
+  //     'case-police/string-check': 'warn',
+  //   },
+  // },
 )
