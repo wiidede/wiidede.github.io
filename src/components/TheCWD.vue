@@ -1,16 +1,17 @@
-<script setup>
+<script setup lang="ts">
+import CWDComments from 'cwd-widget'
+
+// 放在 mounted 钩子中初始化评论组件
 const comments = ref(null)
-let instance = null
+let instance: CWDComments
 const route = useRoute()
 
 onMounted(async () => {
-  // FIXME await esm support & remember to update version
-  if (!window.CWDComments) {
-    await loadScript('https://unpkg.com/cwd-widget@0.1.3/dist/cwd.js')
-  }
-  instance = new window.CWDComments({
+  if (!comments.value)
+    return
+  instance = new CWDComments({
     el: comments.value,
-    apiBaseUrl: 'https://cwd.wiidede.space', // 换成你的 API 地址
+    apiBaseUrl: 'https://cwd.wiidede.space',
     postSlug: route.path,
     siteId: 'wiidede.space',
     theme: isDark.value ? 'dark' : 'light',
@@ -24,19 +25,8 @@ watch(isDark, (val) => {
 })
 
 onBeforeUnmount(() => {
-  instance = null
+  instance.unmount()
 })
-
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script')
-    script.src = src
-    script.async = true
-    script.onload = () => resolve()
-    script.onerror = e => reject(e)
-    document.head.appendChild(script)
-  })
-}
 </script>
 
 <template>

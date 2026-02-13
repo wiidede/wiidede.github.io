@@ -20,6 +20,7 @@
     "@vueuse/core": "^14.2.1",
     "@vueuse/head": "^2.0.0",
     "beasties": "^0.4.1",
+    "cwd-widget": "^0.1.6",
     "dayjs": "^1.11.19",
     "fast-glob": "^3.3.3",
     "markdown-it-table-of-contents": "^1.1.0",
