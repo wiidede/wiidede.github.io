@@ -5,8 +5,6 @@
 }
 
 .prose .shiki {
-  font-size: 1.1em;
-  line-height: 1.1em;
   margin: 0.5em 0;
 }
 
@@ -14,6 +12,16 @@
 .shiki-dark {
   background: var(--c-card-bg) !important;
   --twoslash-popup-bg: var(--c-card-bg);
+}
+
+html .prose .shiki {
+  background-color: var(--s-light-bg);
+  background-color: color-mix(in srgb, var(--s-light-bg), transparent 50%);
+}
+
+html.dark .prose .shiki {
+  background-color: var(--s-dark-bg);
+  background-color: color-mix(in srgb, var(--s-dark-bg), transparent 50%);
 }
 
 html.dark .shiki-light {
