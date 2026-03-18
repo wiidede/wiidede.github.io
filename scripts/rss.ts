@@ -7,6 +7,7 @@ import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 
 const DOMAIN = 'https://wiidede.space'
+const PATH_REGEX = /^pages(.+)\.md$/
 const AUTHOR = {
   name: 'wiidede',
   email: 'wiixdede@gmail.com',
@@ -55,7 +56,7 @@ async function buildBlogRSS() {
             date: new Date(data.date),
             content: html,
             author: [AUTHOR],
-            link: DOMAIN + i.replace(/^pages(.+)\.md$/, '$1'),
+            link: DOMAIN + i.replace(PATH_REGEX, '$1'),
           }
         }),
     ))

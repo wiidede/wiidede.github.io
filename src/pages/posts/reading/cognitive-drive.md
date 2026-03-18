@@ -23,7 +23,7 @@ id: cognitive-drive
 
 ![image-20220614182424966](https://img.wiidede.space/images/image-20220614182424966.png)
 
-# 认知驱动：做成一件对他人很有用的事
+## 认知驱动：做成一件对他人很有用的事
 
 周岭
 

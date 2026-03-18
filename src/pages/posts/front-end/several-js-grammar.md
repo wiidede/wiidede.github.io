@@ -437,7 +437,7 @@ function downloadFile(blob, filename) {
 const treeList = [{ children: [] }]
 function flatChildren(rawList, resList) {
   rawList.forEach((item) => {
-    Object.prototype.hasOwnProperty.call(item, 'children') && Array.isArray(item.children) && flatChildren(item.children)
+    Object.hasOwn(item, 'children') && Array.isArray(item.children) && flatChildren(item.children)
     delete item.children
     resList.push(item)
   })

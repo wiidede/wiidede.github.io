@@ -1,5 +1,5 @@
 import { resolve } from 'node:path'
-import MarkdownItShiki from '@shikijs/markdown-it'
+import MarkdownExitShiki from '@shikijs/markdown-exit'
 import { transformerNotationDiff, transformerNotationHighlight, transformerNotationWordHighlight } from '@shikijs/transformers'
 import { rendererRich, transformerTwoslash } from '@shikijs/twoslash'
 import Vue from '@vitejs/plugin-vue'
@@ -21,6 +21,9 @@ import WebfontDownload from 'vite-plugin-webfont-dl'
 import generateSitemap from 'vite-ssg-sitemap'
 import liquidRayLight from './public/liquid-ray-light.json'
 import liquidRayDark from './public/liquid-ray.json'
+
+const THE_MD_REGEX = /\/The[^/]*.md$/
+const HTTPS_REGEX = /^https?:\/\//
 
 export default defineConfig({
   resolve: {
@@ -83,7 +86,7 @@ export default defineConfig({
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
       wrapperComponent: (id) => {
-        return id.match(/\/The[^/]*.md$/) ? undefined : 'ThePostWrapper'
+        return THE_MD_REGEX.test(id) ? undefined : 'ThePostWrapper'
       },
       wrapperClasses: 'prose prose-sm m-auto text-left slide-enter-content',
       headEnabled: true,
@@ -94,7 +97,7 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       async markdownItSetup(md) {
-        md.use(await MarkdownItShiki({
+        md.use(await MarkdownExitShiki({
           themes: {
             dark: liquidRayDark,
             light: liquidRayLight,
@@ -112,6 +115,7 @@ export default defineConfig({
           ],
         }))
 
+        // @ts-expect-error unplugin-vue-markdown uses markdown-exit which has incompatible types with markdown-it plugins
         md.use(anchor, {
           // slugify,
           permalink: anchor.permalink.linkInsideHeader({
@@ -119,8 +123,10 @@ export default defineConfig({
             renderAttrs: () => ({ 'aria-hidden': 'true' }),
           }),
         })
+
+        // @ts-expect-error unplugin-vue-markdown uses markdown-exit which has incompatible types with markdown-it plugins
         md.use(LinkAttributes, {
-          matcher: (link: string) => /^https?:\/\//.test(link),
+          matcher: (link: string) => HTTPS_REGEX.test(link),
           attrs: {
             target: '_blank',
             rel: 'noopener',

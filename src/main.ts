@@ -7,8 +7,10 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 
+const POST_PATH_REGEX = /^\/posts\/[^/]+\/([^/]+)$/
+
 routes.forEach((route) => {
-  const match = route.path.match(/^\/posts\/[^/]+\/([^/]+)$/)
+  const match = route.path.match(POST_PATH_REGEX)
   if (match) {
     route.path = `/${match[1]}`
     if (route.meta)
