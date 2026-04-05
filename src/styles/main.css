@@ -21,6 +21,7 @@ html.dark {
   --c-bg-secondary: #1116;
   --c-primary: #333;
   --c-active: #444;
+  color-scheme: dark;
 }
 
 html {

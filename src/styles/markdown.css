@@ -41,7 +41,7 @@ html:not(.dark) .shiki span {
   /* --twoslash-border-color: #8884; */
 }
 
-.prose {
+html .prose {
   --fg: #555;
   --fg-deep: #222;
   --fg-deeper: #000;
