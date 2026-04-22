@@ -6,6 +6,7 @@
 
 .prose .shiki {
   margin: 0.5em 0;
+  --uno: 'shadow rd backdrop-blur-sm';
 }
 
 .shiki-light,
@@ -16,12 +17,12 @@
 
 html .prose .shiki {
   background-color: var(--s-light-bg);
-  background-color: color-mix(in srgb, var(--s-light-bg), transparent 50%);
+  background-color: color-mix(in srgb, var(--s-light-bg), transparent 67%);
 }
 
 html.dark .prose .shiki {
   background-color: var(--s-dark-bg);
-  background-color: color-mix(in srgb, var(--s-dark-bg), transparent 50%);
+  background-color: color-mix(in srgb, var(--s-dark-bg), transparent 67%);
 }
 
 html.dark .shiki-light {
